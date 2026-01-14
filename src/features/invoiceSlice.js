@@ -1,26 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
-    { id: "001", customer: "John Doe", total: 250, status: "Paid" },
-    { id: "002", customer: "Jane Montgomery", total: 400, status: "Pending" },
-];
+const initialState = {
+    invoices: JSON.parse(localStorage.getItem("invoices")) || []
+};
 
 const invoiceSlice = createSlice({
     name: "invoices",
     initialState,
     reducers: {
+        setInvoices: (state, action) => {
+            state.invoices = action.payload;
+            localStorage.setItem("invoices", JSON.stringify(state.invoices));
+        },
         addInvoice: (state, action) => {
-            state.push(action.payload);
+            state.invoices.push(action.payload);
+            localStorage.setItem("invoices", JSON.stringify(state.invoices));
         },
         updateInvoice: (state, action) => {
-            const index = state.findIndex(inv => inv.id === action.payload.id);
-            if (index !== -1) state[index] = action.payload;
+            const index = state.invoices.findIndex(inv => inv.id === action.payload.id);
+            if (index !== -1) {
+                state.invoices[index] = action.payload;
+                localStorage.setItem("invoices", JSON.stringify(state.invoices));
+            }
         },
         deleteInvoice: (state, action) => {
-            return state.filter(inv => inv.id !== action.payload);
-        },
-    },
+            state.invoices = state.invoices.filter(inv => inv.id !== action.payload);
+            localStorage.setItem("invoices", JSON.stringify(state.invoices));
+        }
+    }
 });
 
-export const { addInvoice, updateInvoice, deleteInvoice } = invoiceSlice.actions;
+export const { setInvoices, addInvoice, updateInvoice, deleteInvoice } = invoiceSlice.actions;
 export default invoiceSlice.reducer;
