@@ -1,30 +1,30 @@
-// App.js
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setInvoices } from "./features/invoiceSlice";
+import InvoiceList from "./components/invoice-list/InvoiceList";
 
 function App() {
   const dispatch = useDispatch();
-  const invoices = useSelector((state) => state.invoices.invoices);
 
   useEffect(() => {
-    if (!localStorage.getItem("invoices")) {
+    const storedInvoices = localStorage.getItem("invoices");
+
+    if (storedInvoices) {
+      // localStorage doluysa onu Redux store'a yükle
+      dispatch(setInvoices(JSON.parse(storedInvoices)));
+    } else {
+      // boşsa data.json'dan fetch et
       fetch("/db/data.json")
         .then((res) => res.json())
         .then((data) => dispatch(setInvoices(data.invoices)));
     }
   }, [dispatch]);
 
+
   return (
     <div>
       <h1>Invoice App</h1>
-      <ul>
-        {invoices.map((inv) => (
-          <li key={inv.id}>
-            <strong>{inv.id}</strong> - {inv.clientName} - {inv.total}$
-          </li>
-        ))}
-      </ul>
+      <InvoiceList />
     </div>
   );
 }
