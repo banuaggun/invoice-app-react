@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setInvoices } from "./features/invoiceSlice";
-import InvoiceList from "./components/invoice-list/InvoiceList";
+import InvoiceListPage from "./pages/InvoiceListPage";
+import NewInvoicePage from "./pages/NewInvoicePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -10,10 +12,8 @@ function App() {
     const storedInvoices = localStorage.getItem("invoices");
 
     if (storedInvoices) {
-      // localStorage doluysa onu Redux store'a yükle
       dispatch(setInvoices(JSON.parse(storedInvoices)));
     } else {
-      // boşsa data.json'dan fetch et
       fetch("/db/data.json")
         .then((res) => res.json())
         .then((data) => dispatch(setInvoices(data.invoices)));
@@ -22,10 +22,12 @@ function App() {
 
 
   return (
-    <div>
-      <h1>Invoice App</h1>
-      <InvoiceList />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<InvoiceListPage />} />
+        <Route path="/new" element={<NewInvoicePage />} />
+      </Routes>
+    </Router>
   );
 }
 
