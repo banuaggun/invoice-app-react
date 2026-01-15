@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addInvoice } from "../features/invoiceSlice";
+import { addInvoice } from "../../features/invoiceSlice";
 
 const NewInvoicePage = () => {
     const navigate = useNavigate();

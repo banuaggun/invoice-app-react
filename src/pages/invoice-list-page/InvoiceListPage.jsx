@@ -1,5 +1,5 @@
 import React from "react";
-import InvoiceList from "../components/invoice-list/InvoiceList";
+import InvoiceList from "../../components/invoice-list/InvoiceList";
 
 const InvoiceListPage = () => {
     return (
