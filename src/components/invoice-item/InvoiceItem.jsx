@@ -1,4 +1,5 @@
 import React from "react";
+import './invoice-item.css';
 
 function InvoiceItem({ invoice }) {
     console.log(invoice);

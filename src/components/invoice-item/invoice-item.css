@@ -1,0 +1,13 @@
+.invoice-card {
+    border: 1px solid #ddd;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+.invoice-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #333;
+}

@@ -1,0 +1,9 @@
+.invoice-list {
+    padding: 20px;
+}
+
+.invoice-list h2 {
+    margin-bottom: 12px;
+    font-size: 20px;
+    color: #444;
+}
