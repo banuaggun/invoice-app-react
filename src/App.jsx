@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setInvoices } from "./features/invoiceSlice";
 import InvoiceListPage from "./pages/invoice-list-page/InvoiceListPage";
 import NewInvoicePage from "./pages/new-invoice/NewInvoicePage";
 import InvoiceDetail from "./pages/invoice-detail/InvoiceDetail";
+import Layout from "./components/layout/Layout";
 
 function App() {
   const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme.mode);
 
   useEffect(() => {
     const storedInvoices = localStorage.getItem("invoices");
@@ -23,13 +25,17 @@ function App() {
 
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<InvoiceListPage />} />
-        <Route path="/new" element={<NewInvoicePage />} />
-        <Route path="/invoice/:id" element={<InvoiceDetail />} />
-      </Routes>
-    </Router>
+    <div className={`app ${theme}`}>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<InvoiceListPage />} />
+            <Route path="/new" element={<NewInvoicePage />} />
+            <Route path="/invoice/:id" element={<InvoiceDetail />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </div>
   );
 }
 
