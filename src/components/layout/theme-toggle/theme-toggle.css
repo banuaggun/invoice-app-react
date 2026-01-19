@@ -1,0 +1,39 @@
+.theme-toggle-button {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    padding:8px 4px;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-button svg {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle-button span {
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+    cursor: pointer;
+    background: transparent;
+    transform: translateY(-2px);
+}
+
+.theme-toggle-button:hover svg, 
+.theme-toggle-button:hover span {
+    transform: scale(1.2);
+    color: var(--accent-color, #B8C5D6);
+}
+
+.theme-toggle-button:active {
+    transform: scale(0.96);
+}
