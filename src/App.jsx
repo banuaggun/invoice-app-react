@@ -6,6 +6,7 @@ import InvoiceListPage from "./pages/invoice-list-page/InvoiceListPage";
 import NewInvoicePage from "./pages/new-invoice/NewInvoicePage";
 import InvoiceDetail from "./pages/invoice-detail/InvoiceDetail";
 import Layout from "./components/layout/Layout";
+import Profile from "./pages/profile-page/Profile";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,8 +32,10 @@ function App() {
           <Routes>
             <Route path="/" element={<InvoiceListPage />} />
             <Route path="/new" element={<NewInvoicePage />} />
-            <Route path="/invoice/:id" element={<InvoiceDetail />} />
-          </Routes>
+            <Route path="/invoice/:id" element={<InvoiceDetail />} /> 
+            <Route path="/profile" element={<Profile />} />
+          </Routes> 
+          
         </Layout>
       </Router>
     </div>

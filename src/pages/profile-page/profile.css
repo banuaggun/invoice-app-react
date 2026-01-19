@@ -1,0 +1,32 @@
+.profile-page {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.profile-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.profile-card {
+  width: 180px;
+  padding: 1rem;
+  border-radius: 10px;
+  background: var(--button-bg);
+  color: var(--text-color);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  background: var(--hover-bg);
+}
+
+.github { border-top: 4px solid #333; }
+.behance { border-top: 4px solid #1769ff; }
+.linkedin { border-top: 4px solid #0a66c2; }

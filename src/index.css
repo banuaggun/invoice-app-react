@@ -10,17 +10,19 @@
 }
 
 .app.light {
-  --bg-color: #f3f2f2;
+  --bg-color: #F7F4F3;
   --text-color: #242424;
-  --button-bg: #bebdbd;
+  --button-bg: transparent;
   --button-text: #333;
-  --nav-bg: #444;
+  --nav-bg: #444;  
+  --hover-bg: #eaeaea; 
+  --accent-color: #CB9F01;
 }
 
 .app.dark {
-  --bg-color: #525151;
+  --bg-color: #4C4F57;
   --text-color: #f9f9f9;
-  --button-bg: #e0e0e0;
+  --button-bg: transparent;
   --button-text: #f9f9f9;
   --nav-bg: #fff;
 }
@@ -30,7 +32,10 @@ body {
   margin: 0;
   padding: 0;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100vh; 
+  box-sizing: border-box; 
+  width:100%; 
+  height:100%;
 }
 
 .app {

@@ -1,0 +1,70 @@
+.sidenav-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 36px 16px 12px 16px;
+} 
+
+a, a:hover, a.active, a:focus{
+    color: var(--text-color); 
+    text-decoration: none;
+}
+
+@media only screen and (min-width:601px){
+    .sidenav-area{
+        padding:36px 30px 12px 30px;
+    }
+}
+
+.sidenav-area-logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sidenav-area-logo svg {
+    width: 24px;
+    height: 24px;
+    color: red;
+}
+
+.sidenav-area-logo span {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sidenav-area-right {
+    display: flex;
+    align-items: center; 
+    gap:0;
+    border: 1px solid pink;
+}
+
+.sidenav-area-right-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;  
+    border:1px solid yellow;
+} 
+.sidenav-area-right-profile svg:nth-child(1){
+    width:36px; 
+    height:36px; 
+    color:var(--text-color);
+}
+
+.sidenav-area-right-profile svg:nth-child(2){
+    width:24px; 
+    height:24px; 
+    color:var(--text-color);
+}
+
+.sidenav-area-right-profile:hover{
+    cursor: pointer;
+}
+
+.sidenav-area-right-theme{
+    border:1px solid white;
+}
