@@ -3,18 +3,20 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 36px 16px 12px 16px;
+    padding: 36px 16px 12px 16px; 
+
+    top:0; 
+    left:0;
+    box-sizing: border-box; 
+    position: fixed;  
+    width:100%; 
+    z-index: 1000; 
+    background-color: var(--bg-color);
 } 
 
 a, a:hover, a.active, a:focus{
     color: var(--text-color); 
     text-decoration: none;
-}
-
-@media only screen and (min-width:601px){
-    .sidenav-area{
-        padding:36px 30px 12px 30px;
-    }
 }
 
 .sidenav-area-logo {
@@ -24,9 +26,8 @@ a, a:hover, a.active, a:focus{
 }
 
 .sidenav-area-logo svg {
-    width: 24px;
-    height: 24px;
-    color: red;
+    width: 28px;
+    height: 28px;
 }
 
 .sidenav-area-logo span {
@@ -38,8 +39,7 @@ a, a:hover, a.active, a:focus{
 .sidenav-area-right {
     display: flex;
     align-items: center; 
-    gap:0;
-    border: 1px solid pink;
+    gap:4px;
 }
 
 .sidenav-area-right-profile {
@@ -47,7 +47,6 @@ a, a:hover, a.active, a:focus{
     align-items: center;
     justify-content: center;
     overflow: hidden;  
-    border:1px solid yellow;
 } 
 .sidenav-area-right-profile svg:nth-child(1){
     width:36px; 
@@ -67,4 +66,13 @@ a, a:hover, a.active, a:focus{
 
 .sidenav-area-right-theme{
     border:1px solid white;
+}
+
+@media only screen and (min-width:601px){
+    .sidenav-area{
+        padding:36px 60px 12px 60px;
+    } 
+    .sidenav-area-right{
+        gap:8px;
+    }
 }
