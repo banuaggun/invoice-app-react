@@ -1,0 +1,32 @@
+.invoice-detail{
+    padding:90px 16px 0 16px;
+}
+
+.invoice-detail-topbar{
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    position: sticky; 
+    top:90px; 
+    background-color: var(--bg-color);
+} 
+
+.invoice-detail-topbar .actions{
+    display: flex; 
+    justify-content: flex-end;  
+    align-items: center; 
+    gap:16px; 
+    width: 100%;
+}
+
+@media only screen and (min-width:601px){ 
+    .invoice-detail{
+        padding:90px 60px 0 60px;
+    }
+    .invoice-detail-topbar{
+        display: flex; 
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: space-between;
+    }
+}
