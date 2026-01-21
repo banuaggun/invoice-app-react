@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addInvoice } from "../../features/invoiceSlice";
+import { addInvoice } from "../../features/invoiceSlice"; 
+import './new-invoice.css'; 
 
 const NewInvoicePage = () => {
     const navigate = useNavigate();
@@ -22,30 +23,30 @@ const NewInvoicePage = () => {
         total: 0,
     });
 
+    const [newItem, setNewItem] = useState({ name: "", quantity: 1, price: 0, total: 0 });
+
     const handleChange = (field, value) => {
         setFormData({ ...formData, [field]: value });
         setDirty(true);
     };
 
-    const addItem = () => {
-        setFormData({
-            ...formData,
-            items: [...formData.items, { name: "", quantity: 1, price: 0, total: 0 }],
-        });
-        setDirty(true);
+    const handleNewItemChange = (field, value) => {
+        const updated = { ...newItem, [field]: value };
+        if (field === "quantity" || field === "price") {
+            updated.total = updated.quantity * updated.price;
+        }
+        setNewItem(updated);
     };
 
-    const updateItem = (index, field, value) => {
-        const newItems = [...formData.items];
-        newItems[index][field] = value;
-        if (field === "quantity" || field === "price") {
-            newItems[index].total = newItems[index].quantity * newItems[index].price;
-        }
+    const addItem = () => {
+        if (!newItem.name) return; // boş isim eklenmesin
+        const updatedItems = [...formData.items, newItem];
         setFormData({
             ...formData,
-            items: newItems,
-            total: newItems.reduce((sum, i) => sum + i.total, 0),
+            items: updatedItems,
+            total: updatedItems.reduce((sum, i) => sum + i.total, 0),
         });
+        setNewItem({ name: "", quantity: 1, price: 0, total: 0 }); 
         setDirty(true);
     };
 
@@ -65,7 +66,6 @@ const NewInvoicePage = () => {
 
     return (
         <div className="new-invoice-page">
-            {/* Üst bar */}
             <div className="top-bar">
                 <button onClick={handleCancel}>← Back</button>
                 <div className="actions">
@@ -74,12 +74,12 @@ const NewInvoicePage = () => {
                 </div>
             </div>
 
-            {/* Form içerik */}
             {step === 1 && (
                 <div>
                     <h3>Step 1: Sender & Client Info</h3>
                     <input
                         placeholder="Sender Street"
+                        value={formData.senderAddress.street}
                         onChange={(e) =>
                             setFormData({
                                 ...formData,
@@ -89,10 +89,12 @@ const NewInvoicePage = () => {
                     />
                     <input
                         placeholder="Client Name"
+                        value={formData.clientName}
                         onChange={(e) => handleChange("clientName", e.target.value)}
                     />
                     <input
                         placeholder="Client Email"
+                        value={formData.clientEmail}
                         onChange={(e) => handleChange("clientEmail", e.target.value)}
                     />
                 </div>
@@ -103,16 +105,18 @@ const NewInvoicePage = () => {
                     <h3>Step 2: Invoice Details</h3>
                     <input
                         placeholder="Description"
+                        value={formData.description}
                         onChange={(e) => handleChange("description", e.target.value)}
                     />
                     <select
+                        value={formData.paymentTerms}
                         onChange={(e) => handleChange("paymentTerms", Number(e.target.value))}
                     >
                         <option value={1}>1 day</option>
                         <option value={7}>7 days</option>
                         <option value={30}>30 days</option>
                     </select>
-                    <select onChange={(e) => handleChange("status", e.target.value)}>
+                    <select value={formData.status} onChange={(e) => handleChange("status", e.target.value)}>
                         <option value="draft">Draft</option>
                         <option value="pending">Pending</option>
                         <option value="paid">Paid</option>
@@ -123,31 +127,45 @@ const NewInvoicePage = () => {
             {step === 3 && (
                 <div>
                     <h3>Step 3: Items</h3>
-                    {formData.items.map((item, index) => (
-                        <div key={index}>
-                            <input
-                                placeholder="Name"
-                                onChange={(e) => updateItem(index, "name", e.target.value)}
-                            />
-                            <input
-                                type="number"
-                                placeholder="Quantity"
-                                onChange={(e) => updateItem(index, "quantity", Number(e.target.value))}
-                            />
-                            <input
-                                type="number"
-                                placeholder="Price"
-                                onChange={(e) => updateItem(index, "price", Number(e.target.value))}
-                            />
-                            <span>Total: {item.total}</span>
-                        </div>
-                    ))}
+
+                    <div className="item-row">
+                        <input
+                            placeholder="Name"
+                            value={newItem.name}
+                            onChange={(e) => handleNewItemChange("name", e.target.value)}
+                        />
+                        <input
+                            type="number"
+                            placeholder="Quantity"
+                            value={newItem.quantity}
+                            onChange={(e) => handleNewItemChange("quantity", Number(e.target.value))}
+                        />
+                        <input
+                            type="number"
+                            placeholder="Price"
+                            value={newItem.price}
+                            onChange={(e) => handleNewItemChange("price", Number(e.target.value))}
+                        />
+                        <span>Total: {newItem.total}</span>
+                    </div>
+
                     <button onClick={addItem}>Add Item</button>
+
+                    {formData.items.length > 0 && (
+                        <ul className="item-list">
+                            {formData.items.map((item, idx) => (
+                                <li key={idx}>
+                                    {item.name} — {item.quantity} × ${item.price} = ${item.total}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+
+                    {/* Grand Total */}
                     <h4>Grand Total: {formData.total}</h4>
                 </div>
             )}
 
-            {/* Pagination */}
             <div className="pagination">
                 {step > 1 && <button onClick={() => setStep(step - 1)}>Previous</button>}
                 {step < 3 && <button onClick={() => setStep(step + 1)}>Next</button>}
