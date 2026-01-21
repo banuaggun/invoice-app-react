@@ -1,13 +1,77 @@
 .invoice-card {
-    border: 1px solid #ddd;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 6px;
-    background-color: #fafafa;
+  border: 1px solid var(--button-text);
+  color: var(--text-color);
+  padding: 12px 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  background-color: #fafafa;
+} 
+
+
+.row-2, .row-3{
+    display: grid; 
+    grid-template-columns: 2fr 1fr;  
+    align-items: center;
+} 
+.row-1 p,
+.row-2 p,
+.row-3 p {
+  justify-self: start; 
 }
 
-.invoice-card h3 {
-    margin: 0 0 8px;
-    font-size: 16px;
-    color: #333;
+.row-1{ 
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.row-1 h3 {
+  font-size: 16px;
+}
+
+.row-1 p {
+  display: flex;
+  align-items: center; 
+  gap:4px;
+  font-weight: 600; 
+}
+
+.row-1 p svg {
+  width: 20px;
+  height: 20px;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-badge.paid .status-dot {
+  background-color: #4caf50; 
+}
+.status-badge.paid .status-text {
+  color: #4caf50;
+}
+
+.status-badge.pending .status-dot {
+  background-color: #ff9800; 
+}
+.status-badge.pending .status-text {
+  color: #ff9800;
+}
+
+.status-badge.draft .status-dot {
+  background-color: #9e9e9e; 
+}
+.status-badge.draft .status-text {
+  color: #9e9e9e;
 }
