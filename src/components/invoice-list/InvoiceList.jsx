@@ -7,10 +7,23 @@ import './invoice-list.css';
 function InvoiceList() {
     const invoices = useSelector((state) => state.invoices.invoices);
     const [filter, setFilter] = useState("");
+    const [sort, setSort] = useState(""); // yeni sort state
 
-    const filteredInvoices = filter
+    // 1. Status filtresi
+    let filteredInvoices = filter
         ? invoices.filter(inv => inv.status === filter)
         : invoices;
+
+    // 2. Sort işlemi
+    if (sort === "newest") {
+        filteredInvoices = [...filteredInvoices].sort(
+            (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
+    } else if (sort === "oldest") {
+        filteredInvoices = [...filteredInvoices].sort(
+            (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+        );
+    }
 
     return (
         <div className="invoices-list-area">
@@ -19,6 +32,8 @@ function InvoiceList() {
                 filteredInvoices={filteredInvoices}
                 filter={filter}
                 setFilter={setFilter}
+                sort={sort}          // sort props
+                setSort={setSort}    // sort setter
             />
             <div className="invoice-list">
                 {filteredInvoices.length === 0 ? (
