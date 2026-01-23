@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { deleteInvoice } from "../../features/invoiceSlice";
+import { useSelector, useDispatch } from "react-redux"; 
+import { deleteInvoice } from "../../features/invoiceSlice"; 
+import { formatDate } from "../../utils/dateUtils.js";
 import "./invoice-detail.css";
 import Modal from "../../components/modals/Modal.jsx";
 
@@ -16,7 +17,7 @@ const InvoiceDetail = () => {
 
   if (!invoice) {
     return <p>Invoice not found.</p>;
-  }
+  } 
 
   const handleDelete = () => {
     dispatch(deleteInvoice(invoice.id));
@@ -30,7 +31,12 @@ const InvoiceDetail = () => {
           ← Back
         </button>
         <div className="actions">
-          <button className="edit-btn">Edit</button>
+          <button
+            className="edit-btn"
+            onClick={() => navigate(`/invoice/${invoice.id}/edit`)}>
+            Edit
+          </button>
+
           <button className="delete-btn" onClick={() => setIsModalOpen(true)}>
             Delete
           </button>
@@ -54,11 +60,13 @@ const InvoiceDetail = () => {
 
       <h2>Invoice {invoice.id}</h2>
       <p>
-        <strong>Created At:</strong> {invoice.createdAt}
-      </p>
-      <p>
-        <strong>Payment Due:</strong> {invoice.paymentDue}
-      </p>
+  <strong>{invoice.updatedAt ? "Updated At:" : "Created At:"}</strong>{" "}
+  {formatDate(invoice.updatedAt || invoice.createdAt)}
+</p>
+<p>
+  <strong>Payment Due:</strong> {formatDate(invoice.paymentDue)}
+</p>
+
       <p>
         <strong>Description:</strong> {invoice.description}
       </p>

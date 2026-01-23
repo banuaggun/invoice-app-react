@@ -7,6 +7,7 @@ import NewInvoicePage from "./pages/new-invoice/NewInvoicePage";
 import InvoiceDetail from "./pages/invoice-detail/InvoiceDetail";
 import Layout from "./components/layout/Layout";
 import Profile from "./pages/profile-page/Profile";
+import EditInvoicePage from "./pages/edit-invoice/EditInvoicePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ function App() {
             <Route path="/" element={<InvoiceListPage />} />
             <Route path="/new" element={<NewInvoicePage />} />
             <Route path="/invoice/:id" element={<InvoiceDetail />} /> 
+            <Route path="/invoice/:id/edit" element={<EditInvoicePage/>} />
             <Route path="/profile" element={<Profile />} />
           </Routes> 
           
