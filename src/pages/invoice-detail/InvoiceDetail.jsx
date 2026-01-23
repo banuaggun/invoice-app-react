@@ -1,55 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux"; 
-import './invoice-detail.css'; 
+import { useSelector, useDispatch } from "react-redux";
+import { deleteInvoice } from "../../features/invoiceSlice";
+import "./invoice-detail.css";
+import Modal from "../../components/modals/Modal.jsx";
 
 const InvoiceDetail = () => {
-    const { id } = useParams();
-    const navigate = useNavigate();
-    const invoices = useSelector((state) => state.invoices.invoices);
-    const invoice = invoices.find((inv) => inv.id === id);
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const invoices = useSelector((state) => state.invoices.invoices);
+  const invoice = invoices.find((inv) => inv.id === id);
 
-    if (!invoice) {
-        return <p>Invoice not found.</p>;
-    }
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-    return (
-        <div className="invoice-detail">
-            {/* Üst bar */}
-            <div className="invoice-detail-topbar">
-                <button className="back-btn" onClick={() => navigate(-1)}>← Back</button>
-                <div className="actions">
-                    <button className="edit-btn">Edit</button>
-                    <button className="delete-btn">Delete</button>
-                </div>
-            </div>
+  if (!invoice) {
+    return <p>Invoice not found.</p>;
+  }
 
-            {/* Detay içerik */}
-            <h2>Invoice {invoice.id}</h2>
-            <p><strong>Created At:</strong> {invoice.createdAt}</p>
-            <p><strong>Payment Due:</strong> {invoice.paymentDue}</p>
-            <p><strong>Description:</strong> {invoice.description}</p>
-            <p><strong>Client:</strong> {invoice.clientName} ({invoice.clientEmail})</p>
-            <p><strong>Status:</strong> {invoice.status}</p>
+  const handleDelete = () => {
+    dispatch(deleteInvoice(invoice.id));
+    navigate("/");
+  };
 
-            <h3>Sender Address</h3>
-            <p>{invoice.senderAddress.street}, {invoice.senderAddress.city}, {invoice.senderAddress.postCode}, {invoice.senderAddress.country}</p>
-
-            <h3>Client Address</h3>
-            <p>{invoice.clientAddress.street}, {invoice.clientAddress.city}, {invoice.clientAddress.postCode}, {invoice.clientAddress.country}</p>
-
-            <h3>Items</h3>
-            <ul>
-                {invoice.items.map((item, idx) => (
-                    <li key={idx}>
-                        {item.name} — {item.quantity} × ${item.price} = ${item.total}
-                    </li>
-                ))}
-            </ul>
-
-            <h3>Total: ${invoice.total}</h3>
+  return (
+    <div className="invoice-detail">
+      <div className="invoice-detail-topbar">
+        <button className="back-btn" onClick={() => navigate(-1)}>
+          ← Back
+        </button>
+        <div className="actions">
+          <button className="edit-btn">Edit</button>
+          <button className="delete-btn" onClick={() => setIsModalOpen(true)}>
+            Delete
+          </button>
         </div>
-    );
+      </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Delete Invoice"
+        actions={
+          <>
+            <button onClick={() => setIsModalOpen(false)}>Cancel</button>
+            <button onClick={handleDelete}>Confirm</button>
+          </>
+        }>
+        <p>
+          Are you sure you want to delete invoice <strong>{invoice.id}</strong>?
+        </p>
+      </Modal>
+
+      <h2>Invoice {invoice.id}</h2>
+      <p>
+        <strong>Created At:</strong> {invoice.createdAt}
+      </p>
+      <p>
+        <strong>Payment Due:</strong> {invoice.paymentDue}
+      </p>
+      <p>
+        <strong>Description:</strong> {invoice.description}
+      </p>
+      <p>
+        <strong>Client:</strong> {invoice.clientName} ({invoice.clientEmail})
+      </p>
+      <p>
+        <strong>Status:</strong> {invoice.status}
+      </p>
+
+      <h3>Sender Address</h3>
+      <p>
+        {invoice.senderAddress.street}, {invoice.senderAddress.city},{" "}
+        {invoice.senderAddress.postCode}, {invoice.senderAddress.country}
+      </p>
+
+      <h3>Client Address</h3>
+      <p>
+        {invoice.clientAddress.street}, {invoice.clientAddress.city},{" "}
+        {invoice.clientAddress.postCode}, {invoice.clientAddress.country}
+      </p>
+
+      <h3>Items</h3>
+      <ul>
+        {invoice.items.map((item, idx) => (
+          <li key={idx}>
+            {item.name} — {item.quantity} × ${item.price} = ${item.total}
+          </li>
+        ))}
+      </ul>
+
+      <h3>Total: ${invoice.total}</h3>
+    </div>
+  );
 };
 
 export default InvoiceDetail;
