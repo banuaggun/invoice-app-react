@@ -1,16 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
+import { formatDate } from "../../utils/dateUtils";
 import './invoice-item.css';
 
 function InvoiceItem({ invoice }) {
     const navigate = useNavigate();
 
-    // Tarihi sadece gün-ay-yıl formatında göster
-    const formattedDate = new Date(invoice.createdAt).toLocaleDateString("en-GB", {
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-    });
+const displayDate = invoice.updatedAt || invoice.createdAt;
+const formattedDate = formatDate(displayDate, "tr-TR"); 
+
 
     return (
         <div 
