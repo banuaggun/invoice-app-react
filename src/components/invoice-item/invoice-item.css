@@ -31,15 +31,22 @@
 .row-1 p {
   display: flex;
   align-items: center; 
-  gap:4px;
+  gap:8px;
   font-weight: 600; 
+  border:1px solid darkcyan; 
+  padding:2px 8px; 
+  border-radius: 20px; 
+  background-color: lightcyan;
 }
 
 .row-1 p svg {
   width: 20px;
   height: 20px;
 }
-
+ 
+.row-1:hover{
+  cursor: pointer;
+}
 .status-badge {
   display: flex;
   align-items: center;
