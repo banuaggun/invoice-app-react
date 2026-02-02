@@ -30,13 +30,15 @@ const InvoiceHeader = ({ invoices, filteredInvoices, filter, setFilter, sort, se
           )}
         </span>
 
-        <InvoiceFilter 
+      </div> 
+      <div className="invoice-header-area-row-3">
+          <InvoiceFilter 
           filter={filter} 
           setFilter={setFilter} 
           sort={sort} 
           setSort={setSort} 
         />
-      </div>
+        </div>
     </div>
   );
 };

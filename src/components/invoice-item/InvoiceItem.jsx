@@ -27,7 +27,7 @@ const formattedDate = formatDate(displayDate, "tr-TR");
 
           <div className="row-2">
               <p>{invoice.clientName}</p>
-              <p>{formattedDate}</p> {/* sadece tarih */}
+              <p>{formattedDate}</p> 
           </div> 
 
           <div className="row-3">
