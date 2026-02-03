@@ -1,11 +1,11 @@
+
 .invoice-list {
-    padding: 16px 10px; 
     position: relative; 
     margin-top:100px; 
     border:1px solid black; 
-    box-sizing: border-box;
 }
 
+/*
 .invoice-list h2 {
     margin-bottom: 12px;
     font-size: 20px;
@@ -33,3 +33,4 @@
     } 
     
 }
+    */

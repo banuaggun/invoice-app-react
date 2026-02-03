@@ -1,83 +1,88 @@
-.invoice-card {
-  border: 1px solid var(--button-text);
-  color: var(--text-color);
-  padding: 12px 12px;
-  margin: 8px 0;
-  border-radius: 6px;
-} 
-
-
-.row-2, .row-3{
-    display: grid; 
-    grid-template-columns: 2fr 1fr;  
-    align-items: center;
-} 
-.row-1 p,
-.row-2 p,
-.row-3 p {
-  justify-self: start; 
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
 }
 
-.row-1{ 
-    display: flex; 
-    align-items: center;
-    justify-content: space-between; 
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
 }
 
-.row-1 h3 {
-  font-size: 16px;
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
 }
 
-.row-1 p {
-  display: flex;
-  align-items: center; 
-  gap:8px;
-  font-weight: 600; 
-  border:1px solid darkcyan; 
-  padding:2px 8px; 
-  border-radius: 20px; 
-  background-color: lightcyan;
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
 }
 
-.row-1 p svg {
-  width: 20px;
-  height: 20px;
-}
- 
-.row-1:hover{
-  cursor: pointer;
-}
-.status-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-  text-transform: capitalize;
+
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
-.status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
 }
 
-.status-badge.paid .status-dot {
-  background-color: #4caf50; 
-}
-.status-badge.paid .status-text {
-  color: #4caf50;
-}
-
-.status-badge.pending .status-dot {
-  background-color: #ff9800; 
-}
-.status-badge.pending .status-text {
-  color: #ff9800;
-}
-
-.status-badge.draft .status-dot {
-  background-color: #9e9e9e; 
-}
-.status-badge.draft .status-text {
-  color: #9e9e9e;
+/* general styling */
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
 }
