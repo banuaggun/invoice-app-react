@@ -41,7 +41,8 @@ function InvoiceList() {
               <th scope="col">ID</th> 
               <th scope="col">Customer</th> 
               <th scope="col">Date</th> 
-              <th scope="col">Total</th>
+              <th scope="col">Total</th> 
+              <th scope="col"></th>
             </tr>
           </thead> 
             </table>

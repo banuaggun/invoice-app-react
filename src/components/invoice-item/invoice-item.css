@@ -81,8 +81,24 @@ table th {
   }
 }
 
-/* general styling */
-body {
-  font-family: "Open Sans", sans-serif;
-  line-height: 1.25;
+table td.more-btn{
+  display:flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap:4px; 
+  padding: 4px 8px;
+  background-color: plum; 
+  color: white; 
+  border: none; 
+  border-radius: 6px;
+} 
+
+table td.more-btn svg{
+  width:20px; 
+  height:20px;
+}
+
+table td.more-btn span{
+  font-weight: bold; 
+  font-size: 1rem;
 }
