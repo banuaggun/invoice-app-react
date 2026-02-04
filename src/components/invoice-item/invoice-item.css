@@ -1,9 +1,9 @@
 table {
   border: 1px solid #ccc;
   border-collapse: collapse;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  margin: 0 auto;
+  padding: 2px 8px;
+  width: 90%;
   table-layout: fixed;
 }
 
@@ -21,7 +21,7 @@ table tr {
 table th,
 table td {
   padding: .625em;
-  text-align: center;
+  text-align: left;
 }
 
 
@@ -87,7 +87,7 @@ table td.more-btn{
   justify-content: center; 
   gap:4px; 
   padding: 4px 8px;
-  background-color: plum; 
+  background-color: #687EA1; 
   color: white; 
   border: none; 
   border-radius: 6px;

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux"; 
-import { deleteInvoice } from "../../features/invoiceSlice"; 
+import { useSelector, useDispatch } from "react-redux";
+import { deleteInvoice } from "../../features/invoiceSlice";
 import { formatDate } from "../../utils/dateUtils.js";
-import "./invoice-detail.css";
+import "./detail.css";
 import Modal from "../../components/modals/Modal.jsx";
 
 const InvoiceDetail = () => {
@@ -17,7 +17,7 @@ const InvoiceDetail = () => {
 
   if (!invoice) {
     return <p>Invoice not found.</p>;
-  } 
+  }
 
   const handleDelete = () => {
     dispatch(deleteInvoice(invoice.id));
@@ -59,23 +59,29 @@ const InvoiceDetail = () => {
       </Modal>
 
       <h2>Invoice {invoice.id}</h2>
-      <p>
-  <strong>{invoice.updatedAt ? "Updated At:" : "Created At:"}</strong>{" "}
-  {formatDate(invoice.updatedAt || invoice.createdAt)}
-</p>
-<p>
-  <strong>Payment Due:</strong> {formatDate(invoice.paymentDue)}
-</p>
-
-      <p>
-        <strong>Description:</strong> {invoice.description}
-      </p>
-      <p>
-        <strong>Client:</strong> {invoice.clientName} ({invoice.clientEmail})
-      </p>
-      <p>
-        <strong>Status:</strong> {invoice.status}
-      </p>
+      <div className="area-1">
+        <div className="row-1">
+          <p>
+            <strong>{invoice.updatedAt ? "Updated At:" : "Created At:"}</strong>{" "}
+            {formatDate(invoice.updatedAt || invoice.createdAt)}
+          </p>
+          <p>
+            <strong>Payment Due:</strong> {formatDate(invoice.paymentDue)}
+          </p>
+          <p>
+            <strong>Status:</strong> {invoice.status}
+          </p>
+        </div>
+        <div className="row-2">
+          <p>
+            <strong>Description:</strong> {invoice.description}
+          </p>
+          <p>
+            <strong>Client:</strong> {invoice.clientName} ({invoice.clientEmail}
+            )
+          </p>
+        </div>
+      </div>
 
       <h3>Sender Address</h3>
       <p>
