@@ -13,7 +13,7 @@ table caption {
 }
 
 table tr {
-  background-color: #f8f8f8;
+  background-color: var(--bg-color);
   border: 1px solid #ddd;
   padding: .35em;
 }
@@ -87,11 +87,16 @@ table td.more-btn{
   justify-content: center; 
   gap:4px; 
   padding: 4px 8px;
-  background-color: #687EA1; 
-  color: white; 
+  background-color: var(--btn-more); 
+  color: black; 
   border: none; 
   border-radius: 6px;
 } 
+
+table td.more-btn:hover{ 
+  cursor: pointer;
+  background-color: var(--btn-more-hover);
+}
 
 table td.more-btn svg{
   width:20px; 

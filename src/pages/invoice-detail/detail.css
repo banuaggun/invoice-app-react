@@ -3,7 +3,7 @@
   padding: 100px 16px 40px 16px; /* topbar sabit olduğu için üst padding */
   max-width: 800px; 
   min-width:300px;
-  margin: 0 40px; 
+  margin: 0 auto; 
   border:1px solid black;
   font-family: Arial, sans-serif;
   line-height: 1.5;

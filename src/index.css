@@ -11,7 +11,14 @@
 
 .app.light {
   --bg-color: #F7F4F3;
-  --text-color: #242424;
+  --text-color: #242424; 
+  --btn-text:#000000;
+  --btn-invoice:#7887F7; 
+  --btn-invoice-hover:#3E53F4; 
+  --btn-sort:#95B1A9; 
+  --btn-sort-hover:#D0DCD9;
+  --btn-more:#98D7C1; 
+  --btn-more-hover:#7CCBB0;
   --button-bg: transparent;
   --button-text: #333;
   --nav-bg: #444;  
@@ -21,7 +28,14 @@
 
 .app.dark {
   --bg-color: #4C4F57;
-  --text-color: #f9f9f9;
+  --text-color: #f9f9f9; 
+  --btn-text:#000000; 
+  --btn-invoice:#8B98F8; 
+  --btn-invoice-hover:#3E53F4; 
+  --btn-sort:#B9CBC6; 
+  --btn-sort-hover:#D0DCD9;
+  --btn-more:#B6E2D3; 
+  --btn-more-hover:#7CCBB0; 
   --button-bg: transparent;
   --button-text: #f9f9f9;
   --nav-bg: #fff;

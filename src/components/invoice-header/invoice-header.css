@@ -22,7 +22,8 @@
     letter-spacing: 0.4px; 
     border-radius: 8px; 
     border:none; 
-    background-color: thistle; 
+    color:var(--btn-text);
+    background-color: var(--btn-invoice); 
     box-shadow: 1px 2px 3px rgba(63, 41, 63, 0.6);
 } 
 
@@ -30,7 +31,8 @@
 .invoice-header-area-row-1 button.active, 
 .invoice-header-area-row-1 button:focus{
     cursor:pointer; 
-    background-color: plum;
+    background-color: var(--btn-invoice-hover); 
+    color:#fff;
 }
 
 
