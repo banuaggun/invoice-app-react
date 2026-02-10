@@ -1,5 +1,6 @@
 import React from 'react'
-import SideNav from './side-nav/SideNav'
+import SideNav from './side-nav/SideNav' 
+import './layouts.css' 
 
 const Layout = ({ children }) => {
     return (
