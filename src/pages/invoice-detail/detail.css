@@ -19,10 +19,26 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--bg-color);
-  padding: 12px 24px; 
+  padding: 12px 24px 12px 16px; 
   width:90%;
   border-bottom: 1px solid #ddd;
   z-index: 1000;
+}
+
+.detail-button{
+  display:flex; 
+  align-items: center; 
+  justify-content: center;
+  gap:8px;
+}
+
+.detail-button svg{
+  width:24px; 
+  height:24px;
+}
+
+.detail-button span{
+  font-size:1rem; 
 }
 
 /* Back button */
