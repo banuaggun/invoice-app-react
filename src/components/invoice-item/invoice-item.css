@@ -2,7 +2,8 @@ table {
   border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0 auto;
-  padding: 2px 8px;
+  padding: 2px 8px; 
+  margin-bottom: 8px; 
   width: 90%;
   table-layout: fixed;
 }
@@ -15,7 +16,7 @@ table caption {
 table tr {
   background-color: var(--bg-color);
   border: 1px solid #ddd;
-  padding: .35em;
+  padding: .35em; 
 }
 
 table th,
@@ -86,16 +87,19 @@ table td.more-btn{
   align-items: center; 
   justify-content: center; 
   gap:4px; 
-  padding: 4px 8px;
-  background-color: var(--btn-more); 
-  color: black; 
-  border: none; 
+  padding: 10px 8px;
+  background-color: var(--bg-color); 
+  border:1px solid var(--btn-more);
+  color: var(--text-color); 
   border-radius: 6px;
 } 
 
-table td.more-btn:hover{ 
+table td.more-btn:hover, 
+table td.more-btn.active, 
+table td.more-btn:focus{ 
   cursor: pointer;
-  background-color: var(--btn-more-hover);
+  background-color: var(--btn-more-hover); 
+  transition: all ease-in 0.40ms;
 }
 
 table td.more-btn svg{
@@ -106,4 +110,10 @@ table td.more-btn svg{
 table td.more-btn span{
   font-weight: bold; 
   font-size: 1rem;
+} 
+
+@media only screen and (min-width:641px) and (max-width:1921px){
+  table td.more-btn{
+    margin: 0 auto;
+  }
 }
