@@ -1,36 +1,5 @@
-
 .invoice-list {
     position: relative; 
-    margin-top:100px; 
-    border:1px solid black; 
+    margin-top:280px; 
 }
 
-/*
-.invoice-list h2 {
-    margin-bottom: 12px;
-    font-size: 20px;
-    color: #444;
-}  
-
-.invoice-card {
-  flex: 1 1 280px; 
-  max-width: 300px; 
-  box-sizing: border-box;
-}
-
-
-@media only screen and (min-width:601px){ 
-    .invoice-list{ 
-        padding:16px 0px;
-        margin:120px auto 20px auto;  
-        width:100%; 
-        max-width: 1200px;
-        display: flex; 
-        flex-wrap: wrap; 
-        justify-content: space-around; 
-        box-sizing: border-box; 
-        gap: 30px;
-    } 
-    
-}
-    */

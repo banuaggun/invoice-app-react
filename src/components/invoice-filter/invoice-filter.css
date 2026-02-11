@@ -1,9 +1,11 @@
 .invoice-filter {
-  width: 100%; 
-  height:auto;
-  display: flex; 
-  flex-direction: row; 
-  justify-content: space-between; 
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 12px;
+  box-sizing: border-box;
 }
 
 .arrow {
@@ -14,55 +16,42 @@
   transform: rotate(180deg);
 }
 
-.filter-title{
-    display: flex; 
-    gap:4px; 
-    align-items: center;
+.filter-title {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.filter-section{ 
-    width: 120px; 
-    height:auto;
- display: flex; 
- align-items: center; 
- justify-content: center;
- border:1px solid var(--btn-sort); 
- color:var(--text-color); 
- padding:8px 8px; 
- border-radius: 8px; 
- font-size: 14px; 
- font-weight: bold;
+.filter-title span {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.filter-section {
+  width: 140px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--btn-sort);
+  color: var(--text-color);
+  padding: 8px 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .filter-section:hover {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
   color: #2b2c2b;
   padding: 8px 8px;
-  width:120px; 
-  height:auto;
+  width: 140px;
+  height: auto;
   background-color: var(--btn-sort);
-  /*
-  background-image:
-    radial-gradient(
-      93% 87% at 87% 89%,
-      rgba(0, 0, 0, 0.23) 0%,
-      transparent 86.18%
-    ),
-    radial-gradient(
-      66% 66% at 26% 20%,
-      rgba(255, 255, 255, 0.55) 0%,
-      rgba(255, 255, 255, 0) 69.79%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  box-shadow:
-    inset -3px -3px 9px rgba(255, 255, 255, 0.25),
-    inset 0px 3px 9px rgba(255, 255, 255, 0.3),
-    inset 0px 1px 1px rgba(255, 255, 255, 0.6),
-    inset 0px -8px 36px rgba(0, 0, 0, 0.3),
-    inset 0px 1px 5px rgba(255, 255, 255, 0.6);
-    */
   border-radius: 8px;
   font-weight: bold;
   font-size: 14px;
@@ -74,19 +63,24 @@
 }
 
 .invoice-filter-list {
-  position: absolute; 
+  position: absolute;
   display: inline-block;
-  z-index:10;
-  top: 100%; 
-  background-color: #f9f9f9; 
-  color:#4c4f57;
-  border: 1px solid #ddd;
+  z-index: 10;
+  top: 100%;
+  background-color: #f9f9f9;
+  color: #4c4f57;
+  border: 1px solid var(--btn-sort);
   border-radius: 8px;
   margin-top: 0px;
-  width: 120px; 
-  height:max-content;
+  width: 140px;
+  height: max-content;
   list-style: none;
   padding: 0;
+  text-transform: capitalize;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .invoice-filter-list li {
@@ -95,8 +89,7 @@
 }
 
 .invoice-filter-list li:hover {
-  background: #D0DCD9; 
-  color:#242424;
+  background: var(--btn-sort-hover);
+  color: #242424;
+  border-radius: 8px;
 }
-
-

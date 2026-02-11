@@ -100,7 +100,7 @@
 }
 
 /* Başlıklar */
-h2, h3 {
+.detail-header {
   margin-top: 110px;
   margin-bottom: 8px;
   font-weight: 600;
