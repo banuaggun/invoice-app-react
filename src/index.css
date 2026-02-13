@@ -20,7 +20,11 @@
   --btn-sort:#F9C78A; 
   --btn-sort-hover:#F7B564;
   --btn-more:#A7DDCA; 
-  --btn-more-hover:#7CCBB0;
+  --btn-more-hover:#7CCBB0; 
+  --btn-edit:#C5E03E; 
+  --btn-edit-hover:#B5D322; 
+  --btn-delete: #E23C47; 
+  --btn-delete-hover:#D5202C;
   --button-bg: transparent;
   --button-text: #333;
   --nav-bg: #444;  
@@ -38,6 +42,10 @@
   --btn-sort-hover:#F7B564;
   --btn-more:#C4E8DC; 
   --btn-more-hover:#7CCBB0; 
+  --btn-edit: #D0E562; 
+  --btn-edit-hover:#B5D322; 
+  --btn-delete:#E44E58; 
+  --btn-delete-hover:#D5202C;
   --button-bg: transparent;
   --button-text: #f9f9f9;
   --nav-bg: #fff;
