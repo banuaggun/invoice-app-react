@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteInvoice } from "../../features/invoiceSlice";
-import { formatDate } from "../../utils/dateUtils.js";
+//import { formatDate } from "../../utils/dateUtils.js";
 import "./detail.css";
 import Modal from "../../components/modals/Modal.jsx";
+import InvoiceDetailContent from "../../components/invoice-detail-content/InvoiceDetailContent.jsx";
 
 const InvoiceDetail = () => {
   const { id } = useParams();
@@ -107,53 +108,7 @@ const InvoiceDetail = () => {
         </p>
       </Modal>
 
-      <h2 className="detail-header">Invoice {invoice.id}</h2>
-      <div className="area-1">
-        <div className="row-1">
-          <p>
-            <strong>{invoice.updatedAt ? "Updated At:" : "Created At:"}</strong>{" "}
-            {formatDate(invoice.updatedAt || invoice.createdAt)}
-          </p>
-          <p>
-            <strong>Payment Due:</strong> {formatDate(invoice.paymentDue)}
-          </p>
-          <p>
-            <strong>Status:</strong> {invoice.status}
-          </p>
-        </div>
-        <div className="row-2">
-          <p>
-            <strong>Description:</strong> {invoice.description}
-          </p>
-          <p>
-            <strong>Client:</strong> {invoice.clientName} ({invoice.clientEmail}
-            )
-          </p>
-        </div>
-      </div>
-
-      <h3 className="detail-header">Sender Address</h3>
-      <p>
-        {invoice.senderAddress.street}, {invoice.senderAddress.city},{" "}
-        {invoice.senderAddress.postCode}, {invoice.senderAddress.country}
-      </p>
-
-      <h3 className="detail-header">Client Address</h3>
-      <p>
-        {invoice.clientAddress.street}, {invoice.clientAddress.city},{" "}
-        {invoice.clientAddress.postCode}, {invoice.clientAddress.country}
-      </p>
-
-      <h3 className="detail-header">Items</h3>
-      <ul>
-        {invoice.items.map((item, idx) => (
-          <li key={idx}>
-            {item.name} — {item.quantity} × ${item.price} = ${item.total}
-          </li>
-        ))}
-      </ul>
-
-      <h3 className="detail-header">Total: ${invoice.total}</h3>
+      <InvoiceDetailContent />
     </div>
   );
 };
