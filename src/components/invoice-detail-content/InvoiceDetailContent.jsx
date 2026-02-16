@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { formatDate } from "../../utils/dateUtils.js"; 
 import AddressBlock from "../address-block/AddressBlock.jsx";
 import './detail-content.css';
+import InvoiceDetailItem from "../invoice-detail-item/InvoiceDetailItem.jsx";
+
 
 const InvoiceDetailContent = () => {
   const { id } = useParams();
@@ -19,7 +21,8 @@ const InvoiceDetailContent = () => {
       <h2 className="detail-header">Invoice {invoice.id}</h2>
 
       <div className="area-1">
-        <div className="row-1">
+        <div className="row-1"> 
+        
           <p>
             <strong>{invoice.updatedAt ? "Updated At:" : "Created At:"}</strong>{" "}
             {formatDate(invoice.updatedAt || invoice.createdAt)}
@@ -45,29 +48,11 @@ const InvoiceDetailContent = () => {
       </div>
 
       <AddressBlock title="Sender Address" address={invoice.senderAddress} />
-      <AddressBlock title="Client Address" address={invoice.clientAddress} />
+      <AddressBlock title="Client Address" address={invoice.clientAddress} /> 
 
-      <h3 className="detail-header">Items</h3>
-      <table className="items-table">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Qty</th>
-            <th>Price</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {invoice.items.map((item, idx) => (
-            <tr key={idx}>
-              <td>{item.name}</td>
-              <td>{item.quantity}</td>
-              <td>${item.price}</td>
-              <td>${item.total}</td>
-            </tr>
+      {invoice.items.map((item, idx) => (
+            <InvoiceDetailItem key={idx} item={item} />
           ))}
-        </tbody>
-      </table>
 
       <h3 className="detail-header">Total: ${invoice.total}</h3>
     </div>
