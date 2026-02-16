@@ -3,23 +3,23 @@ import './address-block.css';
 
 const AddressBlock = ({ title, address }) => (
   <div className="address-block">
-    <h3 className="detail-header">{title}</h3>
-  
-     <table className="items-table">
+    
+     <table className="items-table"> 
+      <caption>{title}</caption>
         <thead>
           <tr>
-            <th>Street</th> 
-            <th>City</th> 
-            <th>Post Code</th> 
-            <th>Country</th>
+            <th scope="col">Street</th> 
+            <th scope="col">City</th> 
+            <th scope="col">Post Code</th> 
+            <th scope="col">Country</th>
           </tr>
         </thead>
         <tbody>
             <tr>
-              <td>{address.street}</td>
-              <td>{address.city}</td>
-              <td>{address.postCode}</td>
-              <td>{address.country}</td>
+              <td data-label="street">{address.street}</td>
+              <td data-label="city">{address.city}</td>
+              <td data-label="post code">{address.postCode}</td>
+              <td data-label="country">{address.country}</td>
             </tr>
     
         </tbody>
