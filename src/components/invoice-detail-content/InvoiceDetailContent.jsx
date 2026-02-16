@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { formatDate } from "../../utils/dateUtils.js"; 
+import { formatDate } from "../../utils/dateUtils.js";
 import AddressBlock from "../address-block/AddressBlock.jsx";
-import './detail-content.css';
+import "./detail-content.css";
 import InvoiceDetailItem from "../invoice-detail-item/InvoiceDetailItem.jsx";
 import InvoiceInfo from "../invoice-info/InvoiceInfo.jsx";
 
@@ -18,17 +18,26 @@ const InvoiceDetailContent = () => {
 
   return (
     <div className="detail-content">
-
-          <InvoiceInfo invoice={invoice} />
-       
+      <InvoiceInfo invoice={invoice} />
 
       <AddressBlock title="Sender Address" address={invoice.senderAddress} />
-      <AddressBlock title="Client Address" address={invoice.clientAddress} /> 
+      <AddressBlock title="Client Address" address={invoice.clientAddress} />
 
-
+      <table>
+        <caption>Items</caption>
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+      </table>
       {invoice.items.map((item, idx) => (
-            <InvoiceDetailItem key={idx} item={item} />
-          ))}
+        <InvoiceDetailItem key={idx} item={item} />
+      ))}
+
 
       <h3 className="detail-header">Total: ${invoice.total}</h3>
     </div>

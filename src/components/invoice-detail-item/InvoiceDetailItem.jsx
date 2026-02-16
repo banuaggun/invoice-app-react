@@ -3,15 +3,7 @@ import React from "react";
 const InvoiceDetailItem = ({ item }) => {
   return (
     <table> 
-        <caption>Items</caption>
-        <thead>
-          <tr>
-            <th scope="col">Item</th>
-            <th scope="col">Qty</th>
-            <th scope="col">Price</th>
-            <th scope="col">Total</th>
-          </tr>
-        </thead>
+        
         <tbody>
     <tr>
       <td data-label="name">{item.name}</td>
