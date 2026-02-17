@@ -39,7 +39,7 @@ const InvoiceDetailContent = () => {
       ))}
 
 
-      <h3 className="detail-header">Total: ${invoice.total}</h3>
+      <h3 className="detail-total">Total: ${invoice.total}</h3>
     </div>
   );
 };

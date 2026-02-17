@@ -1,5 +1,4 @@
 import React from "react"; 
-import './address-block.css'; 
 
 const AddressBlock = ({ title, address }) => (
   <div className="address-block">

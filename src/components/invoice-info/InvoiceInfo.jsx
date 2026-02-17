@@ -9,11 +9,11 @@ const InvoiceInfo = ({ invoice }) => {
         <caption>Invoice Detail <br/> <br/> {invoice.id}</caption>
       <thead>
         <tr>
-          <td scope="col">
+          <th scope="col">
             {invoice.updatedAt ? "Updated At:" : "Created At:"}
-          </td>
-          <td scope="col">Payment Due</td>
-          <td scope="col">Status</td> 
+          </th>
+          <th scope="col">Payment Due</th>
+          <th scope="col">Status</th> 
         </tr>
       </thead>
       <tbody>
@@ -33,9 +33,9 @@ const InvoiceInfo = ({ invoice }) => {
     <table>
       <thead>
         <tr> 
-          <td scope="col">Description</td> 
-          <td scope="col">Client Name</td> 
-          <td scope="col">Client Email</td>
+          <th scope="col">Description</th> 
+          <th scope="col">Client Name</th> 
+          <th scope="col">Client Email</th>
         </tr>
       </thead>
       <tbody>

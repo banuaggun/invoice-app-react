@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteInvoice } from "../../features/invoiceSlice";
-//import { formatDate } from "../../utils/dateUtils.js";
 import "./detail.css";
 import Modal from "../../components/modals/Modal.jsx";
 import InvoiceDetailContent from "../../components/invoice-detail-content/InvoiceDetailContent.jsx";
