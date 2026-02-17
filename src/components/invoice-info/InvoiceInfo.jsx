@@ -2,7 +2,7 @@ import React from "react";
 import { formatDate } from "../../utils/dateUtils.js";
 import "./invoice-info.css";
 
-const InvoiceInfo = ({ invoice }) => {
+const InvoiceInfo = ({ invoice, onChange, editable = false }) => {
   return (
     <div>
     <table> 
@@ -42,13 +42,34 @@ const InvoiceInfo = ({ invoice }) => {
         <tr>
          
           <td data-label="description">
-            {invoice.description}
+             {editable ? (
+                <input value={invoice.description} onChange={(e) =>
+                    onChange({ ...invoice, description: e.target.value })
+                  }
+                />
+              ) : (
+                invoice.description
+              )}
           </td> 
           <td data-label="Client Name"> 
-            {invoice.clientName} 
+           {editable ? (
+                <input value={invoice.clientName} onChange={(e) =>
+                    onChange({ ...invoice, clientName: e.target.value })
+                  }
+                />
+              ) : (
+                invoice.clientName
+              )}
           </td> 
           <td data-label="Client Email"> 
-            {invoice.clientEmail} 
+            {editable ? (
+                <input value={invoice.clientEmail} onChange={(e) =>
+                    onChange({ ...invoice, clientEmail: e.target.value })
+                  }
+                />
+              ) : (
+                invoice.clientEmail
+              )}
           </td>
         </tr>
       </tbody>
