@@ -93,8 +93,11 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
   return (
     <form className="invoice-form" onSubmit={handleSubmit}>
-      
-      <InvoiceActionButtons onCancel={onCancel} isEditing={!!initialData.id} />
+      <InvoiceActionButtons
+        onCancel={onCancel}
+        isEditing={!!initialData.id}
+        mode={initialData.id ? "edit" : "new"}
+      />
 
       {step === 1 && (
         <div>
