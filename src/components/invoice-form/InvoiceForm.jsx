@@ -4,7 +4,8 @@ import AddressBlock from "../common/form-elements/AddressBlock";
 import InvoiceInfo from "../common/form-elements/InvoiceInfo";
 import InvoiceActionButtons from "../common/form-elements/InvoiceActionButtons";
 import InvoiceTimeStatus from "../common/form-elements/InvoiceTimeStatus";
-import InvoiceDetailItem from "../invoice-detail-item/InvoiceDetailItem";
+import InvoiceDetailItem from "../common/form-elements/InvoiceDetailItem";
+import InvoicePreview from "../common/form-elements/InvoicePreview";
 
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const [step, setStep] = useState(1);
@@ -179,31 +180,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       </div>
 
       {showPreview && (
-        <div className="preview">
-          <h3>Invoice Preview</h3>
-          <p>
-            <strong>Client:</strong> {formData.clientName} (
-            {formData.clientEmail})
-          </p>
-          <p>
-            <strong>Description:</strong> {formData.description}
-          </p>
-          <p>
-            <strong>Status:</strong> {formData.status}
-          </p>
-          <p>
-            <strong>Payment Terms:</strong> {formData.paymentTerms} days
-          </p>
-          <h4>Items</h4>
-          <ul>
-            {formData.items.map((item, idx) => (
-              <li key={idx}>
-                {item.name} — {item.quantity} × ${item.price} = ${item.total}
-              </li>
-            ))}
-          </ul>
-          <h4>Grand Total: ${formData.total}</h4>
-        </div>
+        <InvoicePreview formData={formData} />
       )}
     </form>
   );
