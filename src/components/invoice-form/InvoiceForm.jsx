@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./invoice-form.css";
-import AddressBlock from "../address-block/AddressBlock";
+import AddressBlock from "../form-elements/address-block/AddressBlock";
 import InvoiceInfo from "../invoice-info/InvoiceInfo";
+import InvoiceActionButtons from "../form-elements/invoice-action-buttons/InvoiceActionButtons";
 
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const [step, setStep] = useState(1);
@@ -13,13 +14,28 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
     clientName: initialData.clientName || "",
     clientEmail: initialData.clientEmail || "",
     status: initialData.status || "draft",
-    senderAddress: initialData.senderAddress || { street: "", city: "", postCode: "", country: "" },
-    clientAddress: initialData.clientAddress || { street: "", city: "", postCode: "", country: "" },
+    senderAddress: initialData.senderAddress || {
+      street: "",
+      city: "",
+      postCode: "",
+      country: "",
+    },
+    clientAddress: initialData.clientAddress || {
+      street: "",
+      city: "",
+      postCode: "",
+      country: "",
+    },
     items: initialData.items || [],
     total: initialData.total || 0,
   });
 
-  const [newItem, setNewItem] = useState({ name: "", quantity: 1, price: 0, total: 0 });
+  const [newItem, setNewItem] = useState({
+    name: "",
+    quantity: 1,
+    price: 0,
+    total: 0,
+  });
 
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
@@ -57,7 +73,9 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
     };
 
     const today = new Date();
-    const createdAt = initialData.id ? initialData.createdAt : today.toISOString().split("T")[0];
+    const createdAt = initialData.id
+      ? initialData.createdAt
+      : today.toISOString().split("T")[0];
     const paymentDueDate = new Date(today);
     paymentDueDate.setDate(paymentDueDate.getDate() + formData.paymentTerms);
     const paymentDue = paymentDueDate.toISOString().split("T")[0];
@@ -75,13 +93,8 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
   return (
     <form className="invoice-form" onSubmit={handleSubmit}>
-      <div className="top-bar">
-        <button type="button" onClick={onCancel}>← Back</button>
-        <div className="actions">
-          <button type="submit">{initialData.id ? "Update" : "Save"}</button>
-          <button type="button" onClick={onCancel}>Cancel</button>
-        </div>
-      </div>
+      
+      <InvoiceActionButtons onCancel={onCancel} isEditing={!!initialData.id} />
 
       {step === 1 && (
         <div>
@@ -89,15 +102,18 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
             title="Sender Address"
             address={formData.senderAddress}
             editable={true}
-            onChange={(updated) => setFormData({ ...formData, senderAddress: updated })}
+            onChange={(updated) =>
+              setFormData({ ...formData, senderAddress: updated })
+            }
           />
           <AddressBlock
             title="Client Address"
             address={formData.clientAddress}
             editable={true}
-            onChange={(updated) => setFormData({ ...formData, clientAddress: updated })}
+            onChange={(updated) =>
+              setFormData({ ...formData, clientAddress: updated })
+            }
           />
-         
         </div>
       )}
 
@@ -119,16 +135,16 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
           />
           <select
             value={formData.paymentTerms}
-            onChange={(e) => handleChange("paymentTerms", Number(e.target.value))}
-          >
+            onChange={(e) =>
+              handleChange("paymentTerms", Number(e.target.value))
+            }>
             <option value={1}>1 day</option>
             <option value={7}>7 days</option>
             <option value={30}>30 days</option>
           </select>
           <select
             value={formData.status}
-            onChange={(e) => handleChange("status", e.target.value)}
-          >
+            onChange={(e) => handleChange("status", e.target.value)}>
             <option value="draft">Draft</option>
             <option value="pending">Pending</option>
             <option value="paid">Paid</option>
@@ -149,17 +165,23 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
               type="number"
               placeholder="Quantity"
               value={newItem.quantity}
-              onChange={(e) => handleNewItemChange("quantity", Number(e.target.value))}
+              onChange={(e) =>
+                handleNewItemChange("quantity", Number(e.target.value))
+              }
             />
             <input
               type="number"
               placeholder="Price"
               value={newItem.price}
-              onChange={(e) => handleNewItemChange("price", Number(e.target.value))}
+              onChange={(e) =>
+                handleNewItemChange("price", Number(e.target.value))
+              }
             />
             <span>Total: {newItem.total}</span>
           </div>
-          <button type="button" onClick={addItem}>Add Item</button>
+          <button type="button" onClick={addItem}>
+            Add Item
+          </button>
           {formData.items.length > 0 && (
             <ul className="item-list">
               {formData.items.map((item, idx) => (
@@ -174,8 +196,16 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       )}
 
       <div className="pagination">
-        {step > 1 && <button type="button" onClick={() => setStep(step - 1)}>Previous</button>}
-        {step < 4 && <button type="button" onClick={() => setStep(step + 1)}>Next</button>}
+        {step > 1 && (
+          <button type="button" onClick={() => setStep(step - 1)}>
+            Previous
+          </button>
+        )}
+        {step < 4 && (
+          <button type="button" onClick={() => setStep(step + 1)}>
+            Next
+          </button>
+        )}
         {step === 4 && (
           <button type="button" onClick={() => setShowPreview(!showPreview)}>
             {showPreview ? "Preview Close" : "Preview"}
@@ -186,10 +216,19 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       {showPreview && (
         <div className="preview">
           <h3>Invoice Preview</h3>
-          <p><strong>Client:</strong> {formData.clientName} ({formData.clientEmail})</p>
-          <p><strong>Description:</strong> {formData.description}</p>
-          <p><strong>Status:</strong> {formData.status}</p>
-          <p><strong>Payment Terms:</strong> {formData.paymentTerms} days</p>
+          <p>
+            <strong>Client:</strong> {formData.clientName} (
+            {formData.clientEmail})
+          </p>
+          <p>
+            <strong>Description:</strong> {formData.description}
+          </p>
+          <p>
+            <strong>Status:</strong> {formData.status}
+          </p>
+          <p>
+            <strong>Payment Terms:</strong> {formData.paymentTerms} days
+          </p>
           <h4>Items</h4>
           <ul>
             {formData.items.map((item, idx) => (

@@ -1,8 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { formatDate } from "../../utils/dateUtils.js";
-import AddressBlock from "../address-block/AddressBlock.jsx";
+import AddressBlock from "../form-elements/address-block/AddressBlock.jsx";
 import "./detail-content.css";
 import InvoiceDetailItem from "../invoice-detail-item/InvoiceDetailItem.jsx";
 import InvoiceInfo from "../invoice-info/InvoiceInfo.jsx";
