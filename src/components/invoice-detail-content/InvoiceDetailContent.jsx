@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import AddressBlock from "../form-elements/address-block/AddressBlock.jsx";
+import AddressBlock from "../common/form-elements/AddressBlock.jsx";
 import "./detail-content.css";
 import InvoiceDetailItem from "../invoice-detail-item/InvoiceDetailItem.jsx";
-import InvoiceInfo from "../form-elements/invoice-info/InvoiceInfo.jsx";
-import InvoiceTimeStatus from "../form-elements/invoice-time-status/InvoiceTimeStatus.jsx";
+import InvoiceInfo from "../common/form-elements/InvoiceInfo.jsx";
+import InvoiceTimeStatus from "../common/form-elements/InvoiceTimeStatus.jsx";
 
 const InvoiceDetailContent = () => {
   const { id } = useParams();

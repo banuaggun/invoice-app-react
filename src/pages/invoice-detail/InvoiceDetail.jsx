@@ -5,7 +5,7 @@ import { deleteInvoice } from "../../features/invoiceSlice";
 import "./detail.css";
 import Modal from "../../components/modals/Modal.jsx";
 import InvoiceDetailContent from "../../components/invoice-detail-content/InvoiceDetailContent.jsx";
-import InvoiceActionButtons from "../../components/form-elements/invoice-action-buttons/InvoiceActionButtons.jsx";
+import InvoiceActionButtons from "../../components/common/form-elements/InvoiceActionButtons.jsx";
 
 const InvoiceDetail = () => {
   const { id } = useParams();
