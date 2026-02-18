@@ -19,3 +19,15 @@ table tbody tr td span.status-badge {
   background-color: #f0f0f0;
   color: #616161;
 }
+
+.detail-content{
+    position: relative; 
+    margin: 200px auto 80px auto; 
+    z-index: 998;
+}
+
+.detail-total{
+  width:90%;
+  padding:2px 16px; 
+  margin:16px auto; 
+}
