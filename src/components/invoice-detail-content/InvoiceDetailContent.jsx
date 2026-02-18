@@ -5,6 +5,7 @@ import AddressBlock from "../form-elements/address-block/AddressBlock.jsx";
 import "./detail-content.css";
 import InvoiceDetailItem from "../invoice-detail-item/InvoiceDetailItem.jsx";
 import InvoiceInfo from "../invoice-info/InvoiceInfo.jsx";
+import InvoiceTimeStatus from "../form-elements/invoice-time-status/InvoiceTimeStatus.jsx";
 
 const InvoiceDetailContent = () => {
   const { id } = useParams();
@@ -17,6 +18,7 @@ const InvoiceDetailContent = () => {
 
   return (
     <div className="detail-content">
+      <InvoiceTimeStatus invoice={invoice} />
       <InvoiceInfo invoice={invoice} />
 
       <AddressBlock title="Sender Address" address={invoice.senderAddress} />
