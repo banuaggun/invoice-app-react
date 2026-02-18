@@ -3,6 +3,7 @@ import "./invoice-form.css";
 import AddressBlock from "../common/form-elements/AddressBlock";
 import InvoiceInfo from "../common/form-elements/InvoiceInfo";
 import InvoiceActionButtons from "../common/form-elements/InvoiceActionButtons";
+import InvoiceTimeStatus from "../common/form-elements/InvoiceTimeStatus";
 
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const [step, setStep] = useState(1);
@@ -129,30 +130,14 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       )}
 
       {step === 3 && (
-        <div>
-          <h3>Invoice Details</h3>
-          <input
-            placeholder="Description"
-            value={formData.description}
-            onChange={(e) => handleChange("description", e.target.value)}
-          />
-          <select
-            value={formData.paymentTerms}
-            onChange={(e) =>
-              handleChange("paymentTerms", Number(e.target.value))
-            }>
-            <option value={1}>1 day</option>
-            <option value={7}>7 days</option>
-            <option value={30}>30 days</option>
-          </select>
-          <select
-            value={formData.status}
-            onChange={(e) => handleChange("status", e.target.value)}>
-            <option value="draft">Draft</option>
-            <option value="pending">Pending</option>
-            <option value="paid">Paid</option>
-          </select>
-        </div>
+       
+          <InvoiceTimeStatus
+    invoice={formData}
+    isFormMode={true}
+    step={step}
+    onChange={handleChange}
+  />
+     
       )}
 
       {step === 4 && (
