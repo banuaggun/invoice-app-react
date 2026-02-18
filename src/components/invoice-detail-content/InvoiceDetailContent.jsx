@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import AddressBlock from "../form-elements/address-block/AddressBlock.jsx";
 import "./detail-content.css";
 import InvoiceDetailItem from "../invoice-detail-item/InvoiceDetailItem.jsx";
-import InvoiceInfo from "../invoice-info/InvoiceInfo.jsx";
+import InvoiceInfo from "../form-elements/invoice-info/InvoiceInfo.jsx";
 import InvoiceTimeStatus from "../form-elements/invoice-time-status/InvoiceTimeStatus.jsx";
 
 const InvoiceDetailContent = () => {

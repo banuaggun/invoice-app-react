@@ -1,5 +1,6 @@
 import React from "react";
-import { formatDate } from "../../../utils/dateUtils.js";
+import { formatDate } from "../../../utils/dateUtils.js"; 
+import './invoice-time-status.css'; 
 
 const InvoiceTimeStatus = ({ invoice }) => {
   return (

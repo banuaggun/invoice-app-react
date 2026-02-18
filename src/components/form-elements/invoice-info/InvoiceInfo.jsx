@@ -1,5 +1,4 @@
 import React from "react";
-import "./invoice-info.css";
 
 const InvoiceInfo = ({ invoice, onChange, editable = false }) => {
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./invoice-form.css";
 import AddressBlock from "../form-elements/address-block/AddressBlock";
-import InvoiceInfo from "../invoice-info/InvoiceInfo";
+import InvoiceInfo from "../form-elements/invoice-info/InvoiceInfo";
 import InvoiceActionButtons from "../form-elements/invoice-action-buttons/InvoiceActionButtons";
 
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
