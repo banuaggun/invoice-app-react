@@ -36,7 +36,7 @@ const InvoiceDetailContent = () => {
         </thead>
       </table>
       {invoice.items.map((item, idx) => (
-        <InvoiceDetailItem key={idx} item={item} />
+        <InvoiceDetailItem key={idx} item={item} isFormMode={false} />
       ))}
 
 

@@ -4,6 +4,7 @@ import AddressBlock from "../common/form-elements/AddressBlock";
 import InvoiceInfo from "../common/form-elements/InvoiceInfo";
 import InvoiceActionButtons from "../common/form-elements/InvoiceActionButtons";
 import InvoiceTimeStatus from "../common/form-elements/InvoiceTimeStatus";
+import InvoiceDetailItem from "../invoice-detail-item/InvoiceDetailItem";
 
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const [step, setStep] = useState(1);
@@ -130,51 +131,27 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       )}
 
       {step === 3 && (
-       
-          <InvoiceTimeStatus
-    invoice={formData}
-    isFormMode={true}
-    step={step}
-    onChange={handleChange}
-  />
-     
+        <InvoiceTimeStatus
+          invoice={formData}
+          isFormMode={true}
+          step={step}
+          onChange={handleChange}
+        />
       )}
 
       {step === 4 && (
         <div>
-          <h3>Items</h3>
-          <div className="item-row">
-            <input
-              placeholder="Name"
-              value={newItem.name}
-              onChange={(e) => handleNewItemChange("name", e.target.value)}
-            />
-            <input
-              type="number"
-              placeholder="Quantity"
-              value={newItem.quantity}
-              onChange={(e) =>
-                handleNewItemChange("quantity", Number(e.target.value))
-              }
-            />
-            <input
-              type="number"
-              placeholder="Price"
-              value={newItem.price}
-              onChange={(e) =>
-                handleNewItemChange("price", Number(e.target.value))
-              }
-            />
-            <span>Total: {newItem.total}</span>
-          </div>
-          <button type="button" onClick={addItem}>
-            Add Item
-          </button>
+          <InvoiceDetailItem
+            isFormMode={true}
+            newItem={newItem}
+            onNewItemChange={handleNewItemChange}
+            onAddItem={addItem}
+          />
           {formData.items.length > 0 && (
             <ul className="item-list">
               {formData.items.map((item, idx) => (
                 <li key={idx}>
-                  {item.name} — {item.quantity} × ${item.price} = ${item.total}
+                  <InvoiceDetailItem item={item} isFormMode={false} />
                 </li>
               ))}
             </ul>
