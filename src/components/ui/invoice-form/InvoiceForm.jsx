@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./invoice-form.css";
-import AddressBlock from "../common/form-elements/AddressBlock";
-import InvoiceInfo from "../common/form-elements/InvoiceInfo";
-import InvoiceActionButtons from "../common/form-elements/InvoiceActionButtons";
-import InvoiceTimeStatus from "../common/form-elements/InvoiceTimeStatus";
-import InvoiceDetailItem from "../common/form-elements/InvoiceDetailItem";
-import InvoicePreview from "../common/form-elements/InvoicePreview";
+import AddressBlock from "../../common/form-elements/AddressBlock";
+import InvoiceInfo from "../../common/form-elements/InvoiceInfo";
+import InvoiceActionButtons from "../../common/form-elements/InvoiceActionButtons";
+import InvoiceTimeStatus from "../../common/form-elements/InvoiceTimeStatus";
+import InvoiceDetailItem from "../../common/form-elements/InvoiceDetailItem";
+import InvoicePreview from "../../common/form-elements/InvoicePreview";
 
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const [step, setStep] = useState(1);

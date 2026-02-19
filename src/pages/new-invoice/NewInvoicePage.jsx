@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addInvoice } from "../../features/invoiceSlice"; 
-import InvoiceForm from "../../components/invoice-form/InvoiceForm";
+import InvoiceForm from "../../components/ui/invoice-list/InvoiceList";
 import "./new-invoice.css";
 
 const NewInvoicePage = () => {

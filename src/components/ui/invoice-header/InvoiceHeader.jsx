@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./invoice-header.css";
-import InvoiceFilter from "../common/list-elements/invoice-filter/InvoiceFilter";
+import InvoiceFilter from "../../common/list-elements/invoice-filter/InvoiceFilter";
 
 const InvoiceHeader = ({ invoices, filteredInvoices, filter, setFilter, sort, setSort }) => {
   const navigate = useNavigate();

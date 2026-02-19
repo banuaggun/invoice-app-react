@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import InvoiceHeader from "../invoice-header/InvoiceHeader";
-import InvoiceItem from "../common/list-elements/invoice-item/InvoiceItem";
+import InvoiceItem from "../../common/list-elements/invoice-item/InvoiceItem";
 import './invoice-list.css';
 
 function InvoiceList() {

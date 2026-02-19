@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updateInvoice } from "../../features/invoiceSlice";
-import InvoiceForm from "../../components/invoice-form/InvoiceForm";
+import InvoiceForm from "../../components/ui/invoice-form/InvoiceForm";
 
 const EditInvoicePage = () => {
   const { id } = useParams();

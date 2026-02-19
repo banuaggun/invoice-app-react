@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import InvoiceList from "../../components/invoice-list/InvoiceList"; 
+import InvoiceList from "../../components/ui/invoice-list/InvoiceList"; 
 
 const InvoiceListPage = () => { 
 useEffect(() => {
