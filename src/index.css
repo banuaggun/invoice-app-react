@@ -21,8 +21,8 @@
   --btn-sort-hover:#F7B564;
   --btn-more:#A7DDCA; 
   --btn-more-hover:#7CCBB0; 
-  --btn-edit:#C5E03E; 
-  --btn-edit-hover:#B5D322; 
+  --btn-edit:rgba(251, 198, 56, 0.60); 
+  --btn-edit-hover:rgba(251, 198, 56, 1); 
   --btn-delete: #E23C47; 
   --btn-delete-hover:#D5202C;
   --button-bg: transparent;
@@ -42,8 +42,8 @@
   --btn-sort-hover:#F7B564;
   --btn-more:#C4E8DC; 
   --btn-more-hover:#7CCBB0; 
-  --btn-edit: #D0E562; 
-  --btn-edit-hover:#B5D322; 
+  --btn-edit: rgba(251, 198, 56, 0.8); 
+  --btn-edit-hover:rgba(251, 198, 56, 1); 
   --btn-delete:#E44E58; 
   --btn-delete-hover:#D5202C;
   --button-bg: transparent;

@@ -18,10 +18,9 @@ const InvoiceActionButtons = ({
     <div className="action-area">
       <div className="action-area-back">
         <button
-          className="detail-button back-btn cta-back"
+          className="back-btn cta-back"
           onClick={() => navigate(-1)}>
           <BackIcon />
-          
         </button>
       </div>
       <div className="action-area-edit-delete">
@@ -31,14 +30,14 @@ const InvoiceActionButtons = ({
               className="detail-button edit-btn"
               onClick={() => navigate(`/invoice/${invoiceId}/edit`)}>
               <EditIcon />
-              <span>Edit</span>
+              <span className="detail-button-text">Edit</span>
             </button>
 
             <button
               className="detail-button delete-btn"
               onClick={onDelete}>
               <DeleteIcon />
-              <span>Delete</span>
+              <span className="detail-button-text">Delete</span>
             </button>
           </>
         )}

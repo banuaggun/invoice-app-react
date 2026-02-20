@@ -63,15 +63,18 @@ table td.more-btn span {
 .cta span:nth-child(2) {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
+   width: 20px;
+  position: relative;
+  top: 12%;
 }
-
+/*
 span:nth-child(2) {
   width: 20px;
   position: relative;
   top: 12%;
 }
-
+*/
 /**************SVG****************/
 
 path.one {
