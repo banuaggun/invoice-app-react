@@ -1,3 +1,168 @@
+.action-area{
+  position: fixed;
+  top: 90px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px 16px 0 16px;
+  background-color: var(--bg-color);
+  border:1px solid red;
+} 
+
+/* ------- cta-back ------ */
+
+.cta-back svg{
+  width:16px; 
+  height:16px;
+} 
+
+.cta-back{
+  transition: 1s;
+}
+
+.cta-back:focus,
+.cta-back.active {
+  outline: none;
+} 
+
+.cta-back:hover,
+.cta-back:focus,
+.cta-back.active {
+  transition: 0.5s;
+}
+
+.cta-back span:nth-child(2) {
+  transition: 0.5s;
+}
+
+.cta-back:hover span:nth-child(2),
+.cta-back:focus span:nth-child(2),
+.cta-back.active span:nth-child(2) {
+  transition: 0.5s;
+} 
+
+.cta-back span:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span:nth-child(2) {
+  width: 20px;
+  position: relative;
+  top: 12%;
+}
+
+/* ------- SVG ------ */
+
+path.one {
+  transition: 0.4s;
+}
+
+path.two {
+  transition: 0.5s;
+}
+
+.cta-back:hover path.three {
+  animation: color_anim_back 1s infinite 0.2s;
+}
+
+.cta-back:hover path.one {
+  animation: color_anim_back 1s infinite 0.6s;
+}
+
+.cta-back:hover path.two {
+  animation: color_anim_back 1s infinite 0.4s;
+}
+
+@keyframes color_anim_back {
+  0% {
+    fill: #242424;
+  }
+  50% {
+    fill: #fbc638;
+  }
+  100% {
+    fill: #242424;
+  }
+}
+
+.back-btn{
+  transform: rotate(180deg); 
+  width:36px; 
+  height:36px; 
+  padding:4px 8px;
+  border-radius: 80%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: whitesmoke; 
+  border:1px solid rgba(0, 0, 0, 0.08); 
+  outline: none;
+  box-shadow: 2px -2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.back-btn:hover{ 
+  border:1px solid rgb(251, 198, 56); 
+  box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
+  outline:2px solid rgb(251, 198, 56); 
+  outline-offset: 4px; 
+  transition:.3s; 
+  cursor: pointer;
+}
+
+/* ------- cta-back ------ */
+
+.action-area-edit-delete{ 
+  width:100%;
+  display: flex; 
+  justify-content: flex-end;
+  gap:12px; 
+  border:1px solid gray;
+} 
+
+.action-area-edit-delete button{
+  padding:8px 16px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  border-radius: 6px; 
+  border:none; 
+  font-weight: 600; 
+  transition: background-color 0.2s ease; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------- status badge -------- */
+
 table tbody tr td span.status-badge {
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
@@ -18,7 +183,9 @@ table tbody tr td span.status-badge {
 .status-badge.draft {
   background-color: #f0f0f0;
   color: #616161;
-}
+} 
+
+/* ------- status badge -------- */
 
 .detail-content{
     position: relative; 

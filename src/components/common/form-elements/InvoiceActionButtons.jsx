@@ -2,7 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import BackIcon from "../../../assets/icons/BackIcon";
 import EditIcon from "../../../assets/icons/EditIcon";
-import DeleteIcon from "../../../assets/icons/DEleteIcon";
+import DeleteIcon from "../../../assets/icons/DeleteIcon"; 
+import './form-elements.css';
 
 const InvoiceActionButtons = ({
   mode,
@@ -14,16 +15,16 @@ const InvoiceActionButtons = ({
   const navigate = useNavigate();
 
   return (
-    <div className="top-bar">
-      <div>
+    <div className="action-area">
+      <div className="action-area-back">
         <button
-          className="detail-button back-btn cta-detail"
+          className="detail-button back-btn cta-back"
           onClick={() => navigate(-1)}>
           <BackIcon />
-          <span>Back</span>
+          
         </button>
       </div>
-      <div className="actions">
+      <div className="action-area-edit-delete">
         {mode === "detail" && (
           <>
             <button
