@@ -31,7 +31,7 @@ const InvoiceTimeStatus = ({ invoice, isFormMode, step, onChange }) => {
   return (
     <table>
       <caption>
-        Invoice Detail <br /> <br /> {invoice.id}
+        <span>{invoice.id}</span> Invoice Detail 
       </caption>
       <thead>
         <tr>

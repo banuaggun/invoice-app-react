@@ -39,8 +39,26 @@ const InvoiceDetailContent = () => {
         <InvoiceDetailItem key={idx} item={item} isFormMode={false} />
       ))}
 
-
-      <h3 className="detail-total">Total: ${invoice.total}</h3>
+      <table className="mobile-total">
+        <thead>
+          <tr>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Total">{invoice.total}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div className="web-total-table">
+        <table>
+          <tr>
+            <th>Total: </th>
+            <td>${invoice.total}</td>
+          </tr>
+        </table>
+      </div>
     </div>
   );
 };

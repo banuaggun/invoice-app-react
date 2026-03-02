@@ -70,10 +70,10 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
           </thead>
           <tbody>
             <tr>
-              <td>{address.street}</td>
-              <td>{address.city}</td>
-              <td>{address.postCode}</td>
-              <td>{address.country}</td>
+              <td data-label="Street">{address.street}</td>
+              <td data-label="City">{address.city}</td>
+              <td data-label="Post Code">{address.postCode}</td>
+              <td data-label="Country">{address.country}</td>
             </tr>
           </tbody>
         </table>

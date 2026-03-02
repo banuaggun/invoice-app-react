@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteInvoice } from "../../features/invoiceSlice";
-import "./detail.css";
+//import "./detail.css";
 import Modal from "../../components/modals/Modal.jsx";
 import InvoiceDetailContent from "../../components/common/form-elements/InvoiceDetailContent.jsx";
 import InvoiceActionButtons from "../../components/common/form-elements/InvoiceActionButtons.jsx";
