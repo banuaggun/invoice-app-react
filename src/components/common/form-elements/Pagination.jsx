@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react' 
+import './form-elements.css'; 
 
 const Pagination = ({ step, setStep, showPreview, setShowPreview }) => {
   return (

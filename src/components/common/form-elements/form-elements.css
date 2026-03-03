@@ -260,11 +260,11 @@ table tbody tr td span.status-badge {
 
 /* --------- new invoice ------- */
 
-.form-page{
+.form-page {
   border: 1px solid black;
   margin-top: 40px;
-  width: 100%; 
-  height:auto;
+  width: 100%;
+  height: auto;
 }
 
 .address-form {
@@ -276,9 +276,9 @@ table tbody tr td span.status-badge {
   height: 24px;
   border: 1px solid transparent;
   transition: all 0.2s ease-in-out;
-  outline: none; 
-  background-color: var(--bg-color); 
-  color:var(--text-color);
+  outline: none;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .address-form input:hover {
@@ -292,9 +292,9 @@ table tbody tr td span.status-badge {
 }
 
 .address-form input::placeholder {
-  color: var(--text-color-placeholder); 
-  font-style: italic;  
-  font-size: 14px; 
+  color: var(--text-color-placeholder);
+  font-style: italic;
+  font-size: 14px;
   transition: color 0.2s ease-in-out;
 }
 
@@ -306,3 +306,40 @@ table tbody tr td span.status-badge {
   color: var(--text-color);
 }
 
+/* -------- Pagination ----------- */
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 2px 8px;
+  width: 90%;
+  margin: 12px auto;
+  border: 1px solid pink;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--btn-invoice);
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.pagination button:hover {
+  background-color: var(--btn-invoice-hover);
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.pagination button:last-child {
+  background-color: var(--btn-more);
+}
