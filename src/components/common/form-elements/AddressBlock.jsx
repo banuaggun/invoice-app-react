@@ -62,10 +62,10 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
           <caption>{title}</caption>
           <thead>
             <tr>
-              <th>Street</th>
-              <th>City</th>
-              <th>Post Code</th>
-              <th>Country</th>
+              <th scope="col">Street</th>
+              <th scope="col">City</th>
+              <th scope="col">Post Code</th>
+              <th scope="col">Country</th>
             </tr>
           </thead>
           <tbody>
