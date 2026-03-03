@@ -9,8 +9,8 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: 24px 24px 12px 24px;
-  background-color: var(--bg-color); 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid green;
 }
 
@@ -55,7 +55,7 @@
   letter-spacing: 0.4px;
 }
 
-.edit-btn{
+.edit-btn {
   background-color: rgba(245, 245, 245, 0.8);
   border: 1px solid var(--btn-edit-hover);
   outline: none;
@@ -212,7 +212,6 @@ path.two {
 
 /* ------- cta-back ------ */
 
-
 /* ------- status badge -------- */
 
 table tbody tr td span.status-badge {
@@ -242,27 +241,68 @@ table tbody tr td span.status-badge {
 .detail-content {
   position: relative;
   margin: 180px auto 80px auto;
-  z-index: 998; 
-  border:1px solid red;
+  z-index: 998;
+  border: 1px solid red;
 }
 
-.web-total-table{
+.web-total-table {
   display: none;
 }
 
-@media only screen and (min-width:768px){
-  .mobile-total{
-    display:none;
-  } 
-  .web-total-table{
+@media only screen and (min-width: 768px) {
+  .mobile-total {
+    display: none;
+  }
+  .web-total-table {
     display: block;
   }
 }
 
 /* --------- new invoice ------- */
 
-.new-invoice-page, .invoice-form{
-  border:1px solid black; 
-  margin-top:85px; 
-  width:100%;
+.form-page{
+  border: 1px solid black;
+  margin-top: 40px;
+  width: 100%; 
+  height:auto;
 }
+
+.address-form {
+  border: 1px solid red;
+}
+
+.address-form input {
+  width: 100%;
+  height: 24px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  outline: none; 
+  background-color: var(--bg-color); 
+  color:var(--text-color);
+}
+
+.address-form input:hover {
+  border-color: #ddd;
+  cursor: pointer;
+}
+
+.address-form input:focus {
+  border-color: var(--btn-more);
+  box-shadow: 0 0 4px var(--btn-more);
+}
+
+.address-form input::placeholder {
+  color: var(--text-color-placeholder); 
+  font-style: italic;  
+  font-size: 14px; 
+  transition: color 0.2s ease-in-out;
+}
+
+.address-form input:hover::placeholder {
+  color: var(--text-color);
+}
+
+.address-form input:focus::placeholder {
+  color: var(--text-color);
+}
+

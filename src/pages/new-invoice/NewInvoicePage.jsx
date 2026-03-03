@@ -26,7 +26,7 @@ const NewInvoicePage = () => {
   };
 
   return (
-    <div className="new-invoice-page">
+    <div className="form-page">
       <InvoiceForm onSubmit={handleSubmit} onCancel={handleCancel} />
     </div>
   );

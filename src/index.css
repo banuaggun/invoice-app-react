@@ -14,6 +14,7 @@
 .app.light {
   --bg-color: #F7F4F3;
   --text-color: #242424; 
+  --text-color-placeholder:rgba(36, 36, 36, 0.6);
   --btn-text:#000000;
   --btn-invoice:#D3C4E3; 
   --btn-invoice-hover:#B79ED1; 
@@ -35,6 +36,7 @@
 .app.dark {
   --bg-color: #4C4F57;
   --text-color: #f9f9f9; 
+  --text-color-placeholder: rgba(249, 249, 249, 0.6);
   --btn-text:#000000; 
   --btn-invoice:#D3C4E3; 
   --btn-invoice-hover:#B79ED1; 

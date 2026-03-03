@@ -22,11 +22,13 @@ const EditInvoicePage = () => {
   };
 
   return (
-    <InvoiceForm
-      initialData={invoice}
-      onSubmit={handleSubmit}
-      onCancel={() => navigate(-1)}
-    />
+    <div className="form-page">
+      <InvoiceForm
+        initialData={invoice}
+        onSubmit={handleSubmit}
+        onCancel={() => navigate(-1)}
+      />
+    </div>
   );
 };
 
