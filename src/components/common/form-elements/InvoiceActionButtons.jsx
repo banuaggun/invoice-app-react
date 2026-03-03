@@ -44,9 +44,13 @@ const InvoiceActionButtons = ({
 
         {(mode === "edit" || mode === "new") && (
           <>
-            <button type="submit">{isEditing ? "Update" : "Save"}</button>
-            <button type="button" onClick={onCancel}>
-              Cancel
+            <button className="detail-button save-update-btn" type="submit">
+              <span className="detail-button-text">
+{isEditing ? "Update" : "Save"}
+              </span>
+              </button>
+            <button className="detail-button delete-btn" type="button" onClick={onCancel}>
+              <span className="detail-button-text">Cancel</span>
             </button>
           </>
         )}

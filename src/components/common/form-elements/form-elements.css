@@ -10,7 +10,8 @@
   justify-content: space-between;
   padding: 24px 24px 12px 24px;
   background-color: var(--bg-color); 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  border: 1px solid green;
 }
 
 @media only screen and (min-width: 601px) {
@@ -54,7 +55,7 @@
   letter-spacing: 0.4px;
 }
 
-.edit-btn {
+.edit-btn{
   background-color: rgba(245, 245, 245, 0.8);
   border: 1px solid var(--btn-edit-hover);
   outline: none;
@@ -67,6 +68,24 @@
   border: 1px solid var(--btn-edit-hover);
   box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
   outline: 2px solid var(--btn-edit-hover);
+  outline-offset: 4px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.save-update-btn {
+  background-color: rgba(245, 245, 245, 0.8);
+  border: 1px solid var(--btn-more-hover);
+  outline: none;
+}
+
+.save-update-btn:hover,
+.save-update-btn.active,
+.save-update-btn.focus {
+  background-color: var(--btn-more-hover);
+  border: 1px solid var(--btn-more-hover);
+  box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
+  outline: 2px solid var(--btn-more-hover);
   outline-offset: 4px;
   transition: 0.3s;
   cursor: pointer;
@@ -238,4 +257,12 @@ table tbody tr td span.status-badge {
   .web-total-table{
     display: block;
   }
+}
+
+/* --------- new invoice ------- */
+
+.new-invoice-page, .invoice-form{
+  border:1px solid black; 
+  margin-top:85px; 
+  width:100%;
 }
