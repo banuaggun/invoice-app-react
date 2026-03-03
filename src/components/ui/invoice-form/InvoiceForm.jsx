@@ -6,6 +6,7 @@ import InvoiceActionButtons from "../../common/form-elements/InvoiceActionButton
 import InvoiceTimeStatus from "../../common/form-elements/InvoiceTimeStatus";
 import InvoiceDetailItem from "../../common/form-elements/InvoiceDetailItem";
 import InvoicePreview from "../../common/form-elements/InvoicePreview";
+import Pagination from "../../common/form-elements/Pagination";
 
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const [step, setStep] = useState(1);
@@ -161,27 +162,14 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
         </div>
       )}
 
-      <div className="pagination">
-        {step > 1 && (
-          <button type="button" onClick={() => setStep(step - 1)}>
-            Previous
-          </button>
-        )}
-        {step < 4 && (
-          <button type="button" onClick={() => setStep(step + 1)}>
-            Next
-          </button>
-        )}
-        {step === 4 && (
-          <button type="button" onClick={() => setShowPreview(!showPreview)}>
-            {showPreview ? "Preview Close" : "Preview"}
-          </button>
-        )}
-      </div>
+      <Pagination
+        step={step}
+        setStep={setStep}
+        showPreview={showPreview}
+        setShowPreview={setShowPreview}
+      />
 
-      {showPreview && (
-        <InvoicePreview formData={formData} />
-      )}
+      {showPreview && <InvoicePreview formData={formData} />}
     </form>
   );
 };
