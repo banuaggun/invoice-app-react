@@ -5,7 +5,7 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
     <div className="address-block">
       {editable ? (
         <div className="address-form">
-          <table className="items-table form-inputs">
+          <table className="items-table">
             <caption>{title}</caption>
             <thead>
               <tr>

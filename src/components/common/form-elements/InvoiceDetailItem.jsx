@@ -1,41 +1,73 @@
 import React from "react";
 
-const InvoiceDetailItem = ({ item, isFormMode, newItem, onNewItemChange, onAddItem }) => {
+const InvoiceDetailItem = ({
+  title,
+  item,
+  isFormMode,
+  newItem,
+  onNewItemChange,
+  onAddItem,
+}) => {
   if (isFormMode) {
     // Form görünümü (step 4)
     return (
-      <div>
-        <h3>Items</h3>
-        <div className="item-row">
-          <input
-            placeholder="Name"
-            value={newItem.name}
-            onChange={(e) => onNewItemChange("name", e.target.value)}
-          />
-          <input
-            type="number"
-            placeholder="Quantity"
-            value={newItem.quantity}
-            onChange={(e) => onNewItemChange("quantity", Number(e.target.value))}
-          />
-          <input
-            type="number"
-            placeholder="Price"
-            value={newItem.price}
-            onChange={(e) => onNewItemChange("price", Number(e.target.value))}
-          />
-          <span>Total: {newItem.total}</span>
-        </div>
-        <button type="button" onClick={onAddItem}>
-          Add Item
-        </button>
+      <div className="item-form">
+        <table className="items-table">
+          <caption>{title}</caption>
+          <thead>
+            <tr>
+              <th scope="col">Item Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+              <td scope="col">Total</td>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Item Name">
+                <input
+                  placeholder="Name"
+                  value={newItem.name}
+                  onChange={(e) => onNewItemChange("name", e.target.value)}
+                />
+              </td>
+              <td data-label="Quantity">
+                <input
+                  type="number"
+                  placeholder="Quantity"
+                  value={newItem.quantity}
+                  onChange={(e) =>
+                    onNewItemChange("quantity", Number(e.target.value))
+                  }
+                />
+              </td>
+              <td data-label="Price">
+                <input
+                  type="number"
+                  placeholder="Price"
+                  value={newItem.price}
+                  onChange={(e) =>
+                    onNewItemChange("price", Number(e.target.value))
+                  }
+                />
+              </td>
+              <td data-label="Total">{newItem.total}</td>
+              <td className="item-btn">
+                <button className="detail-button add-btn" type="button" onClick={onAddItem}>
+                  <span className="detail-button-text">Add Item</span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }
 
   // Normal görünüm (detail mode)
   return (
-    <table>
+    <table className="items-table">
       <tbody>
         <tr>
           <td data-label="name">{item.name}</td>

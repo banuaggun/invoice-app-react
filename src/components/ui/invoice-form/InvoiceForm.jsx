@@ -126,6 +126,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
       {step === 2 && (
         <InvoiceInfo
+          title="Info"
           invoice={formData}
           editable={true}
           onChange={(updated) => setFormData(updated)}
@@ -144,6 +145,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       {step === 4 && (
         <div>
           <InvoiceDetailItem
+            title="Items"
             isFormMode={true}
             newItem={newItem}
             onNewItemChange={handleNewItemChange}
