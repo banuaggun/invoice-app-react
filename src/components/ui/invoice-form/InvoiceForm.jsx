@@ -134,7 +134,8 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       )}
 
       {step === 3 && (
-        <InvoiceTimeStatus
+        <InvoiceTimeStatus 
+        title="Invoice Details"
           invoice={formData}
           isFormMode={true}
           step={step}
