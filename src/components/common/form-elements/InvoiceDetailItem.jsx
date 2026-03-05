@@ -9,7 +9,7 @@ const InvoiceDetailItem = ({
   onAddItem,
 }) => {
   if (isFormMode) {
-    // Form görünümü (step 4)
+    // Form görünümü (step 5)
     return (
       <div className="item-form">
         <table className="items-table">

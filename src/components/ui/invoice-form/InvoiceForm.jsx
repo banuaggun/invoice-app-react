@@ -14,10 +14,10 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
   const [formData, setFormData] = useState({
     description: initialData.description || "",
-    paymentTerms: initialData.paymentTerms || 30,
+    paymentTerms: initialData.paymentTerms || "",
     clientName: initialData.clientName || "",
     clientEmail: initialData.clientEmail || "",
-    status: initialData.status || "draft",
+    status: initialData.status || "",
     senderAddress: initialData.senderAddress || {
       street: "",
       city: "",
@@ -103,8 +103,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
         mode={initialData.id ? "edit" : "new"}
       />
 
-      {step === 1 && (
-        <div>
+      {step === 1 && ( 
           <AddressBlock
             title="Sender Address"
             address={formData.senderAddress}
@@ -113,20 +112,11 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
               setFormData({ ...formData, senderAddress: updated })
             }
           />
-          <AddressBlock
-            title="Client Address"
-            address={formData.clientAddress}
-            editable={true}
-            onChange={(updated) =>
-              setFormData({ ...formData, clientAddress: updated })
-            }
-          />
-        </div>
-      )}
+      )} 
 
-      {step === 2 && (
+      {step === 2 && ( 
         <InvoiceInfo
-          title="Info"
+          title="Client Info"
           invoice={formData}
           editable={true}
           onChange={(updated) => setFormData(updated)}
@@ -134,6 +124,17 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       )}
 
       {step === 3 && (
+        <AddressBlock
+            title="Client Address"
+            address={formData.clientAddress}
+            editable={true}
+            onChange={(updated) =>
+              setFormData({ ...formData, clientAddress: updated })
+            }
+          />
+      )}
+
+      {step === 4 && (
         <InvoiceTimeStatus 
         title="Invoice Details"
           invoice={formData}
@@ -143,7 +144,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
         />
       )}
 
-      {step === 4 && (
+      {step === 5 && (
         <div>
           <InvoiceDetailItem
             title="Items"

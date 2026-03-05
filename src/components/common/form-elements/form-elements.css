@@ -368,3 +368,36 @@ table tbody tr td span.status-badge {
   background-color: var(--btn-more);
 }
 
+.dropdown {
+  position: relative;
+  display: flex; 
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 16px; /* her dropdown arasında boşluk */
+}
+
+.dropdown-menu {
+  position: absolute; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap:12px; 
+  box-sizing: border-box;
+  top: 100%;
+  left: 0;
+  width: fit-content;
+  margin-top: 4px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 1000; /* menüler birbirini ezmesin */
+} 
+
+.dropdown-menu li{
+  list-style-type: none; 
+  padding:0; 
+  border:1px solid red; 
+  width:100%;
+}
