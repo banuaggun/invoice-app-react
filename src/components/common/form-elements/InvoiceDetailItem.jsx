@@ -1,4 +1,5 @@
 import React from "react";
+import TableHeader from "../list-elements/table-header/TableHeader";
 
 const InvoiceDetailItem = ({
   title,
@@ -7,22 +8,15 @@ const InvoiceDetailItem = ({
   newItem,
   onNewItemChange,
   onAddItem,
-}) => {
+}) => { 
+  const columns = ["Item Name", "Quantity", "Price", "Total", ""]
   if (isFormMode) {
     // Form görünümü (step 5)
     return (
       <div className="item-form">
         <table className="items-table">
           <caption>{title}</caption>
-          <thead>
-            <tr>
-              <th scope="col">Item Name</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Price</th>
-              <td scope="col">Total</td>
-              <th scope="col"></th>
-            </tr>
-          </thead>
+          <TableHeader columns={columns} />
           <tbody>
             <tr>
               <td data-label="Item Name">

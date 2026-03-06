@@ -1,20 +1,17 @@
 import React from "react";
+import TableHeader from "../list-elements/table-header/TableHeader";
 
-const AddressBlock = ({ title, address, onChange, editable = false }) => {
+const AddressBlock = ({ title, address, onChange, editable = false }) => { 
+  
+  const columns = ["Street", "City", "Post Code", "Country"]
   return (
     <div className="address-block">
       {editable ? (
         <div className="address-form">
           <table className="items-table">
-            <caption>{title}</caption>
-            <thead>
-              <tr>
-                <th scope="col">Street</th>
-                <th scope="col">City</th>
-                <th scope="col">Post Code</th>
-                <th scope="col">Country</th>
-              </tr>
-            </thead>
+            <caption>{title}</caption> 
+            <TableHeader columns={columns} />
+            
             <tbody>
               <tr>
                 <td data-label="street">
@@ -60,14 +57,7 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
       ) : (
         <table className="items-table">
           <caption>{title}</caption>
-          <thead>
-            <tr>
-              <th scope="col">Street</th>
-              <th scope="col">City</th>
-              <th scope="col">Post Code</th>
-              <th scope="col">Country</th>
-            </tr>
-          </thead>
+          <TableHeader columns={columns} />
           <tbody>
             <tr>
               <td data-label="Street">{address.street}</td>

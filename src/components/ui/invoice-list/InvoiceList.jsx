@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import InvoiceHeader from "../invoice-header/InvoiceHeader";
 import InvoiceItem from "../../common/list-elements/invoice-item/InvoiceItem";
 import './invoice-list.css';
+import TableHeader from "../../common/list-elements/table-header/TableHeader";
 
 function InvoiceList() {
     const invoices = useSelector((state) => state.invoices.invoices);
@@ -23,6 +24,10 @@ function InvoiceList() {
         );
     }
 
+
+    const columns = ["ID", "Customer", "Date", "Total", ""];
+
+
     return (
         <div className="invoices-list-area">
             <InvoiceHeader
@@ -36,16 +41,8 @@ function InvoiceList() {
             
             <div className="invoice-list"> 
                 <table>
-                <thead>
-            <tr>
-              <th scope="col">ID</th> 
-              <th scope="col">Customer</th> 
-              <th scope="col">Date</th> 
-              <th scope="col">Total</th> 
-              <th scope="col"></th>
-            </tr>
-          </thead> 
-            </table>
+                <TableHeader columns={columns} />
+</table>
                 {filteredInvoices.length === 0 ? (
                     <p>No invoices found.</p>
                 ) : (

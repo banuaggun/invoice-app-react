@@ -105,7 +105,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
       {step === 1 && ( 
           <AddressBlock
-            title="Sender Address"
+            title="Sender Address 1"
             address={formData.senderAddress}
             editable={true}
             onChange={(updated) =>
@@ -116,7 +116,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
       {step === 2 && ( 
         <InvoiceInfo
-          title="Client Info"
+          title="Client Info 2"
           invoice={formData}
           editable={true}
           onChange={(updated) => setFormData(updated)}
@@ -125,7 +125,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
       {step === 3 && (
         <AddressBlock
-            title="Client Address"
+            title="Client Address 3"
             address={formData.clientAddress}
             editable={true}
             onChange={(updated) =>
@@ -136,7 +136,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
       {step === 4 && (
         <InvoiceTimeStatus 
-        title="Invoice Details"
+        title="Invoice Details 4"
           invoice={formData}
           isFormMode={true}
           step={step}
@@ -147,12 +147,13 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       {step === 5 && (
         <div>
           <InvoiceDetailItem
-            title="Items"
+            title="Items 5"
             isFormMode={true}
             newItem={newItem}
             onNewItemChange={handleNewItemChange}
             onAddItem={addItem}
-          />
+          /> 
+          
           {formData.items.length > 0 && (
             <ul className="item-list">
               {formData.items.map((item, idx) => (

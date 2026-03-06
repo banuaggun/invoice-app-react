@@ -2,18 +2,15 @@ import React from "react";
 import { formatDate } from "../../../utils/dateUtils.js";
 import "./form-elements.css";
 import InvoiceOptions from "./InvoiceOptions.jsx";
+import TableHeader from "../list-elements/table-header/TableHeader.jsx";
 
 const InvoiceTimeStatus = ({ title, invoice, isFormMode, step, onChange }) => {
   if (isFormMode && step === 4) {
     return (
-      <table className="items-table">
+      <table className="items-table"> 
+      const columns = ["Payment Terms", "Status"];
         <caption>{title}</caption>
-        <thead>
-          <tr>
-            <th scope="col">Payment Terms</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
+        <TableHeader columns={columns} />
         <tbody>
           <tr>
             <td data-label="Payment Terms">

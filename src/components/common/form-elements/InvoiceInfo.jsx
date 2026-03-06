@@ -1,17 +1,15 @@
 import React from "react";
+import TableHeader from "../list-elements/table-header/TableHeader";
 
-const InvoiceInfo = ({ title, invoice, onChange, editable = false }) => {
+const InvoiceInfo = ({ title, invoice, onChange, editable = false }) => { 
+  const columns = ["Description", "Client Name", clientEmail]
   return (
     <div className="info-block">
       {editable ? (
         <div className="info-form">
           <table className="items-table form-inputs">
             <caption>{title}</caption>
-            <thead>
-              <th scope="col">Description</th>
-              <th scope="col">Client Name</th>
-              <th scope="col">Client Email</th>
-            </thead>
+            <TableHeader columns={columns} />
             <tbody>
               <tr>
                 <td data-label="description">
@@ -48,13 +46,7 @@ const InvoiceInfo = ({ title, invoice, onChange, editable = false }) => {
       ) : (
         <table className="items-table">
           <caption>{title}</caption>
-          <thead>
-            <tr>
-              <th scope="col">Description</th>
-              <th scope="col">Client Name</th>
-              <th scope="col">Client Email</th>
-            </tr>
-          </thead>
+         <TableHeader columns={columns} />
           <tbody>
             <tr>
               <td data-label="Description">{invoice.description}</td>

@@ -75,7 +75,8 @@ table {
   padding: 2px 8px;
   margin-bottom: 8px;
   width: 90%;
-  table-layout: fixed;
+  table-layout: fixed; 
+ background-color: lightskyblue;
 }
 
 table caption {

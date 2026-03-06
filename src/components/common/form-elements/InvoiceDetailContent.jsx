@@ -6,11 +6,14 @@ import "./form-elements.css";
 import InvoiceDetailItem from "./InvoiceDetailItem.jsx";
 import InvoiceInfo from "./InvoiceInfo.jsx";
 import InvoiceTimeStatus from "./InvoiceTimeStatus.jsx";
+import TableHeader from "../list-elements/table-header/TableHeader.jsx";
 
 const InvoiceDetailContent = () => {
   const { id } = useParams();
   const invoices = useSelector((state) => state.invoices.invoices);
-  const invoice = invoices.find((inv) => inv.id === id);
+  const invoice = invoices.find((inv) => inv.id === id); 
+
+  const columns = ["Item", "Quantity", "Price", "Total"];
 
   if (!invoice) {
     return <p>Invoice not found.</p>;
@@ -26,14 +29,7 @@ const InvoiceDetailContent = () => {
 
       <table>
         <caption>Items</caption>
-        <thead>
-          <tr>
-            <th scope="col">Item</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Price</th>
-            <th scope="col">Total</th>
-          </tr>
-        </thead>
+        <TableHeader columns={columns} />
       </table>
       {invoice.items.map((item, idx) => (
         <InvoiceDetailItem key={idx} item={item} isFormMode={false} />
