@@ -2,7 +2,7 @@ import React from "react";
 import TableHeader from "../list-elements/table-header/TableHeader";
 
 const InvoiceInfo = ({ title, invoice, onChange, editable = false }) => { 
-  const columns = ["Description", "Client Name", clientEmail]
+  const columns = ["Description", "Client Name", "Client Email"]
   return (
     <div className="info-block">
       {editable ? (

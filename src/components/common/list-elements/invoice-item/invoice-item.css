@@ -1,39 +1,29 @@
-table td.more-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 8px auto 0 auto;
-  gap: 8px;
-  padding: 6px 8px;
-  background-color: var(--btn-more);
-  color: #242424;
-  border-radius: 6px;
+.cta:hover {
+  cursor: pointer; 
+  background: #fff; 
+  transition: all 0.4s ease-in; 
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1), 
+    0 8px 20px rgba(0, 0, 0, 0.15); 
+  color: #242424; 
+  border-radius: 12px;
 }
 
-table td.more-btn:hover,
-table td.more-btn.active,
-table td.more-btn:focus {
-  cursor: pointer;
-  background-color: var(--btn-more-hover);
-  transition: all ease-in 0.4ms;
-}
 
-table td.more-btn svg {
+table tr.more-btn span, table tr.more-btn svg {
   width: 20px;
-  height: 20px;
+  height: 20px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
 }
 
-table td.more-btn span {
-  font-weight: bold;
-  font-size: 1rem;
-}
+table tr td:last-child{
+  text-align: center; 
+  display: flex;
+  justify-content: center;
+ }
 
-@media only screen and (min-width: 641px) and (max-width: 1921px) {
-  table td.more-btn {
-    margin: 4px auto;
-    width: 70%;
-  }
-}
 
 .cta {
   transition: 1s;
@@ -109,4 +99,35 @@ path.two {
   100% {
     fill: #242424;
   }
+}
+
+
+/* ---- status ---- */
+
+table tbody tr td span.status { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width:20%; 
+  padding: 8px 24px;
+  border-radius: 4px; 
+  font-weight: 600;
+  text-transform: capitalize; 
+  font-size: 0.85rem;
+}
+
+
+.status.paid {
+  background-color: #b9f0c9;
+  color: #2e7d32;
+}
+
+.status.pending {
+  background-color: rgb(238, 203, 203);
+  color: #8c4a00;
+}
+
+.status.draft {
+  background-color: #dbcbcb;
+  color: #616161;
 }

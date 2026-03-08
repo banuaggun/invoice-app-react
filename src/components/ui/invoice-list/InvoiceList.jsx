@@ -25,7 +25,7 @@ function InvoiceList() {
     }
 
 
-    const columns = ["ID", "Customer", "Date", "Total", ""];
+    const columns = ["Date", "Customer", "Status", "Total", ""];
 
 
     return (

@@ -13,15 +13,18 @@ function InvoiceItem({ invoice }) {
   return (
     <table>
       <tbody>
-        <tr>
-          <td data-label="id">{invoice.id}</td>
+        <tr className="more-btn cta" onClick={() => navigate(`/invoice/${invoice.id}`)}>
+         <td data-label="date">{formattedDate}</td>
           <td data-label="customer name">{invoice.clientName}</td>
-          <td data-label="date">{formattedDate}</td>
-          <td data-label="total">${invoice.total}</td>
-          <td
-            className="more-btn cta"
-            onClick={() => navigate(`/invoice/${invoice.id}`)}>
-            <span>More</span>
+          <td data-label="status">
+            <span className={`status ${invoice.status.toLowerCase()}`}>
+              {invoice.status}
+            </span>
+            </td>
+          <td data-label="total">${invoice.total}</td> 
+          
+          <td data-label=" " className="forward-icon">
+          
             <ForwardIcon />
           </td>
         </tr>

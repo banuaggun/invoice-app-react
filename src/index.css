@@ -76,7 +76,6 @@ table {
   margin-bottom: 8px;
   width: 90%;
   table-layout: fixed; 
- background-color: lightskyblue;
 }
 
 table caption {
@@ -93,7 +92,7 @@ table caption > span{
 table tr {
   background-color: var(--bg-color);
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 0.35em;
 }
 
@@ -107,6 +106,13 @@ table th {
   font-size: 0.85em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+} 
+
+table tr td.forward-icon span{
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 8px 24px;
 }
 
 @media screen and (max-width: 600px) {
@@ -141,8 +147,14 @@ table th {
     font-size: 0.8em;
     text-align: right;
   } 
-  .status-badge{
+  .status{
     text-transform: capitalize;
+  }
+
+  table tr td:nth-child(3){
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
   }
 
   table td::before {
@@ -156,7 +168,8 @@ table th {
     text-transform: uppercase;
   }
 
-  table td:last-child {
-    border-bottom: 0;
+  table tr td.forward-icon {
+    border-bottom: 0; 
+    display:none;
   }
 }
