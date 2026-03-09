@@ -18,7 +18,7 @@ table tr.more-btn span, table tr.more-btn svg {
   justify-content: center;
 }
 
-table tr td:last-child{
+table tr td.forward-icon{
   text-align: center; 
   display: flex;
   justify-content: center;
