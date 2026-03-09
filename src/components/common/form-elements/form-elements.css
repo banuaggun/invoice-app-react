@@ -1,5 +1,5 @@
-.action-area {
-  position: fixed;
+.action-area{
+ position: fixed;
   top: 90px;
   left: 0;
   right: 0;
@@ -12,108 +12,7 @@
   background-color: var(--bg-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid green;
-}
-
-@media only screen and (min-width: 601px) {
-  .action-area {
-    padding: 24px 50px 12px 50px;
-  }
-}
-
-@media only screen and (min-width: 1026px) {
-  .action-area {
-    padding: 24px 80px 12px 80px;
-  }
-}
-
-.action-area-edit-delete {
-  display: flex;
-  gap: 12px;
-}
-
-.detail-button {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-
-.detail-button svg {
-  width: 100%;
-  height: 100%; 
-  color:#242424
-}
-
-.detail-button-text {
-  width: 100%;
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: 0.4px; 
-  color:#242424;
-}
-
-.edit-btn {
-  background-color: rgba(245, 245, 245, 0.8);
-  border: 1px solid var(--btn-edit-hover);
-  outline: none;
-}
-
-.edit-btn:hover,
-.edit-btn.active,
-.edit-btn.focus {
-  background-color: var(--btn-edit-hover);
-  border: 1px solid var(--btn-edit-hover);
-  box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
-  outline: 2px solid var(--btn-edit-hover);
-  outline-offset: 4px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.save-update-btn, 
-.add-btn {
-  background-color: rgba(245, 245, 245, 0.8);
-  border: 1px solid var(--btn-more-hover);
-  outline: none;
-}
-
-.save-update-btn:hover,
-.save-update-btn.active,
-.save-update-btn.focus, 
-.add-btn:hover,
-.add-btn.active,
-.add-btn.focus {
-  background-color: var(--btn-more-hover);
-  border: 1px solid var(--btn-more-hover);
-  box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
-  outline: 2px solid var(--btn-more-hover);
-  outline-offset: 4px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.delete-btn {
-  background-color: rgba(245, 245, 245, 0.8);
-  border: 1px solid var(--btn-delete-hover);
-  outline: none;
-}
-
-.delete-btn:hover,
-.delete-btn.active,
-.delete-btn.focus {
-  background-color: var(--btn-delete-hover);
-  border: 1px solid var(--btn-delete-hover);
-  box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
-  outline: 2px solid var(--btn-delete-hover);
-  outline-offset: 4px;
-  transition: 0.3s;
-  cursor: pointer;
-}
+} 
 
 /* ------- cta-back ------ */
 
@@ -192,7 +91,9 @@ path.two {
   }
 }
 
-.back-btn {
+/* ------- cta-back ------ */ 
+
+.btn-back {
   transform: rotate(180deg);
   width: 36px;
   height: 36px;
@@ -207,7 +108,7 @@ path.two {
   box-shadow: 2px -2px 6px rgba(0, 0, 0, 0.25);
 }
 
-.back-btn:hover {
+.btn-back:hover {
   border: 1px solid rgb(251, 198, 56);
   box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
   outline: 2px solid rgb(251, 198, 56);
@@ -216,188 +117,110 @@ path.two {
   cursor: pointer;
 }
 
-/* ------- cta-back ------ */
 
-/* ------- status badge -------- */
-
-table tbody tr td span.status-badge {
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-
-.status-badge.paid {
-  background-color: #e6ffed;
-  color: #2e7d32;
-}
-
-.status-badge.pending {
-  background-color: #fff4e5;
-  color: #ef6c00;
-}
-
-.status-badge.draft {
-  background-color: #f0f0f0;
-  color: #616161;
-}
-
-/* ------- status badge -------- */
-
-.detail-content {
-  position: relative;
-  margin: 180px auto 80px auto;
-  z-index: 998;
-  border: 1px solid red;
-}
-
-.web-total-table {
-  display: none;
-}
-
-@media only screen and (min-width: 768px) {
-  .mobile-total {
-    display: none;
-  }
-  .web-total-table {
-    display: block;
-  }
-}
-
-/* --------- new invoice ------- */
-
-.form-page {
-  border: 1px solid black;
-  margin-top: 40px;
-  width: 100%;
-  height: auto;
-}
-
-.address-form {
-  border: 1px solid red;
-}
-
-.address-form input, 
-.info-form input, 
-.item-form input {
-  width: 100%;
-  height: 24px;
-  border: 1px solid var(--btn-invoice);
-  transition: all 0.2s ease-in-out;
-  outline: none;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-.address-form input:hover, 
-.info-form input:hover, 
-.item-form input:hover {
-  border-color: #ddd;
-  cursor: pointer;
-}
-
-.address-form input:focus, 
-.info-form input:focus, 
-.item-form input:focus {
-  border-color: var(--btn-more);
-  box-shadow: 0 0 4px var(--btn-more);
-}
-
-.address-form input::placeholder, 
-.info-form input::placeholder, 
-.item-form input::placeholder {
-  color: var(--text-color-placeholder);
-  font-style: italic;
-  font-size: 14px; 
-  text-transform: capitalize;
-  transition: color 0.2s ease-in-out;
-}
-
-.address-form input:hover::placeholder, 
-.info-form input:hover::placeholder, 
-.item-form input:hover::placeholder {
-  color: var(--text-color);
-}
-
-.address-form input:focus::placeholder, 
-.info-form input:focus::placeholder, 
-.item-form input:focus::placeholder {
-  color: var(--text-color);
+.btn-actions{
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: center; 
+  gap:24px;
+  width:100%; 
+  border:1px solid red;
 } 
 
-.item-btn{
-  display: flex; 
-  justify-content: flex-end;
-}
-
-/* -------- Pagination ----------- */
-
-.pagination {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  padding: 2px 8px;
-  width: 90%;
-  margin: 12px auto;
-  border: 1px solid pink;
-}
-
-.pagination button {
-  padding: 8px 16px;
+.btn-detail {
+  padding: 6px 12px;
+  border-radius: 8px;
   border: none;
-  border-radius: 6px;
-  background-color: var(--btn-invoice);
-  color: var(--text-color);
-  font-size: 16px;
-  font-weight: 600;
-  transition: all 0.2s ease-in-out;
+  outline: none;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
-.pagination button:hover {
-  background-color: var(--btn-invoice-hover);
+.btn-detail svg {
+  width: 100%;
+  height: 100%; 
+  color:#242424
+}
+
+.btn-detail-text {
+  width: 100%;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.4px; 
+  color:#242424;
+} 
+
+.btn-edit {
+  background-color: rgba(245, 245, 245, 0.8);
+  border: 1px solid var(--btn-edit-hover);
+  outline: none;
+}
+
+.btn-edit:hover,
+.btn-edit.active,
+.btn-edit.focus {
+  background-color: var(--btn-edit-hover);
+  border: 1px solid var(--btn-edit-hover);
+  box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
+  outline: 2px solid var(--btn-edit-hover);
+  outline-offset: 4px;
+  transition: 0.3s;
   cursor: pointer;
 }
 
-.pagination button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-  transform: none;
+.btn-s-u, 
+.add-btn {
+  background-color: rgba(245, 245, 245, 0.8);
+  border: 1px solid var(--btn-more-hover);
+  outline: none;
 }
 
-.pagination button:last-child {
-  background-color: var(--btn-more);
+.btn-s-u:hover,
+.btn-s-u.active,
+.btn-s-u.focus, 
+.add-btn:hover,
+.add-btn.active,
+.add-btn.focus {
+  background-color: var(--btn-more-hover);
+  border: 1px solid var(--btn-more-hover);
+  box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
+  outline: 2px solid var(--btn-more-hover);
+  outline-offset: 4px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.dropdown {
-  position: relative;
-  display: flex; 
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 16px; /* her dropdown arasında boşluk */
+.btn-delete {
+  background-color: rgba(245, 245, 245, 0.8);
+  border: 1px solid var(--btn-delete-hover);
+  outline: none;
 }
 
-.dropdown-menu {
-  position: absolute; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: flex-start; 
-  align-items: flex-start; 
-  gap:12px; 
-  box-sizing: border-box;
-  top: 100%;
-  left: 0;
-  width: fit-content;
-  margin-top: 4px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  z-index: 1000; /* menüler birbirini ezmesin */
-} 
-
-.dropdown-menu li{
-  list-style-type: none; 
-  padding:0; 
-  border:1px solid red; 
-  width:100%;
+.btn-delete:hover,
+.btn-delete.active,
+.btn-delete.focus {
+  background-color: var(--btn-delete-hover);
+  border: 1px solid var(--btn-delete-hover);
+  box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
+  outline: 2px solid var(--btn-delete-hover);
+  outline-offset: 4px;
+  transition: 0.3s;
+  cursor: pointer;
 }
+
+
+@media only screen and (min-width: 601px) {
+  .action-area {
+    padding: 24px 50px 12px 50px; 
+  } 
+}
+
+@media only screen and (min-width: 1026px) {
+  .action-area {
+    padding: 24px 80px 12px 80px;
+  }
+}
+

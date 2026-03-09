@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import BackIcon from "../../../assets/icons/BackIcon";
 import EditIcon from "../../../assets/icons/EditIcon";
-import DeleteIcon from "../../../assets/icons/DeleteIcon"; 
-import './form-elements.css';
+import DeleteIcon from "../../../assets/icons/DeleteIcon";
+import "./form-elements.css";
 
 const InvoiceActionButtons = ({
   mode,
@@ -16,45 +16,44 @@ const InvoiceActionButtons = ({
 
   return (
     <div className="action-area">
-      <div className="action-area-back">
-        <button
-          className="back-btn cta-back"
-          onClick={() => navigate(-1)}>
-          <BackIcon />
-        </button>
-      </div>
-      <div className="action-area-edit-delete">
-        {mode === "detail" && (
-          <>
-            <button
-              className="detail-button edit-btn"
-              onClick={() => navigate(`/invoice/${invoiceId}/edit`)}>
-              <EditIcon />
-              <span className="detail-button-text">Edit</span>
-            </button>
+      {mode === "detail" && (
+        <div>
+          <button className="btn-back cta-back" onClick={() => navigate(-1)}>
+            <BackIcon />
+          </button>
+        </div>
+      )}
+      {mode === "detail" && (
+        <div className="btn-actions">
+          <button
+            className="btn-detail btn-edit"
+            onClick={() => navigate(`/invoice/${invoiceId}/edit`)}>
+            <EditIcon />
+            <span className="btn-detail-text">Edit</span>
+          </button>
 
-            <button
-              className="detail-button delete-btn"
-              onClick={onDelete}>
-              <DeleteIcon />
-              <span className="detail-button-text">Delete</span>
-            </button>
-          </>
-        )}
+          <button className="btn-detail btn-delete" onClick={onDelete}>
+            <DeleteIcon />
+            <span className="btn-detail-text">Delete</span>
+          </button>
+        </div>
+      )}
 
-        {(mode === "edit" || mode === "new") && (
-          <>
-            <button className="detail-button save-update-btn" type="submit">
-              <span className="detail-button-text">
-{isEditing ? "Update" : "Save"}
-              </span>
-              </button>
-            <button className="detail-button delete-btn" type="button" onClick={onCancel}>
-              <span className="detail-button-text">Cancel</span>
-            </button>
-          </>
-        )}
-      </div>
+      {(mode === "edit" || mode === "new") && (
+        <div className="btn-actions">
+          <button className="btn-detail btn-s-u" type="submit">
+            <span className="btn-detail-text">
+              {isEditing ? "Update" : "Save"}
+            </span>
+          </button>
+          <button
+            className="btn-detail btn-delete"
+            type="button"
+            onClick={onCancel}>
+            <span className="btn-detail-text">Cancel</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 };
