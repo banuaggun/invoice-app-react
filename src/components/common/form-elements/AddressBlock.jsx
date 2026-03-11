@@ -1,5 +1,6 @@
 import React from "react";
-import TableHeader from "../list-elements/table-header/TableHeader";
+import TableHeader from "../list-elements/table-header/TableHeader"; 
+import './form-elements.css'; 
 
 const AddressBlock = ({ title, address, onChange, editable = false }) => { 
   
@@ -55,18 +56,16 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
           </table>
         </div>
       ) : (
-        <table className="items-table">
-          <caption>{title}</caption>
-          <TableHeader columns={columns} />
-          <tbody>
-            <tr>
-              <td data-label="Street">{address.street}</td>
-              <td data-label="City">{address.city}</td>
-              <td data-label="Post Code">{address.postCode}</td>
-              <td data-label="Country">{address.country}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="address-card">
+          <h3>{title}</h3> 
+          <div className="address-card-content">
+<p><strong>Street:</strong> {address.street}</p>
+          <p><strong>City:</strong> {address.city}</p>
+          <p><strong>Post Code:</strong> {address.postCode}</p>
+          <p><strong>Country:</strong> {address.country}</p>
+          </div>
+          
+        </div>
       )}
     </div>
   );

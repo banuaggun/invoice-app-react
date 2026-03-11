@@ -24,9 +24,13 @@ const InvoiceDetailContent = () => {
       <InvoiceTimeStatus invoice={invoice} />
       <InvoiceInfo invoice={invoice} />
 
-      <AddressBlock title="Sender Address" address={invoice.senderAddress} />
-      <AddressBlock title="Client Address" address={invoice.clientAddress} />
+<div className="detail-content-info"> 
+   <AddressBlock title="Client Address" address={invoice.clientAddress} />
 
+  <AddressBlock title="Sender Address" address={invoice.senderAddress} />
+     
+</div>
+    
       <table>
         <caption>Items</caption>
         <TableHeader columns={columns} />
