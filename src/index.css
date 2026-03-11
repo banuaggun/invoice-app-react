@@ -151,12 +151,6 @@ table tr td.forward-icon span{
     text-transform: capitalize;
   }
 
-  table tr td:nth-child(3){
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-  }
-
   table td::before {
     /*
     * aria-label has no advantage, it won't be read inside a table

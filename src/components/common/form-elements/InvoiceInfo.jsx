@@ -7,7 +7,7 @@ const InvoiceInfo = ({ title, invoice, onChange, editable = false }) => {
     <div className="info-block">
       {editable ? (
         <div className="info-form">
-          <table className="items-table form-inputs">
+          <table className="items-table forms">
             <caption>{title}</caption>
             <TableHeader columns={columns} />
             <tbody>

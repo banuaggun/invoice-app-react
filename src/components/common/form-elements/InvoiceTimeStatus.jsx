@@ -5,10 +5,11 @@ import InvoiceOptions from "./InvoiceOptions.jsx";
 import TableHeader from "../list-elements/table-header/TableHeader.jsx";
 
 const InvoiceTimeStatus = ({ title, invoice, isFormMode, step, onChange }) => {
-  if (isFormMode && step === 4) {
+  if (isFormMode && step === 4) { 
+    const columns = ["Payment Terms", "Status"];
     return (
       <table className="items-table"> 
-      const columns = ["Payment Terms", "Status"];
+      
         <caption>{title}</caption>
         <TableHeader columns={columns} />
         <tbody>

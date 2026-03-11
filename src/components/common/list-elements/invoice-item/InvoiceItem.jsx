@@ -16,7 +16,7 @@ function InvoiceItem({ invoice }) {
         <tr className="more-btn cta" onClick={() => navigate(`/invoice/${invoice.id}`)}>
          <td data-label="date">{formattedDate}</td>
           <td data-label="customer name">{invoice.clientName}</td>
-          <td data-label="status">
+          <td data-label="status" className="status-area">
             <span className={`status ${invoice.status.toLowerCase()}`}>
               {invoice.status}
             </span>

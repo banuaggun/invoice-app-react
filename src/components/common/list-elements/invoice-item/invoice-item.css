@@ -117,6 +117,13 @@ table tbody tr td span.status {
 }
 
 
+  table tr td.status-area{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+  }
+  
+
 .status.paid {
   background-color: #b9f0c9;
   color: #2e7d32;

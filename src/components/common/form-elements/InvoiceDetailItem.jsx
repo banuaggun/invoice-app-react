@@ -14,7 +14,7 @@ const InvoiceDetailItem = ({
     // Form görünümü (step 5)
     return (
       <div className="item-form">
-        <table className="items-table">
+        <table className="items-table forms">
           <caption>{title}</caption>
           <TableHeader columns={columns} />
           <tbody>

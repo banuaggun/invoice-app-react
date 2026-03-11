@@ -104,14 +104,15 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       />
 
       {step === 1 && ( 
-          <AddressBlock
-            title="Sender Address 1"
-            address={formData.senderAddress}
+        <AddressBlock
+            title="Client Address 1"
+            address={formData.clientAddress}
             editable={true}
             onChange={(updated) =>
-              setFormData({ ...formData, senderAddress: updated })
+              setFormData({ ...formData, clientAddress: updated })
             }
           />
+          
       )} 
 
       {step === 2 && ( 
@@ -125,11 +126,11 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
       {step === 3 && (
         <AddressBlock
-            title="Client Address 3"
-            address={formData.clientAddress}
+            title="Sender Address 3"
+            address={formData.senderAddress}
             editable={true}
             onChange={(updated) =>
-              setFormData({ ...formData, clientAddress: updated })
+              setFormData({ ...formData, senderAddress: updated })
             }
           />
       )}
