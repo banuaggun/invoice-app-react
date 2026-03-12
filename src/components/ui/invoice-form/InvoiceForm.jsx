@@ -103,6 +103,13 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
         mode={initialData.id ? "edit" : "new"}
       />
 
+      <Pagination
+        step={step}
+        setStep={setStep}
+        showPreview={showPreview}
+        setShowPreview={setShowPreview}
+      />
+
       {step === 1 && ( 
         <AddressBlock
             title="Client Address 1"
@@ -168,12 +175,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
         </div>
       )}
 
-      <Pagination
-        step={step}
-        setStep={setStep}
-        showPreview={showPreview}
-        setShowPreview={setShowPreview}
-      />
+      
 
       {showPreview && <InvoicePreview formData={formData} />}
     </form>

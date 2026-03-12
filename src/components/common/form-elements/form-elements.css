@@ -93,8 +93,8 @@ path.two {
 
 /* ------- cta-back ------ */ 
 
-.btn-back {
-  transform: rotate(180deg);
+.btn-back, 
+.btn-forward {
   width: 36px;
   height: 36px;
   padding: 4px 8px;
@@ -108,7 +108,17 @@ path.two {
   box-shadow: 2px -2px 6px rgba(0, 0, 0, 0.25);
 }
 
-.btn-back:hover {
+.btn-back{
+  transform: rotate(180deg);
+}
+
+.btn-forward {
+  transform: rotate(0deg);
+}
+
+
+.btn-back:hover, 
+.btn-forward:hover {
   border: 1px solid rgb(251, 198, 56);
   box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
   outline: 2px solid rgb(251, 198, 56);
@@ -324,3 +334,14 @@ path.two {
   color:var(--text-color);
 }
 /* ---- address block form view ----- */
+
+
+/* ----- pagination ----- */
+.pagination{
+  display:flex; 
+  border:1px solid red;
+  justify-content: space-between;
+  width:90%; 
+  margin:0 auto;
+}
+/* ----- pagination ----- */

@@ -1,17 +1,19 @@
 import React from 'react' 
 import './form-elements.css'; 
+import BackIcon from '../../../assets/icons/BackIcon'; 
+import ForwardIcon from '../../../assets/icons/ForwardIcon';
 
 const Pagination = ({ step, setStep, showPreview, setShowPreview }) => {
   return (
     <div className="pagination">
       {step > 1 && (
-        <button type="button" onClick={() => setStep(step - 1)}>
-          Previous
+        <button className='btn-back cta-back' type="button" onClick={() => setStep(step - 1)}>
+          <BackIcon />
         </button>
       )}
       {step < 5 && (
-        <button type="button" onClick={() => setStep(step + 1)}>
-          Next
+        <button className='btn-forward cta-back' type="button" onClick={() => setStep(step + 1)}>
+          <ForwardIcon />
         </button>
       )}
       {step === 5 && (
