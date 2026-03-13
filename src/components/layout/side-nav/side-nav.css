@@ -66,7 +66,7 @@ a, a:hover, a.active, a:focus{
 
 @media only screen and (min-width:601px){
     .sidenav-area{
-        padding:36px 30px 12px 30px; 
+        padding:36px 50px 12px 50px; 
     } 
     .sidenav-area-right{
         gap:8px;
@@ -75,7 +75,7 @@ a, a:hover, a.active, a:focus{
 
 @media only screen and (min-width:1026px){
     .sidenav-area{
-        padding: 36px 60px 12px 60px; 
+        padding: 36px 80px 12px 80px; 
     } 
     .sidenav-area-right{
         gap:8px;

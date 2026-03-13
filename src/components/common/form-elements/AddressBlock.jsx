@@ -55,9 +55,12 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
           </table>
         </div>
       ) : (
-        <div className="address-card">
+        <div className="form-card-area">
+
+        
+        <div className="form-card">
           <h3>{title}</h3>
-          <div className="address-card-content">
+          <div className="form-card-content">
             <p>
               <strong>Street:</strong> {address.street}
             </p>
@@ -71,6 +74,7 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
               <strong>Country:</strong> {address.country}
             </p>
           </div>
+        </div>
         </div>
       )}
     </div>

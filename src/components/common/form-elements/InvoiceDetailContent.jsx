@@ -11,7 +11,7 @@ import TableHeader from "../list-elements/table-header/TableHeader.jsx";
 const InvoiceDetailContent = () => {
   const { id } = useParams();
   const invoices = useSelector((state) => state.invoices.invoices);
-  const invoice = invoices.find((inv) => inv.id === id); 
+  const invoice = invoices.find((inv) => inv.id === id);
 
   const columns = ["Item", "Quantity", "Price", "Total"];
 
@@ -24,13 +24,12 @@ const InvoiceDetailContent = () => {
       <InvoiceTimeStatus invoice={invoice} />
       <InvoiceInfo invoice={invoice} />
 
-<div className="detail-content-info"> 
-   <AddressBlock title="Client Address" address={invoice.clientAddress} />
+      <div className="detail-content-info">
+        <AddressBlock title="Client Address" address={invoice.clientAddress} />
 
-  <AddressBlock title="Sender Address" address={invoice.senderAddress} />
-     
-</div>
-    
+        <AddressBlock title="Sender Address" address={invoice.senderAddress} />
+      </div>
+
       <table>
         <caption>Items</caption>
         <TableHeader columns={columns} />

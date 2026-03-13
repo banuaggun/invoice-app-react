@@ -56,12 +56,18 @@
 
 @media only screen and (min-width:601px){
     .invoice-header-area{
-        padding:0 50px 0 50px; 
+        padding:0 60px 0 60px; 
     } 
 } 
 
+@media only screen and (min-width:769px){
+    .invoice-header-area{
+        padding:0 70px 0 70px;
+    }
+}
+
 @media only screen and (min-width:1026px){
     .invoice-header-area{
-        padding: 0 60px 0 60px; 
+        padding: 0 100px 0 100px; 
     }
 }
