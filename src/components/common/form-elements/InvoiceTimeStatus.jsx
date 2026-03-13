@@ -5,32 +5,35 @@ import InvoiceOptions from "./InvoiceOptions.jsx";
 import TableHeader from "../list-elements/table-header/TableHeader.jsx";
 
 const InvoiceTimeStatus = ({ title, invoice, isFormMode, step, onChange }) => {
-  if (isFormMode && step === 4) { 
+  if (isFormMode && step === 4) {
     const columns = ["Payment Terms", "Status"];
     return (
-      <table className="items-table"> 
-      
-        <caption>{title}</caption>
-        <TableHeader columns={columns} />
-        <tbody>
-          <tr>
-            <td data-label="Payment Terms">
-              <InvoiceOptions
-                type="paymentTerms"
-                value={invoice.paymentTerms}
-                onChange={onChange}
-              />
-            </td>
-            <td data-label="Status">
-              <InvoiceOptions
-                type="status"
-                value={invoice.status}
-                onChange={onChange}
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="form-block">
+        <div className="forms">
+          <table className="items-table">
+            <caption>{title}</caption>
+            <TableHeader columns={columns} />
+            <tbody>
+              <tr>
+                <td data-label="Payment Terms">
+                  <InvoiceOptions
+                    type="paymentTerms"
+                    value={invoice.paymentTerms}
+                    onChange={onChange}
+                  />
+                </td>
+                <td data-label="Status">
+                  <InvoiceOptions
+                    type="status"
+                    value={invoice.status}
+                    onChange={onChange}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     );
   }
 

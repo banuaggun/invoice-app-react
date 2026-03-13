@@ -5,7 +5,7 @@ import "./form-elements.css";
 const AddressBlock = ({ title, address, onChange, editable = false }) => {
   const columns = ["Street", "City", "Post Code", "Country"];
   return (
-    <div className="address-block">
+    <div className="form-block">
       {editable ? (
         <div className="forms">
           <table className="items-table">

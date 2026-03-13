@@ -4,10 +4,10 @@ import TableHeader from "../list-elements/table-header/TableHeader";
 const InvoiceInfo = ({ title, invoice, onChange, editable = false }) => { 
   const columns = ["Description", "Client Name", "Client Email"]
   return (
-    <div className="info-block">
+    <div className="form-block">
       {editable ? (
-        <div className="info-form">
-          <table className="items-table forms">
+        <div className="forms">
+          <table className="items-table">
             <caption>{title}</caption>
             <TableHeader columns={columns} />
             <tbody>
