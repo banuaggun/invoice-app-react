@@ -1,6 +1,6 @@
 import React from "react";
 import { formatDate } from "../../../utils/dateUtils.js";
-import "./form-elements.css";
+import "./form-elements.css"; 
 import InvoiceOptions from "./InvoiceOptions.jsx";
 import TableHeader from "../list-elements/table-header/TableHeader.jsx";
 
@@ -22,12 +22,14 @@ const InvoiceTimeStatus = ({ title, invoice, isFormMode, step, onChange }) => {
                     onChange={onChange}
                   />
                 </td>
-                <td data-label="Status">
-                  <InvoiceOptions
-                    type="status"
-                    value={invoice.status}
-                    onChange={onChange}
-                  />
+                <td data-label="status">
+                  <span>
+                    <InvoiceOptions
+                      type="status"
+                      value={invoice.status}
+                      onChange={onChange}
+                    />
+                  </span>
                 </td>
               </tr>
             </tbody>
@@ -57,8 +59,8 @@ const InvoiceTimeStatus = ({ title, invoice, isFormMode, step, onChange }) => {
             {formatDate(invoice.updatedAt || invoice.createdAt)}
           </td>
           <td data-label="Payment Due">{formatDate(invoice.paymentDue)}</td>
-          <td data-label="status badge">
-            <span className={`status-badge ${invoice.status}`}>
+          <td data-label="status badge" className="status-area">
+            <span className={`status ${invoice.status.toLowerCase()}`}>
               {invoice.status}
             </span>
           </td>

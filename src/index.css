@@ -1,8 +1,8 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400; 
-  width:100%; 
+  font-weight: 400;
+  width: 100%;
   box-sizing: border-box;
 
   font-synthesis: none;
@@ -12,56 +12,55 @@
 }
 
 .app.light {
-  --bg-color: #F7F4F3;
-  --text-color: #242424; 
-  --text-color-placeholder:rgba(36, 36, 36, 0.6);
-  --btn-text:#000000;
-  --btn-invoice:#D3C4E3; 
-  --btn-invoice-hover:#B79ED1; 
-  --btn-sort:#F9C78A; 
-  --btn-sort-hover:#F7B564;
-  --btn-more:#A7DDCA; 
-  --btn-more-hover:#7CCBB0; 
-  --btn-edit:rgba(251, 198, 56, 0.60); 
-  --btn-edit-hover:rgba(251, 198, 56, 1); 
-  --btn-delete: #E23C47; 
-  --btn-delete-hover:#D5202C;
+  --bg-color: #f7f4f3;
+  --text-color: #242424;
+  --text-color-placeholder: rgba(36, 36, 36, 0.6);
+  --btn-text: #000000;
+  --btn-invoice: #d3c4e3;
+  --btn-invoice-hover: #b79ed1;
+  --btn-sort: #f9c78a;
+  --btn-sort-hover: #f7b564;
+  --btn-more: #a7ddca;
+  --btn-more-hover: #7ccbb0;
+  --btn-edit: rgba(251, 198, 56, 0.6);
+  --btn-edit-hover: rgba(251, 198, 56, 1);
+  --btn-delete: #e23c47;
+  --btn-delete-hover: #d5202c;
   --button-bg: transparent;
   --button-text: #333;
-  --nav-bg: #444;  
-  --hover-bg: #eaeaea; 
-  --accent-color: #CB9F01;
+  --nav-bg: #444;
+  --hover-bg: #eaeaea;
+  --accent-color: #cb9f01;
 }
 
 .app.dark {
-  --bg-color: #4C4F57;
-  --text-color: #f9f9f9; 
+  --bg-color: #4c4f57;
+  --text-color: #f9f9f9;
   --text-color-placeholder: rgba(249, 249, 249, 0.6);
-  --btn-text:#000000; 
-  --btn-invoice:#D3C4E3; 
-  --btn-invoice-hover:#B79ED1; 
-  --btn-sort:#F9C78A; 
-  --btn-sort-hover:#F7B564;
-  --btn-more:#C4E8DC; 
-  --btn-more-hover:#7CCBB0; 
-  --btn-edit: rgba(251, 198, 56, 0.8); 
-  --btn-edit-hover:rgba(251, 198, 56, 1); 
-  --btn-delete:#E44E58; 
-  --btn-delete-hover:#D5202C;
+  --btn-text: #000000;
+  --btn-invoice: #d3c4e3;
+  --btn-invoice-hover: #b79ed1;
+  --btn-sort: #f9c78a;
+  --btn-sort-hover: #f7b564;
+  --btn-more: #c4e8dc;
+  --btn-more-hover: #7ccbb0;
+  --btn-edit: rgba(251, 198, 56, 0.8);
+  --btn-edit-hover: rgba(251, 198, 56, 1);
+  --btn-delete: #e44e58;
+  --btn-delete-hover: #d5202c;
   --button-bg: transparent;
   --button-text: #f9f9f9;
   --nav-bg: #fff;
 }
 
-
 body {
   margin: 0;
   padding: 0;
   min-width: 320px;
-  min-height: 100vh; 
-  box-sizing: border-box; 
-  width:100%; 
-  height:100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 .app {
@@ -75,19 +74,19 @@ table {
   padding: 4px 8px;
   margin-bottom: 8px;
   width: 85%;
-  table-layout: fixed; 
+  table-layout: fixed;
   border-radius: 12px;
 }
 
 table caption {
-  font-size: 1.5em; 
-  font-weight: bold; 
-  text-align: left; 
-  margin: 0.5em 0 0.75em; 
-} 
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: left;
+  margin: 0.5em 0 0.75em;
+}
 
-table caption > span{
-  border-bottom: 1px solid var(--text-color); 
+table caption > span {
+  border-bottom: 1px solid var(--text-color);
 }
 
 table tr {
@@ -107,12 +106,12 @@ table th {
   font-size: 0.85em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-} 
+}
 
-table tr td.forward-icon span{
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+table tr td.forward-icon span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 8px 24px;
 }
 
@@ -147,8 +146,8 @@ table tr td.forward-icon span{
     display: block;
     font-size: 0.8em;
     text-align: right;
-  } 
-  .status{
+  }
+  .status {
     text-transform: capitalize;
   }
 
@@ -164,7 +163,42 @@ table tr td.forward-icon span{
   }
 
   table tr td.forward-icon {
-    border-bottom: 0; 
-    display:none;
+    border-bottom: 0;
+    display: none;
   }
+}
+
+/* ---- status ---- */
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 0.85rem;
+}
+
+.status-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status.paid {
+  background-color: #b9f0c9;
+  color: #2e7d32;
+}
+
+.status.pending {
+  background-color: rgb(238, 203, 203);
+  color: #8c4a00;
+}
+
+.status.draft {
+  background-color: #dbcbcb;
+  color: #616161;
 }
