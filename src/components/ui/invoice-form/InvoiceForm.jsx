@@ -7,6 +7,7 @@ import InvoiceTimeStatus from "../../common/form-elements/InvoiceTimeStatus";
 import InvoiceDetailItem from "../../common/form-elements/InvoiceDetailItem";
 import InvoicePreview from "../../common/form-elements/InvoicePreview";
 import Pagination from "../../common/form-elements/Pagination";
+import InvoiceTotal from "../../common/form-elements/InvoiceTotal";
 
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const [step, setStep] = useState(1);
@@ -110,19 +111,18 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
         setShowPreview={setShowPreview}
       />
 
-      {step === 1 && ( 
+      {step === 1 && (
         <AddressBlock
-            title="Client Address 1"
-            address={formData.clientAddress}
-            editable={true}
-            onChange={(updated) =>
-              setFormData({ ...formData, clientAddress: updated })
-            }
-          />
-          
-      )} 
+          title="Client Address 1"
+          address={formData.clientAddress}
+          editable={true}
+          onChange={(updated) =>
+            setFormData({ ...formData, clientAddress: updated })
+          }
+        />
+      )}
 
-      {step === 2 && ( 
+      {step === 2 && (
         <InvoiceInfo
           title="Client Info 2"
           invoice={formData}
@@ -133,18 +133,18 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
       {step === 3 && (
         <AddressBlock
-            title="Sender Address 3"
-            address={formData.senderAddress}
-            editable={true}
-            onChange={(updated) =>
-              setFormData({ ...formData, senderAddress: updated })
-            }
-          />
+          title="Sender Address 3"
+          address={formData.senderAddress}
+          editable={true}
+          onChange={(updated) =>
+            setFormData({ ...formData, senderAddress: updated })
+          }
+        />
       )}
 
       {step === 4 && (
-        <InvoiceTimeStatus 
-        title="Invoice Details 4"
+        <InvoiceTimeStatus
+          title="Invoice Details 4"
           invoice={formData}
           isFormMode={true}
           step={step}
@@ -160,22 +160,21 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
             newItem={newItem}
             onNewItemChange={handleNewItemChange}
             onAddItem={addItem}
-          /> 
-          
+          />
+
           {formData.items.length > 0 && (
-            <ul className="item-list">
+            <div className="item-list">
               {formData.items.map((item, idx) => (
-                <li key={idx}>
+                <div key={idx}>
                   <InvoiceDetailItem item={item} isFormMode={false} />
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           )}
-          <h4>Grand Total: {formData.total}</h4>
+
+          <InvoiceTotal total={formData.total} isFormMode={true} />
         </div>
       )}
-
-      
 
       {showPreview && <InvoicePreview formData={formData} />}
     </form>

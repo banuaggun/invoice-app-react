@@ -7,6 +7,7 @@ import InvoiceDetailItem from "./InvoiceDetailItem.jsx";
 import InvoiceInfo from "./InvoiceInfo.jsx";
 import InvoiceTimeStatus from "./InvoiceTimeStatus.jsx";
 import TableHeader from "../list-elements/table-header/TableHeader.jsx";
+import InvoiceTotal from "./InvoiceTotal.jsx";
 
 const InvoiceDetailContent = () => {
   const { id } = useParams();
@@ -30,14 +31,21 @@ const InvoiceDetailContent = () => {
         <AddressBlock title="Sender Address" address={invoice.senderAddress} />
       </div>
 
-      <table>
+      
+        <table>
         <caption>Items</caption>
-        <TableHeader columns={columns} />
-      </table>
-      {invoice.items.map((item, idx) => (
+        <TableHeader columns={columns} /> 
+        </table>
+          {invoice.items.map((item, idx) => (
         <InvoiceDetailItem key={idx} item={item} isFormMode={false} />
-      ))}
+      ))} 
+      
+      <InvoiceTotal invoice={invoice} />
+    
 
+      
+
+{/*
       <table className="mobile-total">
         <thead>
           <tr>
@@ -58,6 +66,7 @@ const InvoiceDetailContent = () => {
           </tr>
         </table>
       </div>
+      */}
     </div>
   );
 };
