@@ -295,7 +295,7 @@ path.two {
 /* ---- address block form view ----- */
 .forms input {
   width: 100%;
-  height: 24px;
+  height: 36px;
   border: 1px solid var(--btn-invoice);
   transition: all 0.2s ease-in-out;
   outline: none;
