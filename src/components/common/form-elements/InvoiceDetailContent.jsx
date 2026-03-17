@@ -31,42 +31,15 @@ const InvoiceDetailContent = () => {
         <AddressBlock title="Sender Address" address={invoice.senderAddress} />
       </div>
 
-      
-        <table>
+      <table>
         <caption>Items</caption>
-        <TableHeader columns={columns} /> 
-        </table>
-          {invoice.items.map((item, idx) => (
-        <InvoiceDetailItem key={idx} item={item} isFormMode={false} />
-      ))} 
-      
-      <InvoiceTotal invoice={invoice} />
-    
-
-      
-
-{/*
-      <table className="mobile-total">
-        <thead>
-          <tr>
-            <th scope="col">Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="Total">{invoice.total}</td>
-          </tr>
-        </tbody>
+        <TableHeader columns={columns} />
       </table>
-      <div className="web-total-table">
-        <table>
-          <tr>
-            <th>Total: </th>
-            <td>${invoice.total}</td>
-          </tr>
-        </table>
-      </div>
-      */}
+      {invoice.items.map((item, idx) => (
+        <InvoiceDetailItem key={idx} item={item} isFormMode={false} />
+      ))}
+
+      <InvoiceTotal invoice={invoice} />
     </div>
   );
 };

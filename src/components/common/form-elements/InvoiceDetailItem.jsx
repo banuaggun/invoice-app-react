@@ -50,10 +50,10 @@ const InvoiceDetailItem = ({
                 <td data-label="Total">{newItem.total}</td>
                 <td className="item-btn">
                   <button
-                    className="detail-button add-btn"
+                    className="btn-detail btn-add"
                     type="button"
                     onClick={onAddItem}>
-                    <span className="detail-button-text">Add Item</span>
+                    <span className="btn-detail-text">Add Item</span>
                   </button>
                 </td>
               </tr>

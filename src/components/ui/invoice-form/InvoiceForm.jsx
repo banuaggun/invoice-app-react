@@ -168,15 +168,28 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
                 <div key={idx}>
                   <InvoiceDetailItem item={item} isFormMode={false} />
                 </div>
-              ))}
-            </div>
+              ))} 
+
+              
+            </div> 
+            
           )}
 
           <InvoiceTotal total={formData.total} isFormMode={true} />
         </div>
       )}
 
-      {showPreview && <InvoicePreview formData={formData} />}
+      {showPreview && (
+  <div className="preview-overlay">
+    <InvoicePreview formData={formData} />
+    <button className="btn-detail btn-delete" onClick={() => setShowPreview(false)}>
+      <span className="detail-btn-text">
+        Close
+      </span>
+    </button>
+  </div>
+)}
+
     </form>
   );
 };

@@ -42,8 +42,13 @@ const Pagination = ({ step, setStep, showPreview, setShowPreview }) => {
             onClick={() => setStep(step - 1)}>
             <BackIcon />
           </button>
-          <button type="button" onClick={() => setShowPreview(!showPreview)}>
-            {showPreview ? "Preview Close" : "Preview"}
+          <button
+            className="btn-detail btn-preview"
+            type="button"
+            onClick={() => setShowPreview(!showPreview)}>
+            <span className="btn-detail-text">
+              {showPreview ? "Close Preview" : "Open Preview"}
+            </span>
           </button>
         </>
       )}
