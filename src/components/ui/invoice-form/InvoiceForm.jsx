@@ -8,10 +8,12 @@ import InvoiceDetailItem from "../../common/form-elements/InvoiceDetailItem";
 import InvoicePreview from "../../common/form-elements/InvoicePreview";
 import Pagination from "../../common/form-elements/Pagination";
 import InvoiceTotal from "../../common/form-elements/InvoiceTotal";
+import TableHeader from "../../common/list-elements/table-header/TableHeader";
 
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const [step, setStep] = useState(1);
-  const [showPreview, setShowPreview] = useState(false);
+  const [showPreview, setShowPreview] = useState(false); 
+  const columns = ["Invoice Preview"];
 
   const [formData, setFormData] = useState({
     description: initialData.description || "",
@@ -168,11 +170,8 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
                 <div key={idx}>
                   <InvoiceDetailItem item={item} isFormMode={false} />
                 </div>
-              ))} 
-
-              
-            </div> 
-            
+              ))}
+            </div>
           )}
 
           <InvoiceTotal total={formData.total} isFormMode={true} />
@@ -181,12 +180,25 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
       {showPreview && (
   <div className="preview-overlay">
-    <InvoicePreview formData={formData} />
-    <button className="btn-detail btn-delete" onClick={() => setShowPreview(false)}>
-      <span className="detail-btn-text">
-        Close
-      </span>
-    </button>
+    <div className="preview-fixed-area">
+      <div className="preview-header">
+        <h2>Invoice Preview</h2>
+        <button
+          className="cta-back btn-back"
+          onClick={() => setShowPreview(false)}
+        >
+          <span className="detail-btn-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+              <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <div className="preview-content">
+        <InvoicePreview formData={formData} />
+      </div>
+    </div>
   </div>
 )}
 

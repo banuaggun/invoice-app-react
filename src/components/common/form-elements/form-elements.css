@@ -138,14 +138,18 @@ path.two {
   padding: 6px 12px;
   border-radius: 8px;
   outline: none;
-  width: auto; 
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px; 
-  background: linear-gradient(145deg, rgba(255,255,255,0.8), rgba(245,245,245,0.6));
+  gap: 4px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(245, 245, 245, 0.6)
+  );
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease-in-out;
 }
 
@@ -182,58 +186,11 @@ path.two {
 }
 
 .btn-s-u,
-.btn-add{
+.btn-add {
   background-color: rgba(245, 245, 245, 0.8);
   border: 1px solid var(--btn-more-hover);
   outline: none;
-} 
-
-.btn-preview{ 
-  background-color: rgba(245, 245, 245, 0.8); 
-  border:1px solid var(--btn-invoice); 
-  outline:none; 
 }
-
-.preview-overlay {
-  position: fixed;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  max-height: 80vh;
-  overflow-y: auto;
-  background: var(--bg-color);
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  padding: 16px;
-  z-index: 2000;
-}
-
-.preview-container {
-  max-height: 0; 
-  width:100%;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-}
-.preview-container.open {
-  max-height: 600px; /* içerik yüksekliğine göre ayarla */
-}
-
-
-
-.btn-preview:hover, 
-.btn-preview.active, 
-.btn-preview:focus{
-  background-color: var(--btn-invoice-hover);
-  border: 1px solid var(--btn-invoice-hover);
-  box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
-  outline: 2px solid var(--btn-invoice-hover);
-  outline-offset: 4px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-
 
 .btn-s-u:hover,
 .btn-s-u.active,
@@ -414,3 +371,88 @@ path.two {
 }
 /* ------ form total ----- */
 
+/* --- preview ----- */
+
+.btn-preview {
+  background-color: rgba(245, 245, 245, 0.8);
+  border: 1px solid var(--btn-invoice);
+  outline: none;
+}
+
+.btn-preview:hover,
+.btn-preview.active,
+.btn-preview:focus {
+  background-color: var(--btn-invoice-hover);
+  border: 1px solid var(--btn-invoice-hover);
+  box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
+  outline: 2px solid var(--btn-invoice-hover);
+  outline-offset: 4px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.preview-overlay {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--bg-color);
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 0 16px 16px 16px;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.preview-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-color);
+  padding: 12px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  border-bottom: 1px solid var(--btn-invoice);
+}
+
+.preview-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.preview {
+  margin-top: 20px;
+  z-index: 999;
+  width: 100%;
+  padding: 0;
+}
+
+@media only screen and (max-width: 601px) {
+  .preview-header {
+    padding: 12px 16px;
+  }
+  .preview {
+    margin-top: 400px;
+  }
+  .preview-table,
+  .form-total-mobile {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1026px) {
+  .preview {
+    margin-top: 80px;
+  }
+}
+
+/* ----- preview --------- */
