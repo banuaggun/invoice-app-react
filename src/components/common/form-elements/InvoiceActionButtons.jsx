@@ -4,6 +4,7 @@ import BackIcon from "../../../assets/icons/BackIcon";
 import EditIcon from "../../../assets/icons/EditIcon";
 import DeleteIcon from "../../../assets/icons/DeleteIcon";
 import "./form-elements.css";
+import PrintInvoiceButton from "./PrintInvoiceButton";
 
 const InvoiceActionButtons = ({
   mode,
@@ -24,7 +25,8 @@ const InvoiceActionButtons = ({
         </div>
       )}
       {mode === "detail" && (
-        <div className="btn-actions">
+        <div className="btn-actions"> 
+        <PrintInvoiceButton/>
           <button
             className="btn-detail btn-edit"
             onClick={() => navigate(`/invoice/${invoiceId}/edit`)}>

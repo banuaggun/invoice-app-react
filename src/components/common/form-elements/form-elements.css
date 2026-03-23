@@ -456,3 +456,18 @@ path.two {
 }
 
 /* ----- preview --------- */
+
+
+@media print {
+  .detail-content-info {
+    display: block !important;
+  }
+  .sender-address {
+    display: block !important;
+  }
+}
+@media print {
+  .invoice-detail-topbar {
+    display: none;
+  }
+}
