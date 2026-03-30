@@ -471,3 +471,57 @@ path.two {
     display: none;
   }
 }
+
+
+/* ---- options form 4.step ---- */  
+
+.dropdown {
+  position: relative;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  width: auto;  
+  max-width: 50%; 
+  text-align: center; 
+  padding:6px 12px;
+  border:1px solid green;
+  margin-bottom: 16px; /* her dropdown arasında boşluk */
+}
+
+.dropdown-menu {
+  position: absolute; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: flex-start; 
+  gap:12px; 
+  box-sizing: border-box;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 4px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 1000; /* menüler birbirini ezmesin */
+} 
+
+ul.dropdown-menu{
+  padding:6px 12px;
+}
+
+.dropdown-menu li{
+  list-style-type: none; 
+  padding:0; 
+  border:1px solid red; 
+  width:100%;
+}
+
+
+.dropdown-title{
+  display:flex; 
+  justify-content: space-between; 
+  gap:24px; 
+  background-color: greenyellow;
+}
