@@ -45,11 +45,8 @@ const InvoicePreview = ({ formData }) => {
             </tr>
           ))}
         </tbody>
-      </table>
-
-      <div className="preview-table">
+      </table> 
         <InvoiceTotal total={formData.total} />
-      </div>
     </div>
   );
 };
