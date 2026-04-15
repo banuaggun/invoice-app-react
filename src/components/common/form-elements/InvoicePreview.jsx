@@ -8,7 +8,7 @@ const InvoicePreview = ({ formData }) => {
   const columns3 = ["Name", "Quantity", "Price", "Total"];
   return (
     <div className="preview">
-      <table className="items-table preview-table">
+      <table className="items-table preview-table width-100">
         <TableHeader columns={columns1} />
         <tbody>
           <tr>
@@ -18,7 +18,7 @@ const InvoicePreview = ({ formData }) => {
           </tr>
         </tbody>
       </table>
-      <table className="items-table preview-table">
+      <table className="items-table preview-table width-100">
         <TableHeader columns={columns2} />
         <tbody>
           <tr>
@@ -32,7 +32,7 @@ const InvoicePreview = ({ formData }) => {
         </tbody>
       </table>
 
-      <table className="items-table preview-table">
+      <table className="items-table preview-table width-100">
         <caption>Arrangement Items</caption>
         <TableHeader columns={columns3} />
         <tbody>

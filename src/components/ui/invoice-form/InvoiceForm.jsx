@@ -181,10 +181,10 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       {showPreview && (
   <div className="preview-overlay fixed flex align-center justify-center flex-column">
     <div className="preview-fixed-area">
-      <div className="preview-header flex align-center justify-between">
+      <div className="preview-header flex align-center justify-between sticky">
         <h2>Invoice Preview</h2>
         <button
-          className="cta-back btn-back flex justify-center align-center"
+          className="cta-back btn-back flex justify-center align-center hover-cursor-pointer outline-none"
           onClick={() => setShowPreview(false)}
         >
           <span className="detail-btn-text">

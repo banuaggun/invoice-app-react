@@ -7,9 +7,9 @@ const Pagination = ({ step, setStep, showPreview, setShowPreview }) => {
   return (
     <div className="pagination flex justify-between">
       {step === 1 && (
-        <div className="right flex justify-end">
+        <div className="right width-100 flex justify-end">
           <button
-            className="btn-forward cta-back flex justify-center align-center"
+            className="btn-forward cta-back flex justify-center align-center hover-cursor-pointer outline-none"
             type="button"
             onClick={() => setStep(step + 1)}>
             <ForwardIcon />
@@ -20,13 +20,13 @@ const Pagination = ({ step, setStep, showPreview, setShowPreview }) => {
       {step > 1 && step < 5 && (
         <>
           <button
-            className="btn-back cta-back flex justify-center align-center"
+            className="btn-back cta-back flex justify-center align-center hover-cursor-pointer outline-none"
             type="button"
             onClick={() => setStep(step - 1)}>
             <BackIcon />
           </button>
           <button
-            className="btn-forward cta-back flex justify-center align-center"
+            className="btn-forward cta-back flex justify-center align-center hover-cursor-pointer outline-none"
             type="button"
             onClick={() => setStep(step + 1)}>
             <ForwardIcon />
@@ -37,16 +37,16 @@ const Pagination = ({ step, setStep, showPreview, setShowPreview }) => {
       {step === 5 && (
         <>
           <button
-            className="btn-back cta-back flex justify-center align-center"
+            className="btn-back cta-back flex justify-center align-center hover-cursor-pointer outline-none"
             type="button"
             onClick={() => setStep(step - 1)}>
             <BackIcon />
           </button>
           <button
-            className="btn-detail btn-preview flex justify-center align-center"
+            className="btn-detail btn-preview flex justify-center align-center hover-cursor-pointer active-cursor-pointer focus-cursor-pointer outline-none"
             type="button"
             onClick={() => setShowPreview(!showPreview)}>
-            <span className="btn-detail-text">
+            <span className="btn-detail-text width-100">
               {showPreview ? "Close Preview" : "Open Preview"}
             </span>
           </button>

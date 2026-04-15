@@ -57,7 +57,7 @@ const InvoiceOptions = ({ type, value, onChange }) => {
   };
 
   return (
-    <div className="dropdown relative flex flex-column justify-center" ref={dropdownRef}> 
+    <div className="dropdown relative flex flex-column justify-center hover-cursor-pointer" ref={dropdownRef}> 
     <div className="dropdown-section">
 
     
@@ -69,11 +69,11 @@ const InvoiceOptions = ({ type, value, onChange }) => {
         <span className={`arrow ${open ? "open" : ""}`}>▼</span>
       </div>
       {open && (
-        <ul className="dropdown-menu absolute flex flex-column justify-center align-start">
+        <ul className="dropdown-menu absolute flex flex-column justify-center align-start border-box">
           {options.map((opt) => (
             <li
               key={opt.value}
-              className="dropdown-item"
+              className="dropdown-item width-100 hover-cursor-pointer"
               onClick={() => handleSelect(opt.value)}
             >
               {opt.label}

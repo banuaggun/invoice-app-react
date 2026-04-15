@@ -5,7 +5,7 @@ import "./form-elements.css";
 const AddressBlock = ({ title, address, onChange, editable = false }) => {
   const columns = ["Street", "City", "Post Code", "Country"];
   return (
-    <div className="form-block">
+    <div className="form-block width-100">
       {editable ? (
         <div className="forms">
           <table className="items-table">
@@ -16,6 +16,7 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
               <tr>
                 <td data-label="street">
                   <input
+                    className="width-100 hover-cursor-pointer outline-none"
                     placeholder="Street"
                     value={address.street}
                     onChange={(e) =>
@@ -25,6 +26,7 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
                 </td>
                 <td data-label="city">
                   <input
+                    className="width-100 hover-cursor-pointer outline-none"
                     placeholder="City"
                     value={address.city}
                     onChange={(e) =>
@@ -34,6 +36,7 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
                 </td>
                 <td data-label="post code">
                   <input
+                    className="width-100 hover-cursor-pointer outline-none"
                     placeholder="Post Code"
                     value={address.postCode}
                     onChange={(e) =>
@@ -43,6 +46,7 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
                 </td>
                 <td data-label="Country">
                   <input
+                    className="width-100 hover-cursor-pointer outline-none"
                     placeholder="Country"
                     value={address.country}
                     onChange={(e) =>
@@ -55,26 +59,24 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
           </table>
         </div>
       ) : (
-        <div className="form-card-area">
-
-        
-        <div className="form-card">
-          <h3>{title}</h3>
-          <div className="form-card-content flex flex-column">
-            <p>
-              <strong>Street:</strong> {address.street}
-            </p>
-            <p>
-              <strong>City:</strong> {address.city}
-            </p>
-            <p>
-              <strong>Post Code:</strong> {address.postCode}
-            </p>
-            <p>
-              <strong>Country:</strong> {address.country}
-            </p>
+        <div className="form-card-area width-100-sm border-box-sm">
+          <div className="form-card">
+            <h3>{title}</h3>
+            <div className="form-card-content flex flex-column">
+              <p>
+                <strong>Street:</strong> {address.street}
+              </p>
+              <p>
+                <strong>City:</strong> {address.city}
+              </p>
+              <p>
+                <strong>Post Code:</strong> {address.postCode}
+              </p>
+              <p>
+                <strong>Country:</strong> {address.country}
+              </p>
+            </div>
           </div>
-        </div>
         </div>
       )}
     </div>

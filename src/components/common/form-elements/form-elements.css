@@ -95,7 +95,6 @@ path.two {
   border-radius: 80%; 
   background-color: var(--bg-color);
   border: 1px solid rgba(0, 0, 0, 0.08);
-  outline: none;
   box-shadow: 2px -2px 6px rgba(0, 0, 0, 0.25);
 }
 
@@ -114,18 +113,15 @@ path.two {
   outline: 2px solid rgb(251, 198, 56);
   outline-offset: 4px;
   transition: 0.3s;
-  cursor: pointer;
 }
 
 .btn-actions { 
   gap: 24px;
-  width: 100%;
 }
 
 .btn-detail {
   padding: 6px 12px;
   border-radius: 8px;
-  outline: none;
   width: auto; 
   gap: 4px;
   background: linear-gradient(
@@ -145,7 +141,6 @@ path.two {
 }
 
 .btn-detail-text {
-  width: 100%;
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: 0.4px;
@@ -155,7 +150,6 @@ path.two {
 .btn-edit {
   background-color: rgba(245, 245, 245, 0.8);
   border: 1px solid var(--btn-edit-hover);
-  outline: none;
 }
 
 .btn-edit:hover,
@@ -167,14 +161,12 @@ path.two {
   outline: 2px solid var(--btn-edit-hover);
   outline-offset: 4px;
   transition: 0.3s;
-  cursor: pointer;
 }
 
 .btn-s-u,
 .btn-add {
   background-color: rgba(245, 245, 245, 0.8);
   border: 1px solid var(--btn-more-hover);
-  outline: none;
 }
 
 .btn-s-u:hover,
@@ -189,13 +181,11 @@ path.two {
   outline: 2px solid var(--btn-more-hover);
   outline-offset: 4px;
   transition: 0.3s;
-  cursor: pointer;
 }
 
 .btn-delete {
   background-color: rgba(245, 245, 245, 0.8);
   border: 1px solid var(--btn-delete-hover);
-  outline: none;
 }
 
 .btn-delete:hover,
@@ -207,7 +197,6 @@ path.two {
   outline: 2px solid var(--btn-delete-hover);
   outline-offset: 4px;
   transition: 0.3s;
-  cursor: pointer;
 }
 
 @media only screen and (min-width: 601px) {
@@ -230,7 +219,6 @@ path.two {
 
 /* ---- address block normal view ----- */
 .form-block {
-  width: 100%;
   margin: 0.5rem auto;
 }
 
@@ -261,10 +249,6 @@ path.two {
     gap: 16px;
     margin: 0 auto; 
   }
-  .form-card-area {
-    width: 100%;
-    box-sizing: border-box;
-  }
 }
 
 @media only screen and (min-width: 1026px) {
@@ -278,18 +262,15 @@ path.two {
 
 /* ---- address block form view ----- */
 .forms input {
-  width: 100%;
   height: 36px;
   border: 1px solid var(--btn-invoice);
   transition: all 0.2s ease-in-out;
-  outline: none;
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
 .forms input:hover {
   border-color: #ddd;
-  cursor: pointer;
 }
 
 .forms input:focus {
@@ -315,11 +296,7 @@ path.two {
 .pagination { 
   width: 85%;
   margin: 0 auto;
-}
-
-.right {
-  width: 100%; 
-}
+} 
 
 /* ----- pagination ----- */
 
@@ -344,7 +321,6 @@ path.two {
 .btn-preview {
   background-color: rgba(245, 245, 245, 0.8);
   border: 1px solid var(--btn-invoice);
-  outline: none;
 }
 
 .btn-preview:hover,
@@ -356,7 +332,6 @@ path.two {
   outline: 2px solid var(--btn-invoice-hover);
   outline-offset: 4px;
   transition: 0.3s;
-  cursor: pointer;
 }
 
 .preview-overlay {
@@ -374,7 +349,6 @@ path.two {
 }
 
 .preview-header {
-  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -392,7 +366,6 @@ path.two {
 .preview-table {
   margin-top: 20px;
   z-index: 999;
-  width: 100%;
   padding: 0;
 }
 
@@ -451,13 +424,11 @@ path.two {
 } 
 
 .dropdown:hover{ 
-  cursor: pointer; 
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .dropdown-menu { 
   gap:12px; 
-  box-sizing: border-box;
   top: 100%;
   left: 0;
   width: 100%;
@@ -476,11 +447,9 @@ ul.dropdown-menu{
 .dropdown-menu li{
   list-style-type: none; 
   padding:0; 
-  width:100%;
 } 
 
 .dropdown-menu li:hover{
-  cursor: pointer; 
   background-color: #d1d5db;
 }
 

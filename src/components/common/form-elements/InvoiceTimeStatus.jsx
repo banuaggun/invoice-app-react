@@ -8,7 +8,7 @@ const InvoiceTimeStatus = ({ title, invoice, isFormMode, step, onChange }) => {
   if (isFormMode && step === 4) {
     const columns = ["Payment Terms", "Status"];
     return (
-      <div className="form-block">
+      <div className="form-block width-100">
         <div className="forms">
           <table className="items-table">
             <caption>{title}</caption>

@@ -13,7 +13,7 @@ const InvoiceDetailItem = ({
   if (isFormMode) {
     // Form görünümü (step 5)
     return (
-      <div className="form-block">
+      <div className="form-block width-100">
         <div className="forms">
           <table className="items-table">
             <caption>{title}</caption>
@@ -22,6 +22,7 @@ const InvoiceDetailItem = ({
               <tr>
                 <td data-label="Item Name">
                   <input
+                    className="width-100 hover-cursor-pointer outline-none"
                     placeholder="Name"
                     value={newItem.name}
                     onChange={(e) => onNewItemChange("name", e.target.value)}
@@ -29,6 +30,7 @@ const InvoiceDetailItem = ({
                 </td>
                 <td data-label="Quantity">
                   <input
+                    className="width-100 hover-cursor-pointer outline-none"
                     type="number"
                     placeholder="Quantity"
                     value={newItem.quantity}
@@ -39,6 +41,7 @@ const InvoiceDetailItem = ({
                 </td>
                 <td data-label="Price">
                   <input
+                    className="width-100 hover-cursor-pointer outline-none"
                     type="number"
                     placeholder="Price"
                     value={newItem.price}
@@ -50,10 +53,10 @@ const InvoiceDetailItem = ({
                 <td data-label="Total">{newItem.total}</td>
                 <td className="item-btn">
                   <button
-                    className="btn-detail btn-add flex justify-center align-center"
+                    className="btn-detail btn-add flex justify-center align-center hover-cursor-pointer active-cursor-pointer focus-cursor-pointer outline-none"
                     type="button"
                     onClick={onAddItem}>
-                    <span className="btn-detail-text">Add Item</span>
+                    <span className="btn-detail-text width-100">Add Item</span>
                   </button>
                 </td>
               </tr>
