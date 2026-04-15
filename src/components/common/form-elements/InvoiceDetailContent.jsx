@@ -25,7 +25,7 @@ const InvoiceDetailContent = () => {
       <InvoiceTimeStatus invoice={invoice} />
       <InvoiceInfo invoice={invoice} />
 
-      <div className="detail-content-info">
+      <div className="detail-content-info grid-sm align-center-sm justify-between-sm grid-lg align-center-lg justify-between-lg">
         <AddressBlock title="Client Address" address={invoice.clientAddress} />
 
         <AddressBlock title="Sender Address" address={invoice.senderAddress} />

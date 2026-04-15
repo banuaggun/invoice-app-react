@@ -60,7 +60,7 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
         
         <div className="form-card">
           <h3>{title}</h3>
-          <div className="form-card-content">
+          <div className="form-card-content flex flex-column">
             <p>
               <strong>Street:</strong> {address.street}
             </p>

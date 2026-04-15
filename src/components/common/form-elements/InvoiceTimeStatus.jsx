@@ -15,14 +15,14 @@ const InvoiceTimeStatus = ({ title, invoice, isFormMode, step, onChange }) => {
             <TableHeader columns={columns} />
             <tbody>
               <tr>
-                <td className="invoice-options" data-label="Payment Terms">
+                <td className="invoice-options flex-xs flex-column-xs justify-start-xs align-stretch-xs" data-label="Payment Terms">
                   <InvoiceOptions
                     type="paymentTerms"
                     value={invoice.paymentTerms}
                     onChange={onChange}
                   />
                 </td>
-                <td className="invoice-options" data-label="status">
+                <td className="invoice-options flex-xs flex-column-xs justify-start-xs align-stretch-xs" data-label="status">
                   
                     <InvoiceOptions
                       type="status"

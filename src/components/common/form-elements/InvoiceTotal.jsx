@@ -26,7 +26,7 @@ const InvoiceTotal = ({ invoice, total, isFormMode = false }) => {
 
   return (
     <div className="form-total">
-      <table className="items-table form-total-web">
+      <table className="items-table form-total-web flex-sm justify-between-sm">
         <TableHeader columns={columns} />
         <tbody>
           <tr>

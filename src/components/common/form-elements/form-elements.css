@@ -1,17 +1,11 @@
 .action-area {
-  position: fixed;
   top: 90px;
   left: 0;
   right: 0;
-  z-index: 1000;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
+  z-index: 1000; 
   padding: 24px 24px 12px 24px;
   background-color: var(--bg-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid green;
 }
 
 /* ------- cta-back ------ */
@@ -98,10 +92,7 @@ path.two {
   width: 36px;
   height: 36px;
   padding: 4px 8px;
-  border-radius: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 80%; 
   background-color: var(--bg-color);
   border: 1px solid rgba(0, 0, 0, 0.08);
   outline: none;
@@ -126,10 +117,7 @@ path.two {
   cursor: pointer;
 }
 
-.btn-actions {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.btn-actions { 
   gap: 24px;
   width: 100%;
 }
@@ -138,10 +126,7 @@ path.two {
   padding: 6px 12px;
   border-radius: 8px;
   outline: none;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: auto; 
   gap: 4px;
   background: linear-gradient(
     145deg,
@@ -261,9 +246,7 @@ path.two {
 }
 
 .form-card-content {
-  gap: 0rem;
-  display: flex;
-  flex-direction: column;
+  gap: 0rem; 
 }
 
 .detail-content,
@@ -274,12 +257,9 @@ path.two {
 @media only screen and (min-width: 601px) {
   .detail-content-info {
     width: 85%;
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: space-between;
+    margin: 0 auto; 
   }
   .form-card-area {
     width: 100%;
@@ -289,12 +269,9 @@ path.two {
 
 @media only screen and (min-width: 1026px) {
   .detail-content-info {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: space-between;
+    margin: 0 auto; 
   }
 }
 /* ---- address block normal view ----- */
@@ -335,17 +312,13 @@ path.two {
 /* ---- address block form view ----- */
 
 /* ----- pagination ----- */
-.pagination {
-  display: flex;
-  justify-content: space-between;
+.pagination { 
   width: 85%;
   margin: 0 auto;
 }
 
 .right {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
+  width: 100%; 
 }
 
 /* ----- pagination ----- */
@@ -353,9 +326,7 @@ path.two {
 /* ------ form total ----- */
 
 @media only screen and (min-width:601px){ 
-  .form-total-web{
-    display:flex; 
-    justify-content: space-between; 
+  .form-total-web{ 
     border:1px solid #ddd;
   } 
 
@@ -389,7 +360,6 @@ path.two {
 }
 
 .preview-overlay {
-  position: fixed;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
@@ -400,11 +370,7 @@ path.two {
   border: 1px solid #ccc;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   padding: 0 16px 16px 16px;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  z-index: 2000; 
 }
 
 .preview-header {
@@ -413,10 +379,7 @@ path.two {
   left: 0;
   right: 0;
   background: var(--bg-color);
-  padding: 12px 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 12px 80px; 
   z-index: 10;
   border-bottom: 1px solid var(--btn-invoice);
 }
@@ -470,20 +433,12 @@ path.two {
 /* ---- options form 4.step ---- */  
 @media only screen and (max-width:600px){
   td.invoice-options{
-  display:flex; 
-  flex-direction: column; 
-  justify-content: flex-start; 
-  align-items: stretch; 
   gap:12px;
   text-align: left; 
-  border:1px solid red;
 }
 }
-.dropdown {
-  position: relative;
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
+
+.dropdown { 
   width: auto;  
   max-width: 50%; 
   text-align: center; 
@@ -500,12 +455,7 @@ path.two {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.dropdown-menu {
-  position: absolute; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: flex-start; 
+.dropdown-menu { 
   gap:12px; 
   box-sizing: border-box;
   top: 100%;
@@ -535,8 +485,6 @@ ul.dropdown-menu{
 }
 
 
-.dropdown-title{
-  display:flex; 
-  justify-content: space-between; 
+.dropdown-title{ 
   gap:24px; 
 }

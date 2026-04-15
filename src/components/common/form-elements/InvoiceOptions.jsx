@@ -57,19 +57,19 @@ const InvoiceOptions = ({ type, value, onChange }) => {
   };
 
   return (
-    <div className="dropdown" ref={dropdownRef}> 
+    <div className="dropdown relative flex flex-column justify-center" ref={dropdownRef}> 
     <div className="dropdown-section">
 
     
       <div
-        className="dropdown-title"
+        className="dropdown-title flex justify-between"
         onClick={() => setOpen(!open)}
       >
         {options.find((opt) => opt.value === value)?.label || placeholder}
         <span className={`arrow ${open ? "open" : ""}`}>▼</span>
       </div>
       {open && (
-        <ul className="dropdown-menu">
+        <ul className="dropdown-menu absolute flex flex-column justify-center align-start">
           {options.map((opt) => (
             <li
               key={opt.value}
