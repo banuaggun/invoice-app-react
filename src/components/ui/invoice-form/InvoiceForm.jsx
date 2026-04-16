@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./invoice-form.css";
+import "./invoice-form.css"; 
+import '../../../index2.css';
 import AddressBlock from "../../common/form-elements/AddressBlock";
 import InvoiceInfo from "../../common/form-elements/InvoiceInfo";
 import InvoiceActionButtons from "../../common/form-elements/InvoiceActionButtons";

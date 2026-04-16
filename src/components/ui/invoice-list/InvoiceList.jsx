@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import InvoiceHeader from "../invoice-header/InvoiceHeader";
 import InvoiceItem from "../../common/list-elements/invoice-item/InvoiceItem";
-import './invoice-list.css';
+import './invoice-list.css'; 
+import '../../../index2.css';
 import TableHeader from "../../common/list-elements/table-header/TableHeader";
 
 function InvoiceList() {
@@ -39,7 +40,7 @@ function InvoiceList() {
                 setSort={setSort}  
             /> 
             
-            <div className="invoice-list"> 
+            <div className="invoice-list relative"> 
                 <table>
                 <TableHeader columns={columns} />
 </table>

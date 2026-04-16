@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./invoice-filter.css";
+import '../../../../index2.css';
 
 const InvoiceFilter = ({ filter, setFilter, sort, setSort }) => {
   const [openStatus, setOpenStatus] = useState(false);
@@ -30,11 +31,11 @@ const InvoiceFilter = ({ filter, setFilter, sort, setSort }) => {
   const sortOptions = ["all", "newest", "oldest"];
 
   return (
-    <div className="invoice-filter">
+    <div className="invoice-filter width-100 border-box flex flex-row justify-end">
       {/* Status Filter */}
-      <div className="filter-section" ref={statusRef}>
+      <div className="filter-section flex align-center justify-center hover-cursor-pointer" ref={statusRef}>
         <div
-          className="filter-title"
+          className="filter-title flex align-center justify-start"
           onClick={() => {
             setOpenStatus(!openStatus);
             setOpenSort(false);
@@ -68,9 +69,9 @@ const InvoiceFilter = ({ filter, setFilter, sort, setSort }) => {
       </div>
 
       {/* Sort Filter */}
-      <div className="filter-section" ref={sortRef}>
+      <div className="filter-section flex align-center justify-center hover-cursor-pointer" ref={sortRef}>
         <div
-          className="filter-title"
+          className="filter-title flex align-center justify-start"
           onClick={() => {
             setOpenSort(!openSort);
             setOpenStatus(false);

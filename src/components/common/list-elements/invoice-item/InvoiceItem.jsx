@@ -1,8 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { formatDate } from "../../../../utils/dateUtils";
-import "./invoice-item.css";
-import ForwardIcon from "../../../../assets/icons/ForwardIcon";
+import "./invoice-item.css"; 
+import '../../../../index2.css'; 
+import ForwardIcon from "../../../../assets/icons/ForwardIcon"; 
 
 function InvoiceItem({ invoice }) {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ function InvoiceItem({ invoice }) {
   return (
     <table>
       <tbody>
-        <tr className="more-btn cta" onClick={() => navigate(`/invoice/${invoice.id}`)}>
+        <tr className="more-btn cta hover-cursor-pointer" onClick={() => navigate(`/invoice/${invoice.id}`)}>
          <td data-label="date">{formattedDate}</td>
           <td data-label="customer name">{invoice.clientName}</td>
           <td data-label="status" className="status-area">

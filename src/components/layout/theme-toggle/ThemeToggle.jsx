@@ -1,14 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../../features/themeSlice"; 
-import './theme-toggle.css'; 
+import './theme-toggle.css';  
+import '../../../index2.css';
 
 function ThemeToggle() {
     const dispatch = useDispatch();
     const theme = useSelector((state) => state.theme.mode);
 
     return (
-        <button className="theme-toggle-button" onClick={() => dispatch(toggleTheme())}>
+        <button className="theme-toggle-button flex align-center justify-center width-100 outline-none hover-cursor-pointer" onClick={() => dispatch(toggleTheme())}>
             {theme === "light" ? (
                 <>
                     {/* Moon Icon */}

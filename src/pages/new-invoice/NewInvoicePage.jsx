@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addInvoice } from "../../features/invoiceSlice"; 
 import InvoiceForm from "../../components/ui/invoice-form/InvoiceForm";
-//import "./new-invoice.css";
 
 const NewInvoicePage = () => {
   const navigate = useNavigate();
