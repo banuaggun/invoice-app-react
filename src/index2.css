@@ -4,9 +4,18 @@
 
 .width-100 {
   width: 100%;
+} 
+
+.block{
+  display:block;
 }
+
 .flex {
   display: flex;
+} 
+
+.flex-inline{
+  display: inline-flex;
 }
 
 .flex-row {
