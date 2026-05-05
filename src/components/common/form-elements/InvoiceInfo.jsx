@@ -1,8 +1,17 @@
-import React from "react";
-import TableHeader from "../list-elements/table-header/TableHeader";
+import React, {useState} from "react";
+import TableHeader from "../list-elements/table-header/TableHeader"; 
+import "./form-elements.css";
+import "../../../index2.css";
 
 const InvoiceInfo = ({ title, invoice, onChange, editable = false }) => {
-  const columns = ["Description", "Client Name", "Client Email"];
+  const columns = ["Description", "Client Name", "Client Email"]; 
+
+   const [emailError, setEmailError] = useState(""); // yeni state
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
   return (
     <div className="form-block width-100">
       {editable ? (
@@ -37,10 +46,19 @@ const InvoiceInfo = ({ title, invoice, onChange, editable = false }) => {
                     className="width-100 hover-cursor-pointer outline-none"
                     placeholder="Client Email"
                     value={invoice.clientEmail}
-                    onChange={(e) =>
-                      onChange({ ...invoice, clientEmail: e.target.value })
-                    }
-                  />
+                     onChange={(e) => {
+                      const value = e.target.value;
+                      onChange({ ...invoice, clientEmail: value });
+                      if (!validateEmail(value)) {
+                        setEmailError("Geçerli bir e‑mail adresi girin.");
+                      } else {
+                        setEmailError("");
+                      }
+                    }}
+                  /> 
+                   {emailError && (
+                    <span className="error-text">{emailError}</span>
+                  )}
                 </td>
               </tr>
             </tbody>

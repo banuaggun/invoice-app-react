@@ -14,7 +14,9 @@ import TableHeader from "../../common/list-elements/table-header/TableHeader";
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const [step, setStep] = useState(1);
   const [showPreview, setShowPreview] = useState(false); 
-  const columns = ["Invoice Preview"];
+  const columns = ["Invoice Preview"]; 
+  const [emailError, setEmailError] = useState("");
+
 
   const [formData, setFormData] = useState({
     description: initialData.description || "",
@@ -99,6 +101,26 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
     onSubmit(invoiceData);
   };
 
+
+  const goToStep = (nextStep) => {
+  if (step === 2) {
+    if (!formData.clientEmail || !validateEmail(formData.clientEmail)) {
+      setEmailError("Geçerli bir e‑mail adresi girmeniz gerekiyor.");
+      return;
+    } else {
+      setEmailError("");
+    }
+  }
+  setStep(nextStep);
+};
+
+
+const validateEmail = (email) => {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+};
+
+
   return (
     <form className="invoice-form" onSubmit={handleSubmit}>
       <InvoiceActionButtons
@@ -109,7 +131,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
       <Pagination
         step={step}
-        setStep={setStep}
+        setStep={goToStep}
         showPreview={showPreview}
         setShowPreview={setShowPreview}
       />
@@ -126,12 +148,24 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       )}
 
       {step === 2 && (
-        <InvoiceInfo
+       <div>
+       <InvoiceInfo
           title="Client Info 2"
           invoice={formData}
           editable={true}
-          onChange={(updated) => setFormData(updated)}
-        />
+           onChange={(updated) => {
+        setFormData(updated);
+
+        // Eğer email alanı değişiyorsa uyarıyı temizle
+        if (updated.clientEmail !== formData.clientEmail) {
+          setEmailError("");
+        }
+      }}
+        /> 
+        {emailError && (
+      <div className="error-text">{emailError}</div>
+    )}
+        </div>
       )}
 
       {step === 3 && (
