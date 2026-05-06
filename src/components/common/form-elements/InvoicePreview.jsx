@@ -2,14 +2,36 @@ import React from "react";
 import TableHeader from "../list-elements/table-header/TableHeader";
 import InvoiceTotal from "./InvoiceTotal";
 
-const InvoicePreview = ({ formData }) => {
-  const columns1 = ["Client Name", "Client Email", "Description"];
-  const columns2 = ["Payment Terms", "Status"];
+const InvoicePreview = ({ formData }) => { 
+  const columns0 = ["Street", "City", "Post Code", "Country"]
+  const columns1 = ["Name", "Email", "Description"];
+  const columns2 = ["Payment Terms", "Status"]; 
   const columns3 = ["Name", "Quantity", "Price", "Total"];
   return (
-    <div className="preview">
+    <div className="preview"> 
       <table className="items-table preview-table width-100">
-        <TableHeader columns={columns1} />
+        <TableHeader columns={columns0} /> 
+        <caption>Sender</caption> 
+        <tbody>
+          <tr>
+            <td data-label="sender">
+              {formData.senderAddress.street}
+            </td> 
+            <td data-label=" city">
+              {formData.senderAddress.city}
+            </td> 
+            <td data-label="post code">
+              {formData.senderAddress.postCode}
+            </td> 
+            <td data-label="country">
+              {formData.senderAddress.country}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table className="items-table preview-table width-100">
+        <TableHeader columns={columns1} /> 
+        <caption>Client</caption>
         <tbody>
           <tr>
             <td data-label="client name">{formData.clientName}</td>
