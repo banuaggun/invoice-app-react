@@ -33,7 +33,7 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
                       onChange({ ...address, city: e.target.value })
                     }
                   />
-                </td>
+                </td> 
                 <td data-label="post code">
                   <input
                     className="width-100 hover-cursor-pointer outline-none"
@@ -59,25 +59,28 @@ const AddressBlock = ({ title, address, onChange, editable = false }) => {
           </table>
         </div>
       ) : (
-        <div className="form-card-area width-100-sm border-box-sm">
-          <div className="form-card">
-            <h3>{title}</h3>
-            <div className="form-card-content flex flex-column">
-              <p>
-                <strong>Street:</strong> {address.street}
-              </p>
-              <p>
-                <strong>City:</strong> {address.city}
-              </p>
-              <p>
-                <strong>Post Code:</strong> {address.postCode}
-              </p>
-              <p>
-                <strong>Country:</strong> {address.country}
-              </p>
-            </div>
-          </div>
-        </div>
+      
+          <table className="items-table">
+            <caption>{title}</caption> 
+            <TableHeader columns={columns} />
+            <tbody>
+              <tr>
+                <td data-label="Street"> 
+                  {address.street}
+                  </td> 
+              
+              <td data-label="City">
+                 {address.city}
+              </td>
+              <td data-label="Post Code">
+                 {address.postCode}
+              </td>
+              <td data-label="Country">
+                 {address.country}
+              </td>
+              </tr>
+            </tbody>
+            </table>
       )}
     </div>
   );

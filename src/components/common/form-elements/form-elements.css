@@ -242,6 +242,7 @@ path.two {
   margin-top: 200px;
 }
 
+/*
 @media only screen and (min-width: 601px) {
   .detail-content-info {
     width: 85%;
@@ -258,6 +259,7 @@ path.two {
     margin: 0 auto; 
   }
 }
+  */
 /* ---- address block normal view ----- */
 
 /* ---- address block form view ----- */
