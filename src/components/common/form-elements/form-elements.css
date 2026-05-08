@@ -108,9 +108,9 @@ path.two {
 
 .btn-back:hover,
 .btn-forward:hover {
-  border: 1px solid rgb(251, 198, 56);
+  border: 1px solid var(--btn-edit-hover);
   box-shadow: 2px -2px 6px rgba(251, 198, 56, 0.25);
-  outline: 2px solid rgb(251, 198, 56);
+  outline: 2px solid var(--btn-edit-hover);
   outline-offset: 4px;
   transition: 0.3s;
 }
@@ -148,7 +148,7 @@ path.two {
 }
 
 .btn-edit {
-  background-color: rgba(245, 245, 245, 0.8);
+  background-color: var(--btn-bg);
   border: 1px solid var(--btn-edit-hover);
 }
 
@@ -165,7 +165,7 @@ path.two {
 
 .btn-s-u,
 .btn-add {
-  background-color: rgba(245, 245, 245, 0.8);
+  background-color: var(--btn-bg);
   border: 1px solid var(--btn-more-hover);
 }
 
@@ -184,7 +184,7 @@ path.two {
 }
 
 .btn-delete {
-  background-color: rgba(245, 245, 245, 0.8);
+  background-color: var(--btn-bg);
   border: 1px solid var(--btn-delete-hover);
 }
 
@@ -228,7 +228,7 @@ path.two {
 }
 
 .form-card {
-  border: 1px solid #ccc;
+  border: 1px solid var(--btn-invoice);
   border-radius: 8px;
   padding: 4px 16px;
 }
@@ -253,7 +253,7 @@ path.two {
 }
 
 .forms input:hover {
-  border-color: #ddd;
+  border-color: var(--btn-invoice);
 }
 
 .forms input:focus {
@@ -287,7 +287,7 @@ path.two {
 
 @media only screen and (min-width:601px){ 
   .form-total-web{ 
-    border:1px solid #ddd;
+    border:1px solid var(--btn-invoice);
   } 
 
   .form-total-web tr td, .form-total-web tr th{
@@ -301,7 +301,7 @@ path.two {
 /* --- preview ----- */
 
 .btn-preview {
-  background-color: rgba(245, 245, 245, 0.8);
+  background-color: var(--btn-bg);
   border: 1px solid var(--btn-invoice);
 }
 
@@ -321,7 +321,6 @@ path.two {
   width:80%; 
 	height:90vh;
 	overflow-y:scroll;
-	position:fixed; 
 	top:50%; 
 	left:50%;
 	transform:translate(-50%, -50%); 
@@ -331,21 +330,13 @@ path.two {
   border-radius: 8px;
 }
 
-.preview-fixed-area{
-	width:100%; 
-}  
-
 .preview-header{
   padding: 12px 24px; 
-  display:flex; 
-	justify-content:space-between; 
-	align-items:center; 
-  position:sticky; 
   top:0; 
 	left:0; 
   z-index:1010;
   background-color:var(--bg-color); 
-  border-bottom:1px solid #ccc;
+  border-bottom:1px solid var(--btn-invoice);
 }
 
 .preview-header h2 {
@@ -354,7 +345,6 @@ path.two {
 }
 
 .preview-content{
-  position: relative; 
   padding:0 24px 16px 24px;
 } 
 
@@ -376,13 +366,13 @@ path.two {
   font-size: 1rem;
   padding:6px 12px;
   margin-bottom: 16px; 
-  border: 1px solid #d1d5db; 
+  border: 1px solid var(--btn-invoice); 
   border-radius: 6px;
   background-color: var(--bg-color);
 } 
 
 .dropdown:hover{ 
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
 }
 
 .dropdown-menu { 
@@ -391,9 +381,9 @@ path.two {
   left: 0;
   width: 100%;
   margin-top: 4px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--btn-invoice);
   border-radius: 6px;
-  background-color: #ffffff;
+  background-color: var(--bg-color);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   z-index: 1000; 
 } 
@@ -408,7 +398,8 @@ ul.dropdown-menu{
 } 
 
 .dropdown-menu li:hover{
-  background-color: #d1d5db;
+  background-color: var(--btn-invoice); 
+  color:var(--bg-color);
 }
 
 

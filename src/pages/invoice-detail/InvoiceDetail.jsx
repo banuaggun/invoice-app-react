@@ -44,8 +44,12 @@ const InvoiceDetail = () => {
         title="Delete Invoice"
         actions={
           <>
-            <button onClick={() => setIsModalOpen(false)}>Cancel</button>
-            <button onClick={handleDelete}>Confirm</button>
+            <button className="btn-delete btn-detail" onClick={() => setIsModalOpen(false)}>
+              <span className="btn-detail-text width-100">Cancel</span>
+            </button>
+            <button className="btn-s-u btn-detail" onClick={handleDelete}>
+              <span className="btn-detail-text width-100">Confirm</span>
+            </button>
           </>
         }>
         <p>

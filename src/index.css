@@ -25,10 +25,10 @@
   --btn-edit: rgba(251, 198, 56, 0.6);
   --btn-edit-hover: rgba(251, 198, 56, 1);
   --btn-delete: #e23c47;
-  --btn-delete-hover: #d5202c;
+  --btn-delete-hover: #d5202c; 
+  --btn-bg: rgba(245, 245, 245, 0.8);
   --button-bg: transparent;
   --button-text: #333;
-  --nav-bg: #444;
   --hover-bg: #eaeaea;
   --accent-color: #cb9f01;
 }
@@ -47,10 +47,10 @@
   --btn-edit: rgba(251, 198, 56, 0.8);
   --btn-edit-hover: rgba(251, 198, 56, 1);
   --btn-delete: #e44e58;
-  --btn-delete-hover: #d5202c;
+  --btn-delete-hover: #d5202c; 
+  --btn-bg: rgba(245, 245, 245, 0.8);
   --button-bg: transparent;
   --button-text: #f9f9f9;
-  --nav-bg: #fff;
 }
 
 body {

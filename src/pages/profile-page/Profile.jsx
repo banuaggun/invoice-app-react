@@ -87,13 +87,6 @@ const Profile = () => {
             <li>Responsive design for all devices</li>
             <li>Light/Dark theme support</li>
           </ul>
-          <div className="project-image">
-            <img
-              src={Screenshot}
-              alt="Invoice App Screenshot"
-              className="block"
-            />
-          </div>
         </section>
       </div>
     </div>

@@ -211,9 +211,9 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       )}
 
       {showPreview && (
-        <div className="preview-overlay">
-          <div className="preview-fixed-area">
-            <div className="preview-header">
+        <div className="preview-overlay fixed">
+          <div className="preview-fixed-area width-100">
+            <div className="preview-header flex justify-between align-center sticky">
               <h2>Invoice Preview</h2>
               <button
                 className="cta-back btn-back flex justify-center align-center hover-cursor-pointer outline-none"
@@ -224,7 +224,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
               </button>
             </div>
 
-            <div className="preview-content">
+            <div className="preview-content relative">
               <InvoicePreview formData={formData} />
             </div>
           </div>
