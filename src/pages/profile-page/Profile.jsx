@@ -86,7 +86,6 @@ const Profile = () => {
             </li>
             <li>Responsive design for all devices</li>
             <li>Light/Dark theme support</li>
-            <li>Print feature for invoices</li>
           </ul>
           <div className="project-image">
             <img
