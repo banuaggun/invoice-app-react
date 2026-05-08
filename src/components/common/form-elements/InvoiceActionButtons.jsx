@@ -5,7 +5,6 @@ import EditIcon from "../../../assets/icons/EditIcon";
 import DeleteIcon from "../../../assets/icons/DeleteIcon";
 import "./form-elements.css";
 import "../../../index2.css";
-import PrintInvoiceButton from "./PrintInvoiceButton";
 
 const InvoiceActionButtons = ({
   mode,
@@ -29,7 +28,7 @@ const InvoiceActionButtons = ({
       )}
       {mode === "detail" && (
         <div className="btn-actions width-100 flex justify-end align-center">
-          <PrintInvoiceButton />
+          
           <button
             className="btn-detail btn-edit flex justify-center align-center hover-cursor-pointer active-cursor-pointer focus-cursor-pointer outline-none"
             onClick={() => navigate(`/invoice/${invoiceId}/edit`)}>
