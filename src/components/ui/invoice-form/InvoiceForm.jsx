@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./invoice-form.css"; 
-import '../../../index2.css';
+import "./invoice-form.css";
+import "../../../index2.css";
 import AddressBlock from "../../common/form-elements/AddressBlock";
 import InvoiceInfo from "../../common/form-elements/InvoiceInfo";
 import InvoiceActionButtons from "../../common/form-elements/InvoiceActionButtons";
@@ -14,10 +14,9 @@ import CloseIcon from "../../../assets/icons/CloseIcon";
 
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const [step, setStep] = useState(1);
-  const [showPreview, setShowPreview] = useState(false); 
-  const columns = ["Invoice Preview"]; 
+  const [showPreview, setShowPreview] = useState(false);
+  const columns = ["Invoice Preview"];
   const [emailError, setEmailError] = useState("");
-
 
   const [formData, setFormData] = useState({
     description: initialData.description || "",
@@ -43,8 +42,8 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
 
   const [newItem, setNewItem] = useState({
     name: "",
-    quantity: 1,
-    price: 0,
+    quantity: "",
+    price: "",
     total: 0,
   });
 
@@ -55,7 +54,9 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const handleNewItemChange = (field, value) => {
     const updated = { ...newItem, [field]: value };
     if (field === "quantity" || field === "price") {
-      updated.total = updated.quantity * updated.price;
+      const quantity = Number(updated.quantity) || 0;
+      const price = Number(updated.price) || 0;
+      updated.total = quantity * price;
     }
     setNewItem(updated);
   };
@@ -68,7 +69,7 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
       items: updatedItems,
       total: updatedItems.reduce((sum, i) => sum + i.total, 0),
     });
-    setNewItem({ name: "", quantity: 1, price: 0, total: 0 });
+    setNewItem({ name: "", quantity: "", price: "", total: 0 });
   };
 
   const handleSubmit = (e) => {
@@ -102,25 +103,22 @@ const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
     onSubmit(invoiceData);
   };
 
-
   const goToStep = (nextStep) => {
-  if (step === 2) {
-    if (!formData.clientEmail || !validateEmail(formData.clientEmail)) {
-      setEmailError("Geçerli bir e‑mail adresi girmeniz gerekiyor.");
-      return;
-    } else {
-      setEmailError("");
+    if (step === 2) {
+      if (!formData.clientEmail || !validateEmail(formData.clientEmail)) {
+        setEmailError("Geçerli bir e‑mail adresi girmeniz gerekiyor.");
+        return;
+      } else {
+        setEmailError("");
+      }
     }
-  }
-  setStep(nextStep);
-};
+    setStep(nextStep);
+  };
 
-
-const validateEmail = (email) => {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email);
-};
-
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
 
   return (
     <form className="invoice-form" onSubmit={handleSubmit}>
@@ -139,7 +137,7 @@ const validateEmail = (email) => {
 
       {step === 1 && (
         <AddressBlock
-          title="Client Address 1"
+          title="Client Address"
           address={formData.clientAddress}
           editable={true}
           onChange={(updated) =>
@@ -149,29 +147,27 @@ const validateEmail = (email) => {
       )}
 
       {step === 2 && (
-       <div>
-       <InvoiceInfo
-          title="Client Info 2"
-          invoice={formData}
-          editable={true}
-           onChange={(updated) => {
-        setFormData(updated);
+        <div>
+          <InvoiceInfo
+            title="Client Info"
+            invoice={formData}
+            editable={true}
+            onChange={(updated) => {
+              setFormData(updated);
 
-        // Eğer email alanı değişiyorsa uyarıyı temizle
-        if (updated.clientEmail !== formData.clientEmail) {
-          setEmailError("");
-        }
-      }}
-        /> 
-        {emailError && (
-      <div className="error-text">{emailError}</div>
-    )}
+              // Eğer email alanı değişiyorsa uyarıyı temizle
+              if (updated.clientEmail !== formData.clientEmail) {
+                setEmailError("");
+              }
+            }}
+          />
+          {emailError && <div className="error-text">{emailError}</div>}
         </div>
       )}
 
       {step === 3 && (
         <AddressBlock
-          title="Sender Address 3"
+          title="Sender Address"
           address={formData.senderAddress}
           editable={true}
           onChange={(updated) =>
@@ -182,7 +178,7 @@ const validateEmail = (email) => {
 
       {step === 4 && (
         <InvoiceTimeStatus
-          title="Invoice Details 4"
+          title="Invoice Details"
           invoice={formData}
           isFormMode={true}
           step={step}
@@ -193,7 +189,7 @@ const validateEmail = (email) => {
       {step === 5 && (
         <div>
           <InvoiceDetailItem
-            title="Items 5"
+            title="Items"
             isFormMode={true}
             newItem={newItem}
             onNewItemChange={handleNewItemChange}
@@ -215,27 +211,25 @@ const validateEmail = (email) => {
       )}
 
       {showPreview && (
-  <div className="preview-overlay">
-    <div className="preview-fixed-area">
-      <div className="preview-header">
-        <h2>Invoice Preview</h2>
-        <button
-          className="cta-back btn-back flex justify-center align-center hover-cursor-pointer outline-none"
-          onClick={() => setShowPreview(false)}
-        >
-          <span className="detail-btn-text">
-            <CloseIcon />
-          </span>
-        </button>
-      </div>
+        <div className="preview-overlay">
+          <div className="preview-fixed-area">
+            <div className="preview-header">
+              <h2>Invoice Preview</h2>
+              <button
+                className="cta-back btn-back flex justify-center align-center hover-cursor-pointer outline-none"
+                onClick={() => setShowPreview(false)}>
+                <span className="detail-btn-text">
+                  <CloseIcon />
+                </span>
+              </button>
+            </div>
 
-      <div className="preview-content">
-        <InvoicePreview formData={formData} />
-      </div>
-    </div>
-  </div>
-)}
-
+            <div className="preview-content">
+              <InvoicePreview formData={formData} />
+            </div>
+          </div>
+        </div>
+      )}
     </form>
   );
 };

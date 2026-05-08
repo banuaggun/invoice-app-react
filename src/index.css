@@ -75,7 +75,8 @@ table {
   margin-bottom: 8px;
   width: 85%;
   table-layout: fixed;
-  border-radius: 12px;
+  border-radius: 12px; 
+  text-transform: capitalize;
 }
 
 table caption {

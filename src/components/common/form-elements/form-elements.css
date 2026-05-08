@@ -316,6 +316,7 @@ path.two {
   transition: 0.3s;
 }
 
+/* ----- preview --------- */
 .preview-overlay{
   width:80%; 
 	height:90vh;
@@ -357,83 +358,6 @@ path.two {
   padding:0 24px 16px 24px;
 } 
 
-
-
-/*
-.preview-overlay { 
-  position: fixed;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%; 
-  height:auto; 
-  max-height:80vh;
-  overflow-y: auto;
-  background: var(--bg-color);
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  padding: 0 16px 16px 16px;
-  z-index: 2000; 
-} 
-
-.preview-fixed-area{
-  position:relative; 
-  margin-top:100px;
-  display: flex; 
-  flex-direction: column; 
-  justify-content: space-between; 
-  align-items: stretch;
-  gap:30px; 
-  border:1px solid greenyellow;
-}
-
-
-
-.preview-header {
-  top: 0;
-  left: 0;
-  right: 0;
-  background: var(--bg-color);
-  padding: 12px 80px; 
-  z-index: 10;
-  border-bottom: 1px solid var(--btn-invoice); 
-  margin-bottom: 16px; 
-  border:1px solid red;
-}
-
-.preview-header h2 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.preview { 
-  border:1px solid blue;
-  margin-top: 400px;
-  z-index: 999;
-  padding: 0; 
-}
-
-@media only screen and (max-width: 601px) {
-  .preview-header {
-    padding: 12px 16px; 
-    border:1px solid green; 
-  }
- 
-}
-
-@media only screen and (min-width: 701px) {
-  .preview-header {
-    padding: 12px 16px; 
-    margin-bottom:0;
-  }
-}  
-
-@media only screen and (min-width: 1100px) {
-  .preview-header {
-    padding: 12px 16px; 
-  }
-} 
-*/
 /* ----- preview --------- */
 
 
