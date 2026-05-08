@@ -10,6 +10,7 @@ import InvoicePreview from "../../common/form-elements/InvoicePreview";
 import Pagination from "../../common/form-elements/Pagination";
 import InvoiceTotal from "../../common/form-elements/InvoiceTotal";
 import TableHeader from "../../common/list-elements/table-header/TableHeader";
+import CloseIcon from "../../../assets/icons/CloseIcon";
 
 const InvoiceForm = ({ initialData = {}, onSubmit, onCancel }) => {
   const [step, setStep] = useState(1);
@@ -214,18 +215,16 @@ const validateEmail = (email) => {
       )}
 
       {showPreview && (
-  <div className="preview-overlay fixed flex align-center justify-center flex-column">
+  <div className="preview-overlay">
     <div className="preview-fixed-area">
-      <div className="preview-header flex align-center justify-between sticky">
+      <div className="preview-header">
         <h2>Invoice Preview</h2>
         <button
           className="cta-back btn-back flex justify-center align-center hover-cursor-pointer outline-none"
           onClick={() => setShowPreview(false)}
         >
           <span className="detail-btn-text">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
-              <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
-            </svg>
+            <CloseIcon />
           </span>
         </button>
       </div>

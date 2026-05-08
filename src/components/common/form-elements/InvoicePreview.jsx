@@ -3,15 +3,19 @@ import TableHeader from "../list-elements/table-header/TableHeader";
 import InvoiceTotal from "./InvoiceTotal";
 
 const InvoicePreview = ({ formData }) => { 
-  const columns0 = ["Street", "City", "Post Code", "Country"]
-  const columns1 = ["Name", "Email", "Description"];
-  const columns2 = ["Payment Terms", "Status"]; 
-  const columns3 = ["Name", "Quantity", "Price", "Total"];
+  const senderColumns = ["Street", "City", "Post Code", "Country"]; 
+  const clientColumns0 = ["Street", "City", "Post Code", "Country"];
+  const clientColumns = ["Name", "Email", "Description"];
+  const invoiceColumns = ["Payment Terms", "Status"]; 
+  const itemColumns = ["Name", "Quantity", "Price", "Total"];
   return (
     <div className="preview"> 
-      <table className="items-table preview-table width-100">
-        <TableHeader columns={columns0} /> 
-        <caption>Sender</caption> 
+    <div className="preview-table">
+
+    
+      <table className="items-table width-100">
+        <TableHeader columns={senderColumns} /> 
+        <caption>Sender Address</caption> 
         <tbody>
           <tr>
             <td data-label="sender">
@@ -28,10 +32,30 @@ const InvoicePreview = ({ formData }) => {
             </td>
           </tr>
         </tbody>
+      </table> 
+      <table className="items-table width-100">
+        <TableHeader columns={clientColumns0} /> 
+        <caption>Client Address</caption> 
+        <tbody>
+          <tr>
+            <td data-label="sender">
+              {formData.clientAddress.street}
+            </td> 
+            <td data-label=" city">
+              {formData.clientAddress.city}
+            </td> 
+            <td data-label="post code">
+              {formData.clientAddress.postCode}
+            </td> 
+            <td data-label="country">
+              {formData.clientAddress.country}
+            </td>
+          </tr>
+        </tbody>
       </table>
-      <table className="items-table preview-table width-100">
-        <TableHeader columns={columns1} /> 
-        <caption>Client</caption>
+      <table className="items-table width-100">
+        <TableHeader columns={clientColumns} /> 
+        <caption>Client Info</caption>
         <tbody>
           <tr>
             <td data-label="client name">{formData.clientName}</td>
@@ -40,8 +64,8 @@ const InvoicePreview = ({ formData }) => {
           </tr>
         </tbody>
       </table>
-      <table className="items-table preview-table width-100">
-        <TableHeader columns={columns2} />
+      <table className="items-table width-100">
+        <TableHeader columns={invoiceColumns} />
         <tbody>
           <tr>
             <td data-label="payment terms">{formData.paymentTerms} days</td>
@@ -54,9 +78,9 @@ const InvoicePreview = ({ formData }) => {
         </tbody>
       </table>
 
-      <table className="items-table preview-table width-100">
+      <table className="items-table width-100">
         <caption>Arrangement Items</caption>
-        <TableHeader columns={columns3} />
+        <TableHeader columns={itemColumns} />
         <tbody>
           {formData.items.map((item, idx) => (
             <tr key={idx}>
@@ -69,6 +93,7 @@ const InvoicePreview = ({ formData }) => {
         </tbody>
       </table> 
         <InvoiceTotal total={formData.total} />
+    </div>
     </div>
   );
 };
