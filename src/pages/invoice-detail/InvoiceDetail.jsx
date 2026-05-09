@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteInvoice } from "../../features/invoiceSlice";
 import Modal from "../../components/modals/Modal.jsx";
@@ -7,11 +7,15 @@ import InvoiceDetailContent from "../../components/common/form-elements/InvoiceD
 import InvoiceActionButtons from "../../components/common/form-elements/InvoiceActionButtons.jsx";
 
 const InvoiceDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams(); 
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const invoices = useSelector((state) => state.invoices.invoices);
   const invoice = invoices.find((inv) => inv.id === id);
+
+if (!id || !invoice) {
+    return <Navigate to="/not-found" replace />;
+  }
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -19,9 +23,7 @@ const InvoiceDetail = () => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
-  if (!invoice) {
-    return <p>Invoice not found.</p>;
-  }
+ 
 
   const handleDelete = () => {
     dispatch(deleteInvoice(invoice.id));
