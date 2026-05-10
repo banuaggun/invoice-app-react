@@ -1,16 +1,20 @@
 import React from "react";
-import NotFoundIcon from "../../assets/icons/NotFoundIcon"; 
-import './not-found.css';
+import NotFoundIcon from "../../assets/icons/NotFoundIcon";
+import "./not-found.css";
 
 const NotFoundPage = () => {
   return (
-    <div style={{ margin:"4rem", padding: "2rem", textAlign: "center" }}>  
-    <div className="icon">
- <NotFoundIcon />        
-    </div>
-   
-      <h1>404 - Sayfa Bulunamadı</h1>
-      <p>Aradığınız sayfa mevcut değil.</p>
+    <div className="not-found-area">
+      <div className="icon">
+        <NotFoundIcon />
+      </div>
+      <div className="content">
+        <h3>404 - Page Not Found</h3>
+        <p>The page you are looking for does not exist.</p>
+        <a href="/" target="_self" rel="noopener noreferrer">
+          Return to Home Page
+        </a>
+      </div>
     </div>
   );
 };

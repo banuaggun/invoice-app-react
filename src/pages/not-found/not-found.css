@@ -1,4 +1,39 @@
-.icon, .icon > svg{
-    width:500px; 
-    height:500px;
+.not-found-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 40px auto;
+}
+.icon,
+.icon > svg {
+  width: 500px;
+  height: 500px;
+}
+
+.content {
+  padding: 0 20px;
+}
+
+.content a {
+  font-weight: 600;
+  border-bottom: 3px solid var(--btn-invoice-hover);
+  padding: 4px 8px;
+}
+
+.content a:hover {
+  background-color: var(--btn-invoice-hover);
+}
+
+@media only screen and (max-width: 601px) {
+  .not-found-area {
+    width: min-content;
+    margin: 140px auto;
+  }
+  .icon,
+  .icon > svg {
+    width: 280px;
+    height: 280px;
+    border: 1px solid var(--btn-invoice);
+    border-radius: 50%;
+  }
 }
