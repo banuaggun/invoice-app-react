@@ -12,13 +12,23 @@ A simple yet functional **invoice management application** built with ReactJS.
 
 ## 📸 Screenshot
 
+#### Light Mode
+
 ![Invoice App Screenshot](./src/assets/screenshots/screenshot-1.png)
+
+#### Dark Mode
+
+![Invoice App Screenshot](./src/assets/screenshots/screenshot-2.png)
 
 ## ⚙️ Installation
 
 Clone the project and install dependencies:
 
 ```bash
+git clone <repo-url>
+cd invoice-app-react
 npm install
+npm run dev
+
 
 ```
