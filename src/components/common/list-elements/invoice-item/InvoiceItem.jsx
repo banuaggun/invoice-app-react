@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { formatDate } from "../../../../utils/dateUtils";
 import "./invoice-item.css"; 
-import '../../../../index2.css'; 
 import ForwardIcon from "../../../../assets/icons/ForwardIcon"; 
 
 function InvoiceItem({ invoice }) {

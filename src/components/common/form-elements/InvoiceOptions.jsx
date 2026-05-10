@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./form-elements.css";
 
 const InvoiceOptions = ({ type, value, onChange }) => {
   const [open, setOpen] = useState(false);

@@ -1,8 +1,5 @@
 import React from "react";
-import Screenshot from "../../assets/screenshots/screenshot-1.png";
-import "../../index2.css";
 import "./profile.css";
-import "../../components/common/form-elements/form-elements.css";
 import {
   BehanceIcon,
   GithubIcon,

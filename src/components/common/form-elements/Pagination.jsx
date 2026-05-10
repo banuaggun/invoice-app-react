@@ -1,5 +1,4 @@
 import React from "react";
-import "./form-elements.css";
 import BackIcon from "../../../assets/icons/BackIcon";
 import ForwardIcon from "../../../assets/icons/ForwardIcon";
 

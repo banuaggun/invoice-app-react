@@ -1,6 +1,5 @@
 import React from "react";
 import TableHeader from "../list-elements/table-header/TableHeader";
-import "./form-elements.css";
 
 const AddressBlock = ({ title, address, onChange, editable = false }) => {
   const columns = ["Street", "City", "Post Code", "Country"];

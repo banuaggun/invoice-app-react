@@ -1,4 +1,3 @@
-// src/features/themeSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialTheme = localStorage.getItem("theme") || "light";

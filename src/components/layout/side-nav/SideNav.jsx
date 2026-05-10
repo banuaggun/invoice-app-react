@@ -1,7 +1,6 @@
 import React from 'react';
 import ThemeToggle from '../theme-toggle/ThemeToggle.jsx';
 import './side-nav.css'; 
-import '../../../index2.css'; 
 import { Link } from 'react-router-dom';
 import ProfileIcon from '../../../assets/icons/ProfileIcon.jsx';
 

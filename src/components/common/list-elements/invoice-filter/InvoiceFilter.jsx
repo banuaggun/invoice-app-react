@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./invoice-filter.css";
-import '../../../../index2.css';
 
 const InvoiceFilter = ({ filter, setFilter, sort, setSort }) => {
   const [openStatus, setOpenStatus] = useState(false);

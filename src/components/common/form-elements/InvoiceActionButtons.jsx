@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import BackIcon from "../../../assets/icons/BackIcon";
 import EditIcon from "../../../assets/icons/EditIcon";
 import DeleteIcon from "../../../assets/icons/DeleteIcon";
-import "./form-elements.css";
-import "../../../index2.css";
+
 
 const InvoiceActionButtons = ({
   mode,

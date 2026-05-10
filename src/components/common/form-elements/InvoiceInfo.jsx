@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import TableHeader from "../list-elements/table-header/TableHeader"; 
-import "./form-elements.css";
-import "../../../index2.css";
+
 
 const InvoiceInfo = ({ title, invoice, onChange, editable = false }) => {
   const columns = ["Description", "Client Name", "Client Email"]; 

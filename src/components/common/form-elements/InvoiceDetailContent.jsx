@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AddressBlock from "./AddressBlock.jsx";
-import "./form-elements.css";
 import InvoiceDetailItem from "./InvoiceDetailItem.jsx";
 import InvoiceInfo from "./InvoiceInfo.jsx";
 import InvoiceTimeStatus from "./InvoiceTimeStatus.jsx";

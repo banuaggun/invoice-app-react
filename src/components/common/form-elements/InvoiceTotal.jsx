@@ -1,5 +1,4 @@
 import React from "react";
-import "./form-elements.css";
 import TableHeader from "../list-elements/table-header/TableHeader";
 
 const InvoiceTotal = ({ invoice, total, isFormMode = false }) => {

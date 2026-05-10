@@ -1,6 +1,5 @@
 import React from "react";
 import { formatDate } from "../../../utils/dateUtils.js";
-import "./form-elements.css"; 
 import InvoiceOptions from "./InvoiceOptions.jsx";
 import TableHeader from "../list-elements/table-header/TableHeader.jsx";
 

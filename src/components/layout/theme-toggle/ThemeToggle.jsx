@@ -2,7 +2,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../../features/themeSlice"; 
 import './theme-toggle.css';  
-import '../../../index2.css';
 
 function ThemeToggle() {
     const dispatch = useDispatch();
